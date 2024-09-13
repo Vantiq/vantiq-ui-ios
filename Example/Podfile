@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'vantiq-ui-ios_Example' do
+  pod 'vantiq-ui-ios', :path => '../'
+
+  target 'vantiq-ui-ios_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
