@@ -9,26 +9,19 @@
 Pod::Spec.new do |s|
   s.name             = 'vantiq-ui-ios'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of vantiq-ui-ios.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'UI API for building Vantiq mobile iOS apps.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  UI API for building Vantiq mobile iOS apps.
                        DESC
 
-  s.homepage         = 'https://github.com/Michael Swan/vantiq-ui-ios'
+  s.homepage         = 'https://github.com/Vantiq/vantiq-ui-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Michael Swan' => 'mswan@vantiq.com' }
-  s.source           = { :git => 'https://github.com/Michael Swan/vantiq-ui-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Vantiq/vantiq-ui-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'vantiq-ui-ios/Classes/**/*'
   
@@ -39,4 +32,8 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'vantiq-sdk-ios', '~> 1.4.8'
+  s.dependency 'AppAuth', '~> 1.7.5'
+  s.dependency 'JWT', '~> 2.2.0'
+  s.dependency 'Base64', '~> 1.1.2'
 end

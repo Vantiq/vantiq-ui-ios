@@ -7,6 +7,7 @@
 //
 
 #import "VANTIQUIAppDelegate.h"
+#import "VantiqUI.h"
 
 @implementation VANTIQUIAppDelegate
 
@@ -14,6 +15,17 @@
 {
     // Override point for customization after application launch.
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
+  // Sends the URL to the current authorization flow (if any) which will
+  // process it if it relates to an authorization response.
+  if ([VantiqUIcurrentAuthorizationFlow resumeExternalUserAgentFlowWithURL:url]) {
+      VantiqUIcurrentAuthorizationFlow = nil;
+      return YES;
+  }
+  // Your additional URL handling (if any) goes here.
+  return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

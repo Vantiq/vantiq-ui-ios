@@ -1,0 +1,6 @@
+framework module vantiq_ui_ios {
+  umbrella header "vantiq-ui-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

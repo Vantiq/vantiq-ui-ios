@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
+#import "AppAuth.h"
 
 @interface VANTIQUIAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @end
