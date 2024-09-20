@@ -1352,6 +1352,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A71959157DDC7F635F953E48F00480C /* vantiq-ui-ios.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1734,6 +1735,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 406A8C1F9B89F7EBA3B027DAF4D459AC /* vantiq-ui-ios.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
