@@ -540,10 +540,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vantiq-ui-ios/vantiq-ui-ios-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
+					"$(inherited)/**",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
-					"../../vantiq-ui-ios/Classes",
 				);
 				INFOPLIST_FILE = "vantiq-ui-ios/vantiq-ui-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
@@ -571,10 +570,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vantiq-ui-ios/vantiq-ui-ios-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
+					"$(inherited)/**",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
-					"../../vantiq-ui-ios/Classes",
 				);
 				INFOPLIST_FILE = "vantiq-ui-ios/vantiq-ui-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
