@@ -7,6 +7,8 @@
 
 #ifndef VantiqUI_h
 #define VantiqUI_h
+#import "Vantiq.h"
+#import "AppAuth.h"
 
 extern id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 

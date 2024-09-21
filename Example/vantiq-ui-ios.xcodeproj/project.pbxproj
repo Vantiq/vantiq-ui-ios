@@ -540,7 +540,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vantiq-ui-ios/vantiq-ui-ios-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)/**",
+					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
 				);
@@ -570,7 +570,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vantiq-ui-ios/vantiq-ui-ios-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)/**",
+					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
 				);
