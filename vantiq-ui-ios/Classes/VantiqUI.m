@@ -6,8 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VantiqUI.h"
+#import "Vantiq.h"
 #import "AppAuth.h"
+#import "VantiqUI.h"
 #import "JWT.h"
 
 @interface VantiqUI() {

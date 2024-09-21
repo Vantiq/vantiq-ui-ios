@@ -7,6 +7,8 @@
 //
 
 #import "VANTIQUIAppDelegate.h"
+#import "AppAuth.h"
+#import "Vantiq.h"
 #import "VantiqUI.h"
 
 @implementation VANTIQUIAppDelegate

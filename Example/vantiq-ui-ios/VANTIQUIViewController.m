@@ -7,6 +7,8 @@
 //
 
 #import "VANTIQUIViewController.h"
+#import "AppAuth.h"
+#import "Vantiq.h"
 #import "VantiqUI.h"
 
 #define VANTIQ_SERVER   @"https://staging.vantiq.com"
