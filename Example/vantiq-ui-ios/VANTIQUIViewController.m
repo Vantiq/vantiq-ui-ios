@@ -39,10 +39,9 @@
     AddToText(@"Authenticating...");
     
     vui = [[VantiqUI alloc] init:VANTIQ_SERVER];
-    NSString *authToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.vantiq.react.accessToken"];
-    if (authToken) {
-        NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.vantiq.react.username"];
-        [vui verifyAuthToken:authToken username:username completionHandler:^(BOOL isValid, NSError *error) {
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.vantiq.react.username"];
+    if (username) {
+        [vui verifyAuthToken:username completionHandler:^(BOOL isValid, NSString *errorStr) {
             if (isValid) {
                 NSString *statStr = [NSString stringWithFormat:@"Auth token verified for user %@", username];
                 AddToText(statStr);
@@ -78,21 +77,26 @@
 }
 
 - (void)initiateAuth {
-    [vui serverType:^(BOOL isInternal, NSError *error) {
-        if (isInternal) {
-            
+    [vui serverType:^(BOOL isInternal, NSString *errorStr) {
+        if (!errorStr.length) {
+            if (isInternal) {
+                
+            } else {
+                [self->vui authWithOAuth:@"" urlScheme:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSString *errorStr) {
+                    if (!errorStr.length) {
+                        // remember the OAuth username
+                        [[NSUserDefaults standardUserDefaults] setObject:self->vui.username forKey:@"com.vantiq.react.username"];
+                        AddToText(@"OAuth authentication complete.");
+                        [self runSomeTests];
+                    } else {
+                        NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
+                        AddToText(errStr);
+                    }
+                }];
+            }
         } else {
-            [self->vui authWithOAuth:@"" urlScheme:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSString *authToken, NSError *error) {
-                if (!error) {
-                    [[NSUserDefaults standardUserDefaults] setObject:authToken forKey:@"com.vantiq.react.accessToken"];
-                    [[NSUserDefaults standardUserDefaults] setObject:self->vui.username forKey:@"com.vantiq.react.username"];
-                    AddToText(@"OAuth authentication complete.");
-                    [self runSomeTests];
-                } else {
-                    NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", [error localizedDescription]];
-                    AddToText(errStr);
-                }
-            }];
+            NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
+            AddToText(errStr);
         }
     }];
 }

@@ -17,8 +17,8 @@ extern id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 @property (readonly, nonatomic) NSString *username;
 
 - (id)init:(NSString *)serverURL;
-- (void)serverType:(void (^)(BOOL isInternal, NSError *error))handler;
-- (void)verifyAuthToken:(NSString *)authToken username:(NSString *)username completionHandler:(void (^)(BOOL isValid, NSError *error))handler;
-- (void)authWithOAuth:(NSString *)namespace urlScheme:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString* authToken, NSError *error))handler;
+- (void)serverType:(void (^)(BOOL isInternal, NSString *errorStr))handler;
+- (void)verifyAuthToken:(NSString *)username completionHandler:(void (^)(BOOL isValid, NSString *errorStr))handler;
+- (void)authWithOAuth:(NSString *)namespace urlScheme:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString *errorStr))handler;
 @end
 #endif /* VantiqUI_h */
