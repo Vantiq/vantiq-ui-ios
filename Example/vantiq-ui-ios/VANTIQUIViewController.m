@@ -9,7 +9,7 @@
 #import "VANTIQUIViewController.h"
 #import "VantiqUI.h"
 
-#define VANTIQ_SERVER   @"https://staging.vantiq.com"
+#define VANTIQ_SERVER   @"https://3e815f1b7da4.ngrok.app"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -80,18 +80,12 @@
     [vui serverType:^(BOOL isInternal, NSString *errorStr) {
         if (!errorStr.length) {
             if (isInternal) {
-                
+                [self->vui authWithInternal:@"swan" password:@"3367whit" completionHandler:^(NSString *errorStr) {
+                    [self finishAuth:errorStr];
+                }];
             } else {
-                [self->vui authWithOAuth:@"" urlScheme:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSString *errorStr) {
-                    if (!errorStr.length) {
-                        // remember the OAuth username
-                        [[NSUserDefaults standardUserDefaults] setObject:self->vui.username forKey:@"com.vantiq.react.username"];
-                        AddToText(@"OAuth authentication complete.");
-                        [self runSomeTests];
-                    } else {
-                        NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
-                        AddToText(errStr);
-                    }
+                [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSString *errorStr) {
+                    [self finishAuth:errorStr];
                 }];
             }
         } else {
@@ -99,6 +93,18 @@
             AddToText(errStr);
         }
     }];
+}
+
+- (void)finishAuth:(NSString *)errorStr {
+    if (!errorStr.length) {
+        // remember the username
+        [[NSUserDefaults standardUserDefaults] setObject:self->vui.username forKey:@"com.vantiq.react.username"];
+        AddToText(@"Authentication complete.");
+        [self runSomeTests];
+    } else {
+        NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
+        AddToText(errStr);
+    }
 }
 
 - (void)runSomeTests {

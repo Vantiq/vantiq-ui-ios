@@ -79,7 +79,6 @@
 		958EAE1E90C473F5E1A01701F9602CA3 /* OIDRegistrationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2DE9A3B3F7563DFDE8D58A78DC791D /* OIDRegistrationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98940975CA7FD0211195CFFFA75F21B2 /* AppAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4727DEE1659E729479059438D069304E /* AppAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9901565B4BA3E2BAB551C8FF633796CD /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 465EF15C3612EDC5E00DC402AA9F5D40 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C32FA2C8F5E77FBC94D88F9D343D790 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E17C68428860FABA3C44F4C2E2C40C /* ReplaceMe.m */; };
 		9CF600C1CDD348E9FCF26E9B23DCC218 /* Base64-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38998F79B8EA77BBD9C1967A42EB4B2A /* Base64-dummy.m */; };
 		9F2EFA8C68143EF4839F790170243F48 /* MF_Base64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A142F55649BE6DDD1F9A909D5A8D42 /* MF_Base64Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A052A29186E629813AD41633B35173F8 /* JWTAlgorithmNone.h in Headers */ = {isa = PBXBuildFile; fileRef = F9160A01388783514F70C3BE41494DF9 /* JWTAlgorithmNone.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -235,7 +234,6 @@
 		0D65FC28852EEBC36FC3D200DD097963 /* OIDExternalUserAgentCatalyst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDExternalUserAgentCatalyst.m; path = Sources/AppAuth/iOS/OIDExternalUserAgentCatalyst.m; sourceTree = "<group>"; };
 		1107D5B0B867E6DCE765F42299C6F61D /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		12BF5752C7240F763C0869C512639654 /* JWT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWT.h; path = Classes/JWT.h; sourceTree = "<group>"; };
-		14E17C68428860FABA3C44F4C2E2C40C /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = "vantiq-ui-ios/Classes/ReplaceMe.m"; sourceTree = "<group>"; };
 		15D64621193C7E6F43B7257183DCB3B5 /* OIDIDToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDIDToken.h; path = Sources/AppAuthCore/OIDIDToken.h; sourceTree = "<group>"; };
 		17D116304056AF7CDC815F12DA54878E /* Pods-vantiq-ui-ios_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-vantiq-ui-ios_Example-Info.plist"; sourceTree = "<group>"; };
 		1D0585DEEE46FC973ACCF50FC26D4D69 /* OIDEndSessionRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDEndSessionRequest.m; path = Sources/AppAuthCore/OIDEndSessionRequest.m; sourceTree = "<group>"; };
@@ -648,7 +646,6 @@
 		9D0BC6077D1A04ABDD9EBE071DEF81B1 /* vantiq-ui-ios */ = {
 			isa = PBXGroup;
 			children = (
-				14E17C68428860FABA3C44F4C2E2C40C /* ReplaceMe.m */,
 				8C17D28E1856380F742F10ECF4FE20E4 /* VantiqUI.h */,
 				FEBA1392EE6935D1864C1E513A3FEF5E /* VantiqUI.m */,
 				72BEBACFB27A34EA3F109AA8DDB1D3D7 /* Pod */,
@@ -1247,7 +1244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C32FA2C8F5E77FBC94D88F9D343D790 /* ReplaceMe.m in Sources */,
 				1621678F5E24BCA147EFC5F7D18991EA /* vantiq-ui-ios-dummy.m in Sources */,
 				2E15E252622DB5773DDCDBC5E257AAF3 /* VantiqUI.m in Sources */,
 			);

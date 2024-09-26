@@ -71,7 +71,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     }
 }
 
-- (void)authWithOAuth:(NSString *)namespace urlScheme:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString *errorStr))handler {
+- (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString *errorStr))handler {
     NSString *issuerURL = [[NSString stringWithString:_serverURL] lowercaseString];
     NSURL *url = [NSURL URLWithString:issuerURL];
     issuerURL = [NSString stringWithFormat:@"%@/auth/realms/%@", issuerURL, url.host];
@@ -113,6 +113,20 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             NSLog(@"Error retrieving discovery document: %@", errorStr);
             handler(errorStr);
         }
+    }];
+}
+
+- (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSString *errorStr))handler {
+    _username = username;
+    [_v authenticate:username password:password completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+        NSString *resultStr = @"";
+        [self formError:response error:error resultStr:&resultStr];
+        if (!resultStr.length) {
+            // store the credentials securely
+            NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:self->_v.accessToken, @"accessToken", nil];
+            [self storeCredentials:[self dictionaryToJSONString:credentialsDict]];
+        }
+        handler(resultStr);
     }];
 }
 
