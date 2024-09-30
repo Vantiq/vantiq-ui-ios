@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "VantiqUI.h"
 #import "JWT.h"
+#import "KeychainItemWrapper.h"
 
 @interface VantiqUI() {
     NSString *oAuthName;
@@ -59,16 +60,40 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     _username = username;
     NSDictionary *credentials = [self retrieveCredentials];
     if (credentials) {
-        NSString *authToken = [credentials objectForKey:@"accessToken"];
-        [_v verify:authToken username:username completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^ {
-                NSString *resultStr = @"";
-                handler(![self formError:response error:error resultStr:&resultStr], resultStr);
-            });
-        }];
+        _v.accessToken = [credentials objectForKey:@"accessToken"];
+        NSString *idToken = [credentials objectForKey:@"idToken"];
+        if (idToken) {
+            // if there's an ID token, this is OAuth so preemptively refresh the access token if necessary
+            OIDAuthState *authState = [self retrieveAuthState];
+            if (authState) {
+                [authState performActionWithFreshTokens:^(NSString *_Nonnull accessToken,
+                    NSString *_Nonnull idToken, NSError *_Nullable error) {
+                    if (!error) {
+                        [self storeCredentials:accessToken idToken:idToken];
+                        [self refreshedVerifyAuthToken:accessToken username:username completionHandler:handler];
+                    } else {
+                        NSLog(@"performActionWithFreshTokens: %@", [error localizedDescription]);
+                        [self refreshedVerifyAuthToken:self->_v.accessToken username:username completionHandler:handler];
+                    }
+                }];
+            } else {
+                [self refreshedVerifyAuthToken:_v.accessToken username:username completionHandler:handler];
+            }
+        } else {
+            [self refreshedVerifyAuthToken:_v.accessToken username:username completionHandler:handler];
+        }
     } else {
         handler(false, @"");
     }
+}
+    
+- (void)refreshedVerifyAuthToken:(NSString *)authToken username:(NSString *)username completionHandler:(void (^)(BOOL isValid, NSString *errorStr))handler {
+    [_v verify:authToken username:username completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            NSString *resultStr = @"";
+            handler(![self formError:response error:error resultStr:&resultStr], resultStr);
+        });
+    }];
 }
 
 - (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString *errorStr))handler {
@@ -88,21 +113,19 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                 clientId:clientId scopes:@[OIDScopeOpenID, OIDScopeProfile]
                 redirectURL:redirectURL responseType:OIDResponseTypeCode additionalParameters:nil];
             
-            // performs authentication request
+            // perform authentication request
             UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
             VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
                 presentingViewController:rootViewController
                 callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
                 NSString *errorStr = error ? [error localizedDescription] : @"";
                 if (authState) {
-                    NSLog(@"Got authorization tokens. Access token: %@", authState.lastTokenResponse.accessToken);
                     [self decodeJWT:authState.lastTokenResponse.idToken];
-                    self->_v.accessToken = authState.lastTokenResponse.accessToken;
-                    self->idToken = authState.lastTokenResponse.idToken;
                     
                     // store the credentials securely
-                    NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:self->_v.accessToken, @"accessToken", self->idToken, @"idToken", nil];
-                    [self storeCredentials:[self dictionaryToJSONString:credentialsDict]];
+                    [self storeCredentials:authState.lastTokenResponse.accessToken idToken:authState.lastTokenResponse.idToken];
+                    // persist the returned state
+                    [self storeAuthState:authState];
                     handler(errorStr);
                 } else {
                     NSLog(@"Authorization error: %@", errorStr);
@@ -116,6 +139,28 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     }];
 }
 
+- (void)storeAuthState:(OIDAuthState *)authState {
+    NSError *errRet;
+    NSData *authStateData = [NSKeyedArchiver archivedDataWithRootObject:authState
+        requiringSecureCoding:NO error:&errRet];
+    KeychainItemWrapper *keychainItem =
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
+    [keychainItem setObject:authStateData forKey:(id)kSecAttrAccount];
+}
+- (OIDAuthState *)retrieveAuthState {
+    NSError *errRet;
+    KeychainItemWrapper *keychainItem =
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
+    NSData *data = [keychainItem objectForKey:(id)kSecAttrAccount];
+    OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class]
+        fromData:data error:&errRet];
+    return authState;
+}
+
+- (void)authState:(OIDAuthState *)state didEncounterAuthorizationError:(NSError *)error {
+    NSLog(@"didEncounterAuthorizationError: %@", [error localizedDescription]);
+}
+
 - (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSString *errorStr))handler {
     _username = username;
     [_v authenticate:username password:password completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
@@ -123,8 +168,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         [self formError:response error:error resultStr:&resultStr];
         if (!resultStr.length) {
             // store the credentials securely
-            NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:self->_v.accessToken, @"accessToken", nil];
-            [self storeCredentials:[self dictionaryToJSONString:credentialsDict]];
+            [self storeCredentials:self->_v.accessToken idToken:@""];
         }
         handler(resultStr);
     }];
@@ -148,27 +192,25 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 }
 
 /*
- *  formError
- *      - helper to create an error string based on network usage
- */
-- (BOOL)formError:(NSHTTPURLResponse *)response error:(NSError *)error resultStr:(NSString **)resultStr {
-    if (error) {
-        *resultStr = [error localizedDescription];
-        return YES;
-    } else if ((response.statusCode < 200) || (response.statusCode > 299)) {
-        *resultStr = [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode];
-        return YES;
-    }
-    return NO;
-}
-
-/*
  *  storeCredentials, retrieveCredentials, areCredentialsPresent
  *      - helpers to securely store authentication credentials, both OAuth and username/password
  */
-- (void)storeCredentials:(NSString *)credentials {
-    NSURLCredential *credential = [NSURLCredential credentialWithUser:_username password:credentials persistence:NSURLCredentialPersistencePermanent];
-    [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:protSpace];
+- (void)storeCredentials:(NSString *)accessToken idToken:(NSString *)idToken {
+    BOOL credentialsChanged = NO;
+    if (![accessToken isEqualToString:_v.accessToken]) {
+        _v.accessToken = accessToken;
+        credentialsChanged = YES;
+    }
+    if (![idToken isEqualToString:idToken]) {
+        idToken = idToken;
+        credentialsChanged = YES;
+    }
+    if (credentialsChanged) {
+        NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:_v.accessToken,
+            @"accessToken", _v.accessToken, @"idToken", nil];
+        NSURLCredential *credential = [NSURLCredential credentialWithUser:_username password:[self dictionaryToJSONString:credentialsDict] persistence:NSURLCredentialPersistencePermanent];
+        [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:protSpace];
+    }
 }
 
 - (NSDictionary *)retrieveCredentials {
@@ -212,5 +254,20 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         return [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     }
     return nil;
+}
+
+/*
+ *  formError
+ *      - helper to create an error string based on network usage
+ */
+- (BOOL)formError:(NSHTTPURLResponse *)response error:(NSError *)error resultStr:(NSString **)resultStr {
+    if (error) {
+        *resultStr = [error localizedDescription];
+        return YES;
+    } else if ((response.statusCode < 200) || (response.statusCode > 299)) {
+        *resultStr = [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode];
+        return YES;
+    }
+    return NO;
 }
 @end

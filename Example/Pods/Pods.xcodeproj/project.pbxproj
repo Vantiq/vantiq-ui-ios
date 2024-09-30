@@ -49,6 +49,8 @@
 		56196D282C9E410300A2177F /* Vantiq.h in Headers */ = {isa = PBXBuildFile; fileRef = D77F65777095BD256FA8E5908E557A37 /* Vantiq.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56196D292C9E41FE00A2177F /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 465EF15C3612EDC5E00DC402AA9F5D40 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		564A05270EDDE6BE9D465D02D97E8052 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE80E2739CF15E28CC5D47EB7E1803C /* MF_Base64Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		56ED23752CAB278C006428A8 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 56ED23742CAB278B006428A8 /* KeychainItemWrapper.h */; };
+		56ED23772CAB2795006428A8 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED23762CAB2795006428A8 /* KeychainItemWrapper.m */; };
 		5A192D64055F796420A9D63926A273E0 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCA03E7D611B805C04E33D0531779EE /* OIDExternalUserAgentIOSCustomBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AD7C81F358865EEB5A3A226A45A4FEF /* OIDAuthStateChangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A70B59EB553D9283E083EF19A01EB2 /* OIDAuthStateChangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C59E4A1C457D819CD84164DF9E3C811 /* OIDEndSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF420E333605E7E94308A4CA3BC296 /* OIDEndSessionResponse.m */; };
@@ -285,6 +287,8 @@
 		54919BFEF6F2E582A4BB0CA7667C8118 /* OIDTokenResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDTokenResponse.h; path = Sources/AppAuthCore/OIDTokenResponse.h; sourceTree = "<group>"; };
 		55A0D44D67155B6D8BE5EF39BFE1CAD4 /* Pods-vantiq-ui-ios_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-vantiq-ui-ios_Example.modulemap"; sourceTree = "<group>"; };
 		5697BF121FA7794127E658BE8C0C8C8C /* OIDAuthorizationService+IOS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OIDAuthorizationService+IOS.m"; path = "Sources/AppAuth/iOS/OIDAuthorizationService+IOS.m"; sourceTree = "<group>"; };
+		56ED23742CAB278B006428A8 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = "Example/Pods/vantiq-sdk-ios/Pod/Classes/KeychainItemWrapper.h"; sourceTree = "<group>"; };
+		56ED23762CAB2795006428A8 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = "Example/Pods/vantiq-sdk-ios/Pod/Classes/KeychainItemWrapper.m"; sourceTree = "<group>"; };
 		5703892112E2E1005A5940D64319D9B4 /* vantiq-sdk-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "vantiq-sdk-ios-Info.plist"; sourceTree = "<group>"; };
 		5A71959157DDC7F635F953E48F00480C /* vantiq-ui-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "vantiq-ui-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5B171CBEAEBE9F3A4A34F9113E57622C /* Pods-vantiq-ui-ios_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-vantiq-ui-ios_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -648,6 +652,8 @@
 			children = (
 				8C17D28E1856380F742F10ECF4FE20E4 /* VantiqUI.h */,
 				FEBA1392EE6935D1864C1E513A3FEF5E /* VantiqUI.m */,
+				56ED23742CAB278B006428A8 /* KeychainItemWrapper.h */,
+				56ED23762CAB2795006428A8 /* KeychainItemWrapper.m */,
 				72BEBACFB27A34EA3F109AA8DDB1D3D7 /* Pod */,
 				594C95C0F5D934499BE051A13EB1F70B /* Support Files */,
 			);
@@ -922,6 +928,7 @@
 				B02BAF4BEFC78708A73BA6ACA0DC4E78 /* vantiq-ui-ios-umbrella.h in Headers */,
 				205FAA366821ABF3FF10A6EAFAFC033F /* VantiqUI.h in Headers */,
 				56196D282C9E410300A2177F /* Vantiq.h in Headers */,
+				56ED23752CAB278C006428A8 /* KeychainItemWrapper.h in Headers */,
 				56196D292C9E41FE00A2177F /* AppAuth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1246,6 +1253,7 @@
 			files = (
 				1621678F5E24BCA147EFC5F7D18991EA /* vantiq-ui-ios-dummy.m in Sources */,
 				2E15E252622DB5773DDCDBC5E257AAF3 /* VantiqUI.m in Sources */,
+				56ED23772CAB2795006428A8 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

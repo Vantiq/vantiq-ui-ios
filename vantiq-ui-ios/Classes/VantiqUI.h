@@ -12,7 +12,7 @@
 
 extern id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 
-@interface VantiqUI : NSObject
+@interface VantiqUI : NSObject <OIDAuthStateErrorDelegate>
 @property (readonly, nonatomic) Vantiq *v;
 @property (readonly, nonatomic) NSString *username;
 
