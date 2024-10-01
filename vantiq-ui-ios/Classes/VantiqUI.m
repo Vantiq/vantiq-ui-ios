@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "VantiqUI.h"
 #import "JWT.h"
-#import "KeychainItemWrapper.h"
+#import "./KeychainItemWrapper.h"
 
 @interface VantiqUI() {
     NSString *oAuthName;
