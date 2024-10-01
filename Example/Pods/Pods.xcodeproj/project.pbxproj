@@ -49,7 +49,7 @@
 		56196D282C9E410300A2177F /* Vantiq.h in Headers */ = {isa = PBXBuildFile; fileRef = D77F65777095BD256FA8E5908E557A37 /* Vantiq.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56196D292C9E41FE00A2177F /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 465EF15C3612EDC5E00DC402AA9F5D40 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		564A05270EDDE6BE9D465D02D97E8052 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE80E2739CF15E28CC5D47EB7E1803C /* MF_Base64Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		56ED237A2CAB6D94006428A8 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 56ED23782CAB6D94006428A8 /* KeychainItemWrapper.h */; };
+		56ED237A2CAB6D94006428A8 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 56ED23782CAB6D94006428A8 /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56ED237B2CAB6D94006428A8 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED23792CAB6D94006428A8 /* KeychainItemWrapper.m */; };
 		5A192D64055F796420A9D63926A273E0 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCA03E7D611B805C04E33D0531779EE /* OIDExternalUserAgentIOSCustomBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AD7C81F358865EEB5A3A226A45A4FEF /* OIDAuthStateChangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A70B59EB553D9283E083EF19A01EB2 /* OIDAuthStateChangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1641,6 +1641,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Base64/Base64.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JWT/JWT.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
+				);
 				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
