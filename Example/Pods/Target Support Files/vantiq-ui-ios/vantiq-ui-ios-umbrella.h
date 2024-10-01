@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "KeychainItemWrapper.h"
 #import "VantiqUI.h"
 
 FOUNDATION_EXPORT double vantiq_ui_iosVersionNumber;

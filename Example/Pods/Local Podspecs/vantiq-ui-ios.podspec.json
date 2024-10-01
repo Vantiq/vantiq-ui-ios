@@ -1,8 +1,8 @@
 {
   "name": "vantiq-ui-ios",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "summary": "UI API for building Vantiq mobile iOS apps.",
-  "description": "UI API for building Vantiq mobile iOS apps.",
+  "description": "UI API for building Vantiq mobile iOS apps to allow cross-platform development.",
   "homepage": "https://github.com/Vantiq/vantiq-ui-ios",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Vantiq/vantiq-ui-ios.git",
-    "tag": "0.1.0"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "12.0"

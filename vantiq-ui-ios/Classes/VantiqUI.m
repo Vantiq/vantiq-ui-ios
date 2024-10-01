@@ -62,7 +62,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     if (credentials) {
         _v.accessToken = [credentials objectForKey:@"accessToken"];
         NSString *idToken = [credentials objectForKey:@"idToken"];
-        if (idToken) {
+        if (idToken.length) {
             // if there's an ID token, this is OAuth so preemptively refresh the access token if necessary
             OIDAuthState *authState = [self retrieveAuthState];
             if (authState) {
@@ -168,7 +168,10 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         [self formError:response error:error resultStr:&resultStr];
         if (!resultStr.length) {
             // store the credentials securely
-            [self storeCredentials:self->_v.accessToken idToken:@""];
+            NSString *saveAccessToken = [NSString stringWithString:self->_v.accessToken];
+            self->_v.accessToken = @"";
+            [self storeCredentials:saveAccessToken idToken:@""];
+            self->_v.accessToken = saveAccessToken;
         }
         handler(resultStr);
     }];
@@ -207,7 +210,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     }
     if (credentialsChanged) {
         NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:_v.accessToken,
-            @"accessToken", _v.accessToken, @"idToken", nil];
+            @"accessToken", idToken, @"idToken", nil];
         NSURLCredential *credential = [NSURLCredential credentialWithUser:_username password:[self dictionaryToJSONString:credentialsDict] persistence:NSURLCredentialPersistencePermanent];
         [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:protSpace];
     }
