@@ -17,7 +17,7 @@ extern id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 /**
 The VantiqUI class declares the interface for authentication and subsequent interaction with a Vantiq server.
  */
-@interface VantiqUI : NSObject <OIDAuthStateErrorDelegate>
+@interface VantiqUI : NSObject
 /**
 Instance of the underlying Vantiq class for direct communication to the Vantiq SDK
  */
@@ -26,13 +26,42 @@ Instance of the underlying Vantiq class for direct communication to the Vantiq S
  User name of the last authenticated user.
  */
 @property (readonly, nonatomic) NSString *username;
+/**
+ Preferred user name of the last authenticated user.
+ */
+@property (readonly, nonatomic) NSString *preferredUsername;
+/**
+ Type of the server, will be either 'Internal' or 'OAuth'
+ */
+@property (readonly, nonatomic) NSString *serverType;
 
 /**
 Constructor for use with all other Vantiq UI and server operations.
  
 @param serverURL       Server URL, e.g. https://dev.vantiq.com
+@param namespace        Vantiq Namespace in which to operate, not currently used
+ @param completionHandler
  */
-- (id)init:(NSString *)serverURL;
+- (id)init:(NSString *)serverURL namespace:(NSString *)targetNamespace completionHandler:(void (^)(NSDictionary *response))handler;
+
+/**
+Session Information Dictionary Keys
+ 
+ The following keys are returned in the response dictionary returned by the following methods:
+@see serverType:
+@see verifyAuthToken:
+@see authWithOAuth:clientId:completionHandler:
+@see authWithInternal:password:completionHandler:
+ 
+ Not all keys will be present depending on error conditions and the method.
+ 
+ serverType (NSString): the type of authentication used by the given Vantiq server, either @"Internal" or @"OAuth"
+ authValid (NSString): is the previously establed authentication token valid, either @"true" or @"false"
+ username (NSString): the username of the authenticated user
+ preferredUsername (NSString): the preferred username of the authenticated user, will be the same as the username for Internal authentication
+ errorStr (NSString): a text description of any error that occurred, will be the empty string (@"") if there is no error
+ statusCode (NSNumber): the HTTP status code of any related REST operations
+ */
 
 /**
 The serverType method determines if the given server uses Internal (username/password) or OAuth (via
@@ -43,7 +72,7 @@ The serverType method determines if the given server uses Internal (username/pas
 @warning Please also note this method invokes a callback block associated with a network-
 related block. Because this block is called from asynchronous network operations,
 its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
-to ensure UI operations are completed on the main thread.
+to ensure any UI operations are completed on the main thread.
  
 @see verifyAuthToken:completionHandler:
 @see authWithInternal:password:completionHandler:
@@ -51,10 +80,9 @@ to ensure UI operations are completed on the main thread.
  
 @param handler      The handler block to execute.
  
-@return isInternal: indicates whether the server is Internal or Auth-based
-@return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)serverType:(void (^)(BOOL isInternal, NSString *errorStr))handler;
+- (void)serverType:(void (^)(NSDictionary *response))completionHandler;
 
 /**
 The verifyAuthToken method determines if a previously opaquely-saved access token is still valid. If
@@ -63,7 +91,7 @@ The verifyAuthToken method determines if a previously opaquely-saved access toke
 @warning Please also note this method invokes a callback block associated with a network-
 related block. Because this block is called from asynchronous network operations,
 its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
-to ensure UI operations are completed on the main thread.
+to ensure any UI operations are completed on the main thread.
  
 @see authWithInternal:password:completionHandler:
 @see authWithOAuth:clientId:completionHandler:
@@ -71,10 +99,9 @@ to ensure UI operations are completed on the main thread.
 @param username     The username previously returned in the class variable 'username' after a successful call to authWithInternal or authWithOAuth or an empty (@"") string otherwise.
 @param handler      The handler block to execute.
  
-@return isValid: indicates whether the opaque access token is valid
-@return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)verifyAuthToken:(NSString *)username completionHandler:(void (^)(BOOL isValid, NSString *errorStr))handler;
+- (void)verifyAuthToken:(void (^)(NSDictionary *response))completionHandler;
 
 /**
 The authWithOAuth method retrieves an OAuth access token from a Keycloak server associated
@@ -84,7 +111,7 @@ The authWithOAuth method retrieves an OAuth access token from a Keycloak server 
 @warning Please also note this method invokes a callback block associated with a network-
 related block. Because this block is called from asynchronous network operations,
 its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
-to ensure UI operations are completed on the main thread.
+to ensure any UI operations are completed on the main thread.
  
 @see verifyAuthToken:completionHandler:
  
@@ -92,9 +119,9 @@ to ensure UI operations are completed on the main thread.
 @param clientId     A Client ID configured in the Keycloak sever used to identify the mobile app
 @param handler      The handler block to execute.
  
-@return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSString *errorStr))handler;
+- (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSDictionary *response))handler;
 
 /**
 The authWithInternal method retrieves an access token from the Vantiq server based on the
@@ -104,7 +131,7 @@ The authWithInternal method retrieves an access token from the Vantiq server bas
 @warning Please also note this method invokes a callback block associated with a network-
 related block. Because this block is called from asynchronous network operations,
 its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
-to ensure UI operations are completed on the main thread.
+to ensure any UI operations are completed on the main thread.
  
 @see verifyAuthToken:completionHandler:
  
@@ -112,9 +139,9 @@ to ensure UI operations are completed on the main thread.
 @param password     The password entered by the user
 @param handler      The handler block to execute.
  
-@return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSString *errorStr))handler;
+- (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSDictionary *response))handler;
 
 /**
 The formError method is a helper to produce an error string based on the NSHTTPURLResponse

@@ -9,7 +9,7 @@
 #import "VANTIQUIViewController.h"
 #import "VantiqUI.h"
 
-#define VANTIQ_SERVER   @"https://3e815f1b7da4.ngrok.app"
+#define VANTIQ_SERVER   @"https://staging.vantiq.com"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -38,21 +38,27 @@
     _queueCount = [NSNumber numberWithInt:20];
     AddToText(@"Authenticating...");
     
-    vui = [[VantiqUI alloc] init:VANTIQ_SERVER];
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"com.vantiq.react.username"];
-    if (username) {
-        [vui verifyAuthToken:username completionHandler:^(BOOL isValid, NSString *errorStr) {
-            if (isValid) {
-                NSString *statStr = [NSString stringWithFormat:@"Auth token verified for user %@", username];
-                AddToText(statStr);
+    vui = [[VantiqUI alloc] init:VANTIQ_SERVER namespace:@"" completionHandler:^(NSDictionary *response) {
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            NSString *authValid = [response objectForKey:@"authValid"];
+            NSString *preferredUsername = [response objectForKey:@"preferredUsername"];
+            NSString *stateStr;
+            if (authValid && [authValid isEqualToString:@"true"]) {
+                stateStr = [NSString stringWithFormat:@"Auth token verified for user %@", preferredUsername];
+                AddToText(stateStr);
                 [self runSomeTests];
             } else {
-                [self initiateAuth];
+                NSString *serverType = [response objectForKey:@"serverType"];
+                if (serverType) {
+                    [self initiateAuth:serverType];
+                } else {
+                    stateStr = [NSString stringWithFormat:@"No server type found for %@ (%@)", VANTIQ_SERVER,
+                        [response objectForKey:@"errorStr"]];
+                    AddToText(stateStr);
+                }
             }
-        }];
-    } else {
-        [self initiateAuth];
-    }
+        });
+    }];
 }
 
 /*
@@ -76,35 +82,30 @@
     }
 }
 
-- (void)initiateAuth {
-    [vui serverType:^(BOOL isInternal, NSString *errorStr) {
+- (void)initiateAuth:(NSString *)serverType {
+    if ([serverType isEqualToString:@"Internal"]) {
+        [self->vui authWithInternal:@"swann" password:@"3367whit" completionHandler:^(NSDictionary *response) {
+            [self finishAuth:response];
+        }];
+    } else {
+        [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSDictionary *response) {
+            [self finishAuth:response];
+        }];
+    }
+}
+
+- (void)finishAuth:(NSDictionary *)authResponse {
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        NSString *errorStr = [authResponse objectForKey:@"errorStr"];
         if (!errorStr.length) {
-            if (isInternal) {
-                [self->vui authWithInternal:@"swan" password:@"3367whit" completionHandler:^(NSString *errorStr) {
-                    [self finishAuth:errorStr];
-                }];
-            } else {
-                [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSString *errorStr) {
-                    [self finishAuth:errorStr];
-                }];
-            }
+            // remember the username
+            AddToText(@"Authentication complete.");
+            [self runSomeTests];
         } else {
             NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
             AddToText(errStr);
         }
-    }];
-}
-
-- (void)finishAuth:(NSString *)errorStr {
-    if (!errorStr.length) {
-        // remember the username
-        [[NSUserDefaults standardUserDefaults] setObject:self->vui.username forKey:@"com.vantiq.react.username"];
-        AddToText(@"Authentication complete.");
-        [self runSomeTests];
-    } else {
-        NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
-        AddToText(errStr);
-    }
+    });
 }
 
 - (void)runSomeTests {
