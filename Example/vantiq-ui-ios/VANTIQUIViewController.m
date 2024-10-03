@@ -9,7 +9,7 @@
 #import "VANTIQUIViewController.h"
 #import "VantiqUI.h"
 
-#define VANTIQ_SERVER   @"https://staging.vantiq.com"
+#define VANTIQ_SERVER   @"https://9b08a83331a5.ngrok.app"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -84,7 +84,7 @@
 
 - (void)initiateAuth:(NSString *)serverType {
     if ([serverType isEqualToString:@"Internal"]) {
-        [self->vui authWithInternal:@"swann" password:@"3367whit" completionHandler:^(NSDictionary *response) {
+        [self->vui authWithInternal:@"swan" password:@"3367whit" completionHandler:^(NSDictionary *response) {
             [self finishAuth:response];
         }];
     } else {
