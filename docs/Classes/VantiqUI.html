@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">VIQ </a>
+				<a href="../index.html">VantiqUI Class </a>
 			</h1>
 
 			<p id="developer-home">
@@ -119,6 +119,24 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>The VantiqUI class declares the interface for authentication and subsequent interaction with a Vantiq server.</p>
+
+<p>Session Information Dictionary Keys</p>
+
+<p>The keys listed below are returned in the response dictionary returned by the following methods: <a href="#//api/name/serverType">serverType</a>, verifyAuthToken, authWithOAuth, and authWithInternal.</p>
+
+<p>• <a href="#//api/name/serverType">serverType</a> (NSString): the type of authentication used by the given Vantiq server, either @&ldquo;Internal&rdquo; or @&ldquo;OAuth&rdquo;</p>
+
+<p>• authValid (NSString): is the previously establed authentication token valid, either @&ldquo;true&rdquo; or @&ldquo;false&rdquo;</p>
+
+<p>• <a href="#//api/name/username">username</a> (NSString): the <a href="#//api/name/username">username</a> of the authenticated user</p>
+
+<p>• <a href="#//api/name/preferredUsername">preferredUsername</a> (NSString): the preferred <a href="#//api/name/username">username</a> of the authenticated user, will be the same as the <a href="#//api/name/username">username</a> for Internal authentication</p>
+
+<p>• errorStr (NSString): a text description of any error that occurred, will be the empty string (@&ldquo;&rdquo;) if there is no error</p>
+
+<p>• statusCode (NSNumber): the HTTP status code of any related REST operations</p>
+
+<p>(Not all keys will be present depending on error conditions and the method.)</p>
 					</div>
 					
 					
@@ -348,9 +366,13 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>namespace</code></th>
-						<td><p>Vantiq Namespace in which to operate, not currently used
-@param completionHandler</p></td>
+						<th scope="row" class="argument-name"><code>targetNamespace</code></th>
+						<td><p>Vantiq Namespace in which to operate, not currently used</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The handler block to execute.</p></td>
 					</tr>
 				
 				</table>
@@ -401,7 +423,7 @@ authWithInternal or authWithOAuth.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)serverType:(void ( ^ ) ( NSDictionary *response ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)serverType:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
 
 		    
 			
@@ -447,6 +469,8 @@ to ensure any UI operations are completed on the main thread.</p></div>
 				<h4 class="method-subtitle">See Also</h4>
 				<ul>
 					
+					<li><code><p><a href="#//api/name/verifyAuthToken:">- verifyAuthToken:</a></p></code></li>
+					
 					<li><code><p><a href="#//api/name/authWithInternal:password:completionHandler:">- authWithInternal:password:completionHandler:</a></p></code></li>
 					
 					<li><code><p><a href="#//api/name/authWithOAuth:clientId:completionHandler:">- authWithOAuth:clientId:completionHandler:</a></p></code></li>
@@ -482,18 +506,13 @@ not, then one of <em>authWithInternal</em> or <em>authWithOAuth</em> must be cal
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)verifyAuthToken:(void ( ^ ) ( NSDictionary *response ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)verifyAuthToken:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>username</code></th>
-						<td><p>The <a href="#//api/name/username">username</a> previously returned in the class variable &lsquo;username&rsquo; after a successful call to authWithInternal or authWithOAuth or an empty (@&ldquo;&rdquo;) string otherwise.</p></td>
-					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>handler</code></th>
@@ -618,6 +637,15 @@ to ensure any UI operations are completed on the main thread.</p></div>
 			
 
 			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/verifyAuthToken:">- verifyAuthToken:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
 
 			
 			<div class="method-subsection declared-in-section">
@@ -697,6 +725,15 @@ to ensure any UI operations are completed on the main thread.</p></div>
 
 			
 
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/verifyAuthToken:">- verifyAuthToken:</a></p></code></li>
+					
+				</ul>
+			</div>
 			
 
 			
