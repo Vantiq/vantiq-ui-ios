@@ -195,6 +195,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         if (!resultStr.length) {
             self->_username = username;
             self->_preferredUsername = username;
+            self->authValid = @"true";
             // store the session securely
             [self storeSession];
         }
