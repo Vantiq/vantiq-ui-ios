@@ -9,7 +9,7 @@
 #import "VANTIQUIViewController.h"
 #import "VantiqUI.h"
 
-#define VANTIQ_SERVER   @"https://9b08a83331a5.ngrok.app"
+#define VANTIQ_SERVER   @"https://staging.vantiq.com"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;

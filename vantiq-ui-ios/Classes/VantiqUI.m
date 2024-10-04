@@ -179,9 +179,12 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     KeychainItemWrapper *keychainItem =
         [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
     NSData *data = [keychainItem objectForKey:(id)kSecAttrAccount];
-    OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class]
-        fromData:data error:&errRet];
-    return authState;
+    if (data.length) {
+        OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class]
+            fromData:data error:&errRet];
+        return authState;
+    }
+    return nil;
 }
 
 - (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSDictionary *response))handler {
