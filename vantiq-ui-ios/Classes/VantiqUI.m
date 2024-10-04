@@ -150,6 +150,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                     
                     // store the session securely
                     self->_v.accessToken = authState.lastTokenResponse.accessToken;
+                    self->authValid = @"true";
                     [self storeSession];
                     // persist the returned state
                     [self storeAuthState:authState];
