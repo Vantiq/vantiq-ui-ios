@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '12.0'
 
 target 'vantiq-ui-ios_Example' do
-  pod 'vantiq-sdk-ios', '~> 1.4.8'
+  pod 'vantiq-sdk-ios', '~> 1.5.1'
   pod 'AppAuth', '~> 1.7.5'
   pod 'JWT', '~> 2.2.0'
   pod 'Base64', '~> 1.1.2'

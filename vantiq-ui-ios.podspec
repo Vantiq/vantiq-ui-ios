@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'vantiq-sdk-ios', '~> 1.4.8'
+  s.dependency 'vantiq-sdk-ios', '~> 1.5.1'
   s.dependency 'AppAuth', '~> 1.7.5'
   s.dependency 'JWT', '~> 2.2.0'
   s.dependency 'Base64', '~> 1.1.2'

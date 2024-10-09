@@ -142,6 +142,26 @@ to ensure any UI operations are completed on the main thread.
 - (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSDictionary *response))handler;
 
 /**
+The ensureValidToken method should be used before any REST operation to attempt to have a
+ valid authorization token. If the current authorization token has expired, this method will attempt
+ to obtain a new token. The caller should check the authValid key of the returned dictionary to
+ determine if the current or new token is valid. If not (i.e., the authValid value is @"false"), then it
+ is up to the application to call either authWithOAuth or authWithInternal depending on what kind
+ of server is in use. The server type is identified using the serverType key of the returned dictionary,
+ which will contain the value @"Internal" or @"OAuth".
+ 
+@warning Please also note this method invokes a callback block associated with a network-
+related block. Because this block is called from asynchronous network operations,
+its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
+to ensure any UI operations are completed on the main thread.
+ 
+@param handler      The handler block to execute.
+ 
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
+*/
+- (void)ensureValidToken:(void (^)(NSDictionary *response))handler;
+
+/**
 The formError method is a helper to produce an error string based on the NSHTTPURLResponse
  and NSError responses from calls made directly to the Vantiq SDK via the _v_ class variable. If
  no error is returned by the Vantiq SDK, the _resultStr_ will return the empty (@"") string.

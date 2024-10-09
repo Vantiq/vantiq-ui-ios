@@ -11,6 +11,7 @@
 
 @interface VantiqUI() {
     int tokenExpiration;
+    NSString *internalPassword;
     NSURLProtectionSpace *protSpace;
     NSString *protSpaceUser;
     NSString *authValid;
@@ -41,11 +42,15 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         
         // restore the last known session state from the Keychain
         NSDictionary *session = [self retrieveSession];
+        tokenExpiration = 0;
+        internalPassword = @"";
         if (session) {
             _v.accessToken = [session objectForKey:@"accessToken"];
             _serverType = [session objectForKey:@"serverType"];
             _username = [session objectForKey:@"username"];
             _preferredUsername = [session objectForKey:@"preferredUsername"];
+            tokenExpiration = [[session objectForKey:@"tokenExpiration"] intValue];
+            internalPassword = [session objectForKey:@"internalPassword"];
         } else {
             authValid = @"false";
         }
@@ -128,6 +133,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     issuerURL = [NSString stringWithFormat:@"%@/auth/realms/%@", issuerURL, url.host];
     NSURL *issuer = [NSURL URLWithString:issuerURL];
     
+    authValid = @"false";
     [OIDAuthorizationService discoverServiceConfigurationForIssuer:issuer
         completion:^(OIDServiceConfiguration *_Nullable configuration, NSError *_Nullable error) {
         NSString *errorStr = error ? [error localizedDescription] : @"";
@@ -188,6 +194,49 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     return nil;
 }
 
+/*
+ *  ensureValidToken
+ *      - called before any REST operation to try to ensure there is a valid auth token
+ *      - for OAuth servers, this means using the AppAuth approach
+ *      - for Internal servers, this means explicitly checking if the existing token is
+ *          still valid and, if not, then silently starting a new authorization with our
+ *          last-saved username/password
+ */
+- (void)ensureValidToken:(void (^)(NSDictionary *response))handler {
+    NSString *resultStr = @"";
+    if (_serverType) {
+        if ([_serverType isEqualToString:@"OAuth"]) {
+            OIDAuthState *authState = [self retrieveAuthState];
+            if (authState) {
+                [authState performActionWithFreshTokens:^(NSString *_Nonnull accessToken,
+                    NSString *_Nonnull idToken, NSError *_Nullable error) {
+                    if (!error) {
+                        if (![accessToken isEqualToString:self->_v.accessToken]) {
+                            [self storeSession];
+                        }
+                    }
+                    self->authValid = error ? @"false" : @"true";
+                    handler([self buildResponseDictionary:resultStr urlResponse:nil]);
+                }];
+            } else {
+                self->authValid = @"false";
+                handler([self buildResponseDictionary:resultStr urlResponse:nil]);
+            }
+        } else {
+            NSDate *exp = [NSDate dateWithTimeIntervalSince1970:tokenExpiration];
+            NSDate *now = [[NSDate alloc] init];
+            if ([now compare:exp] == NSOrderedDescending) {
+                [self authWithInternal:_username password:internalPassword completionHandler:^(NSDictionary *response) {
+                    handler(response);
+                }];
+            } else {
+                self->authValid = @"true";
+                handler([self buildResponseDictionary:resultStr urlResponse:nil]);
+            }
+        }
+    }
+}
+
 - (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSDictionary *response))handler {
     [_v authenticate:username password:password completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
         NSString *resultStr = @"";
@@ -196,6 +245,10 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             self->_username = username;
             self->_preferredUsername = username;
             self->authValid = @"true";
+            if (self->_v.idToken) {
+                [self decodeJWT:self->_v.idToken];
+            }
+            self->internalPassword = password;
             // store the session securely
             [self storeSession];
         }
@@ -212,7 +265,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             _preferredUsername = [payload objectForKey:@"preferred_username"];
             _username = [payload objectForKey:@"sub"];
             tokenExpiration = [[payload objectForKey:@"exp"] intValue];
-            NSDate *exp = [NSDate dateWithTimeIntervalSince1970:tokenExpiration - 480];
+            NSDate *exp = [NSDate dateWithTimeIntervalSince1970:tokenExpiration];
             NSString *dateString = [NSDateFormatter localizedStringFromDate:exp
                 dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterFullStyle];
             NSLog(@"token expiration = %@ (server = %@)", dateString, [payload objectForKey:@"iss"]);
@@ -228,7 +281,8 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 - (void)storeSession {
     NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:_v.accessToken,
         @"accessToken", _serverType, @"serverType", _username, @"username",
-        _preferredUsername, @"preferredUsername", nil];
+        _preferredUsername, @"preferredUsername", [NSNumber numberWithInt:tokenExpiration], @"tokenExpiration",
+        internalPassword, @"internalPassword", nil];
     
     // use the NSURLCredential form of Keychain access to store session-oriented data
     // the username is just a common key (@"session") and the password is the JSON-
