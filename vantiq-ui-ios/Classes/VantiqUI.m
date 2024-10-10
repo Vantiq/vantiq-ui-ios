@@ -33,6 +33,9 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         _serverURL = serverURL;
         namespace = targetNamespace;
         _v = [[Vantiq alloc] initWithServer:serverURL];
+        if (namespace && ![namespace isEqualToString:@""]) {
+            _v.namespace = namespace;
+        }
         
         // construct a synthetic URL with which to store login credentials
         NSURL *url = [NSURL URLWithString:serverURL];
