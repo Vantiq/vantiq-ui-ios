@@ -173,6 +173,24 @@ The formError method is a helper to produce an error string based on the NSHTTPU
 @return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
 */
 - (BOOL)formError:(NSHTTPURLResponse *)response error:(NSError *)error resultStr:(NSString **)resultStr;
+
+/**
+The dictionaryToJSONString method is a helper to produce a string from an dictionary. 
+  
+@param dict     The dictionary
+ 
+@return NSString if the string is successfully created, nil otherwise
+*/
+- (NSString *)dictionaryToJSONString:(NSDictionary *)dict;
+
+/**
+The JSONStringToDictionary method is a helper to produce a dictionary from a string.
+  
+@param dict     The dictionary
+ 
+@return NSDictionary if the dictionary is successfully created, nil otherwise
+*/
+- (NSDictionary *)JSONStringToDictionary:(NSString *)jsonString
 @end
 #pragma clang diagnostic pop
 #endif /* VantiqUI_h */
