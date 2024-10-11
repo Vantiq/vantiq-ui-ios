@@ -190,7 +190,7 @@ The JSONStringToDictionary method is a helper to produce a dictionary from a str
  
 @return NSDictionary if the dictionary is successfully created, nil otherwise
 */
-- (NSDictionary *)JSONStringToDictionary:(NSString *)jsonString
+- (NSDictionary *)JSONStringToDictionary:(NSString *)jsonString;
 @end
 #pragma clang diagnostic pop
 #endif /* VantiqUI_h */
