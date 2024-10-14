@@ -215,6 +215,9 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                     NSString *_Nonnull idToken, NSError *_Nullable error) {
                     if (!error) {
                         if (![accessToken isEqualToString:self->_v.accessToken]) {
+                            self->_v.accessToken = accessToken;
+                            [self decodeJWT:idToken];
+                            [self storeAuthState:authState];
                             [self storeSession];
                         }
                     }

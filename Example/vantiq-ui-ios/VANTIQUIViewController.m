@@ -9,7 +9,9 @@
 #import "VANTIQUIViewController.h"
 #import "VantiqUI.h"
 
-#define VANTIQ_SERVER   @"https://cbfc965a30d7.ngrok.app"
+#define VANTIQ_SERVER       @"https://staging.vantiq.com"
+#define INTERNAL_USERNAME   @"swan"
+#define INTERNAL_PASSWORD   @"3367whit"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -84,7 +86,7 @@
 
 - (void)initiateAuth:(NSString *)serverType {
     if ([serverType isEqualToString:@"Internal"]) {
-        [self->vui authWithInternal:@"swan" password:@"3367whit" completionHandler:^(NSDictionary *response) {
+        [self->vui authWithInternal:INTERNAL_USERNAME password:INTERNAL_PASSWORD completionHandler:^(NSDictionary *response) {
             [self finishAuth:response];
         }];
     } else {
@@ -109,64 +111,56 @@
 }
 
 - (void)runSomeTests {
-    int i;
-    for (i = 0; i < 2; i++) {
-        if (i == 0) {
-            AddToText(@"Starting tests...");
-        } else {
-            AddToText(@"Sleeping...");
-            [NSThread sleepForTimeInterval:120];
-            AddToText(@"Restarting tests...");
-        }
-        [self runSelectTest:@"system.types" props:@[] where:NULL sort:NULL limit:-1];
-        [NSThread sleepForTimeInterval:.3];
-        [self runSelectTest:@"system.types" props:@[@"name", @"naturalKey"] where:NULL sort:NULL limit:-1];
-        [NSThread sleepForTimeInterval:.3];
-        [self runSelectTest:@"system.types" props:@[@"name", @"naturalKey"] where:@"{\"name\":\"ArsRuleSnapshot\"}" sort:NULL limit:-1];
-        [NSThread sleepForTimeInterval:.3];
-        [self runSelectTest:@"system.types" props:@[@"name", @"_id"] where:NULL sort:@"{\"name\":-1}" limit:-1];
-        [NSThread sleepForTimeInterval:.3];
-        [self runSelectTest:@"system.types" props:@[] where:NULL sort:NULL limit:2];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runCountTest:@"system.types" where:NULL];
-        [NSThread sleepForTimeInterval:.3];
-        [self runCountTest:@"system.types" where:@"{\"name\":\"ArsRuleSnapshot\"}"];
-        [NSThread sleepForTimeInterval:.3];
-        [self runCountTest:@"system.types" where:@"{\"ars_version\":{\"$gt\":5}}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runInsertTest:@"TestType" object:@"{\"intValue\":42,\"uniqueString\":\"42\"}"];
-        [NSThread sleepForTimeInterval:.3];
-        [self runInsertTest:@"TestType" object:@"{\"intValue\":43,\"uniqueString\":\"43\",\"stringValue\":\"A String.\"}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runUpsertTest:@"TestType" object:@"{\"intValue\":44,\"uniqueString\":\"A Unique String.\"}"];
-        [NSThread sleepForTimeInterval:.3];
-        [self runUpsertTest:@"TestType" object:@"{\"intValue\":45,\"uniqueString\":\"A Unique String.\"}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runUpdateTest:@"TestType" id:lastVantiqID object:@"{\"stringValue\":\"Updated String.\"}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runSelectOneTest:@"TestType" id:lastVantiqID];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runPublishTest:@"/vantiq" message:@"{\"intValue\":42}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runExecuteTest:@"sumTwo" params:@"[35, 21]"];
-        [NSThread sleepForTimeInterval:.3];
-        [self runExecuteTest:@"sumTwo" params:@"{\"val2\":35, \"val1\":21}"];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runDeleteOneTest:@"TestType" id:lastVantiqID];
-        
-        [NSThread sleepForTimeInterval:.3];
-        [self runDeleteTest:@"TestType" where:@"{\"intValue\":42}"];
-        [NSThread sleepForTimeInterval:.3];
-        [self runDeleteTest:@"TestType" where:@"{\"intValue\":43}"];
-    }
+    AddToText(@"Starting tests...");
+    
+    [self runSelectTest:@"system.types" props:@[] where:NULL sort:NULL limit:-1];
+    [NSThread sleepForTimeInterval:.3];
+    [self runSelectTest:@"system.types" props:@[@"name", @"naturalKey"] where:NULL sort:NULL limit:-1];
+    [NSThread sleepForTimeInterval:.3];
+    [self runSelectTest:@"system.types" props:@[@"name", @"naturalKey"] where:@"{\"name\":\"ArsRuleSnapshot\"}" sort:NULL limit:-1];
+    [NSThread sleepForTimeInterval:.3];
+    [self runSelectTest:@"system.types" props:@[@"name", @"_id"] where:NULL sort:@"{\"name\":-1}" limit:-1];
+    [NSThread sleepForTimeInterval:.3];
+    [self runSelectTest:@"system.types" props:@[] where:NULL sort:NULL limit:2];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runCountTest:@"system.types" where:NULL];
+    [NSThread sleepForTimeInterval:.3];
+    [self runCountTest:@"system.types" where:@"{\"name\":\"ArsRuleSnapshot\"}"];
+    [NSThread sleepForTimeInterval:.3];
+    [self runCountTest:@"system.types" where:@"{\"ars_version\":{\"$gt\":5}}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runInsertTest:@"TestType" object:@"{\"intValue\":42,\"uniqueString\":\"42\"}"];
+    [NSThread sleepForTimeInterval:.3];
+    [self runInsertTest:@"TestType" object:@"{\"intValue\":43,\"uniqueString\":\"43\",\"stringValue\":\"A String.\"}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runUpsertTest:@"TestType" object:@"{\"intValue\":44,\"uniqueString\":\"A Unique String.\"}"];
+    [NSThread sleepForTimeInterval:.3];
+    [self runUpsertTest:@"TestType" object:@"{\"intValue\":45,\"uniqueString\":\"A Unique String.\"}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runUpdateTest:@"TestType" id:lastVantiqID object:@"{\"stringValue\":\"Updated String.\"}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runSelectOneTest:@"TestType" id:lastVantiqID];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runPublishTest:@"/vantiq" message:@"{\"intValue\":42}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runExecuteTest:@"sumTwo" params:@"[35, 21]"];
+    [NSThread sleepForTimeInterval:.3];
+    [self runExecuteTest:@"sumTwo" params:@"{\"val2\":35, \"val1\":21}"];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runDeleteOneTest:@"TestType" id:lastVantiqID];
+    
+    [NSThread sleepForTimeInterval:.3];
+    [self runDeleteTest:@"TestType" where:@"{\"intValue\":42}"];
+    [NSThread sleepForTimeInterval:.3];
+    [self runDeleteTest:@"TestType" where:@"{\"intValue\":43}"];
 }
 
 - (void)runSelectTest:(NSString *)type props:(NSArray *)props where:(NSString *)where sort:(NSString *)sort limit:(int)limit {
