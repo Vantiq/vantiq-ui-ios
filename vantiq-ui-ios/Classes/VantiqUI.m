@@ -14,7 +14,7 @@
     NSString *internalPassword;
     NSURLProtectionSpace *protSpace;
     NSString *protSpaceUser;
-    NSString *authValid;
+    BOOL authValid;
     NSString *namespace;
     
 }
@@ -55,7 +55,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             tokenExpiration = [[session objectForKey:@"tokenExpiration"] intValue];
             internalPassword = [session objectForKey:@"internalPassword"];
         } else {
-            authValid = @"false";
+            authValid = NO;
         }
         
         if (!_serverType) {
@@ -124,7 +124,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     [_v verify:authToken username:username completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^ {
             NSString *resultStr = @"";
-            self->authValid = [self formError:response error:error resultStr:&resultStr] ? @"false" : @"true";
+            self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
             handler([self buildResponseDictionary:resultStr urlResponse:response]);
         });
     }];
@@ -136,7 +136,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     issuerURL = [NSString stringWithFormat:@"%@/auth/realms/%@", issuerURL, url.host];
     NSURL *issuer = [NSURL URLWithString:issuerURL];
     
-    authValid = @"false";
+    authValid = NO;
     [OIDAuthorizationService discoverServiceConfigurationForIssuer:issuer
         completion:^(OIDServiceConfiguration *_Nullable configuration, NSError *_Nullable error) {
         NSString *errorStr = error ? [error localizedDescription] : @"";
@@ -159,7 +159,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                     
                     // store the session securely
                     self->_v.accessToken = authState.lastTokenResponse.accessToken;
-                    self->authValid = @"true";
+                    self->authValid = YES;
                     [self storeSession];
                     // persist the returned state
                     [self storeAuthState:authState];
@@ -221,11 +221,11 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                             [self storeSession];
                         }
                     }
-                    self->authValid = error ? @"false" : @"true";
+                    self->authValid = error ? NO : YES;
                     handler([self buildResponseDictionary:resultStr urlResponse:nil]);
                 }];
             } else {
-                self->authValid = @"false";
+                self->authValid = NO;
                 handler([self buildResponseDictionary:resultStr urlResponse:nil]);
             }
         } else {
@@ -236,7 +236,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                     handler(response);
                 }];
             } else {
-                self->authValid = @"true";
+                self->authValid = YES;
                 handler([self buildResponseDictionary:resultStr urlResponse:nil]);
             }
         }
@@ -250,7 +250,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         if (!resultStr.length) {
             self->_username = username;
             self->_preferredUsername = username;
-            self->authValid = @"true";
+            self->authValid = YES;
             if (self->_v.idToken) {
                 [self decodeJWT:self->_v.idToken];
             }
@@ -362,7 +362,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         [responseDict setObject:_serverType forKey:@"serverType"];
     }
     if (authValid) {
-        [responseDict setObject:authValid forKey:@"authValid"];
+        [responseDict setObject:[NSNumber numberWithBool:authValid] forKey:@"authValid"];
     }
     if (_username) {
         [responseDict setObject:_username forKey:@"username"];

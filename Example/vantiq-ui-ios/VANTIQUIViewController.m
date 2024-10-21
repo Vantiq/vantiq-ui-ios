@@ -42,10 +42,10 @@
     
     vui = [[VantiqUI alloc] init:VANTIQ_SERVER namespace:@"" completionHandler:^(NSDictionary *response) {
         dispatch_async(dispatch_get_main_queue(), ^ {
-            NSString *authValid = [response objectForKey:@"authValid"];
+            BOOL authValid = [response objectForKey:@"authValid"];
             NSString *preferredUsername = [response objectForKey:@"preferredUsername"];
             NSString *stateStr;
-            if (authValid && [authValid isEqualToString:@"true"]) {
+            if (authValid) {
                 stateStr = [NSString stringWithFormat:@"Auth token verified for user %@", preferredUsername];
                 AddToText(stateStr);
                 [self runSomeTests];
@@ -166,24 +166,19 @@
 - (void)runSelectTest:(NSString *)type props:(NSArray *)props where:(NSString *)where sort:(NSString *)sort limit:(int)limit {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v select:type props:props where:where sort:sort limit:limit completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr = @"";
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"select(%@) returns %lu records.", type, (unsigned long)[data count]];
-                        } else {
-                            [self->vui formError:response error:error resultStr:&resultStr];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"select(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v select:type props:props where:where sort:sort limit:limit completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr = @"";
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"select(%@) returns %lu records.", type, (unsigned long)[data count]];
+                    } else {
+                        [self->vui formError:response error:error resultStr:&resultStr];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"select(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -194,22 +189,17 @@
 - (void)runCountTest:(NSString *)type where:(NSString *)where {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v count:type where:where completionHandler:^(int count, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"count(%@) returns count %d.", type, count];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"count(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v count:type where:where completionHandler:^(int count, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"count(%@) returns count %d.", type, count];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"count(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -220,28 +210,23 @@
 - (void)runInsertTest:(NSString *)type object:(NSString *)object {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v insert:type object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
-                    if (data) {
-                        // remember the record ID of this insert
-                        self->lastVantiqID = [data objectForKey:@"_id"];
+            [self->vui.v insert:type object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                if (data) {
+                    // remember the record ID of this insert
+                    self->lastVantiqID = [data objectForKey:@"_id"];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"insert(%@) successful.", type];
+                    } else {
+                        resultStr = @"Please make sure the type 'TestType' is defined. See the documentation.";
                     }
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"insert(%@) successful.", type];
-                        } else {
-                            resultStr = @"Please make sure the type 'TestType' is defined. See the documentation.";
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"insert(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"insert(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -252,22 +237,17 @@
 - (void)runUpsertTest:(NSString *)type object:(NSString *)object {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v upsert:type object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"upsert(%@) successful.", type];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"upsert(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v upsert:type object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"upsert(%@) successful.", type];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"upsert(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -278,22 +258,17 @@
 - (void)runDeleteTest:(NSString *)type where:(NSString *)where {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v delete:type where:where completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"delete(%@) successful.", type];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"delete(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v delete:type where:where completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"delete(%@) successful.", type];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"delete(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -304,22 +279,17 @@
 - (void)runDeleteOneTest:(NSString *)type id:(NSString *)ID {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v deleteOne:type id:ID completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"deleteOne(%@) successful.", type];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"deleteOne(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v deleteOne:type id:ID completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"deleteOne(%@) successful.", type];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"deleteOne(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -330,22 +300,17 @@
 - (void)runPublishTest:(NSString *)topic message:(NSString *)message {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v publish:topic message:message completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"publish(%@) successful.", topic];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"publish(%@) auth fails", topic];
-                AddToResults(resultStr);
-            }
+            [self->vui.v publish:topic message:message completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"publish(%@) successful.", topic];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"publish(%@) auth unknown", topic];
             AddToResults(resultStr);
@@ -356,24 +321,19 @@
 - (void)runExecuteTest:(NSString *)procedure params:(NSString *)params {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v execute:procedure params:params completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"procedure(%@) successful.", procedure];
-                        } else {
-                            resultStr = @"Please make sure the procedure 'AddTwo' is defined. See the documentation.";
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"procedure(%@) auth fails", procedure];
-                AddToResults(resultStr);
-            }
+            [self->vui.v execute:procedure params:params completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"procedure(%@) successful.", procedure];
+                    } else {
+                        resultStr = @"Please make sure the procedure 'AddTwo' is defined. See the documentation.";
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"procedure(%@) auth unknown", procedure];
             AddToResults(resultStr);
@@ -384,22 +344,17 @@
 - (void)runUpdateTest:(NSString *)type id:(NSString *)ID object:(NSString *)object {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v update:type id:ID object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"update(%@) successful.", type];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"update(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v update:type id:ID object:object completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"update(%@) successful.", type];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"update(%@) auth unknown", type];
             AddToResults(resultStr);
@@ -410,22 +365,17 @@
 - (void)runSelectOneTest:(NSString *)type id:(NSString *)ID {
     [vui ensureValidToken:^(NSDictionary *response) {
         NSString *resultStr;
-        NSString *authValid = [response objectForKey:@"authValid"];
+        BOOL authValid = [response objectForKey:@"authValid"];
         if (authValid) {
-            if ([authValid isEqualToString:@"true"]) {
-                [self->vui.v selectOne:type id:ID completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^ {
-                        NSString *resultStr;
-                        if (!error) {
-                            resultStr = [NSString stringWithFormat:@"selectOne(%@) successful.", type];
-                        }
-                        AddToResults(resultStr);
-                    });
-                }];
-            } else {
-                resultStr = [NSString stringWithFormat:@"selectOne(%@) auth fails", type];
-                AddToResults(resultStr);
-            }
+            [self->vui.v selectOne:type id:ID completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    NSString *resultStr;
+                    if (!error) {
+                        resultStr = [NSString stringWithFormat:@"selectOne(%@) successful.", type];
+                    }
+                    AddToResults(resultStr);
+                });
+            }];
         } else {
             resultStr = [NSString stringWithFormat:@"selectOne(%@) auth unknown", type];
             AddToResults(resultStr);

@@ -23,7 +23,7 @@ The VantiqUI class declares the interface for authentication and subsequent inte
   
  • serverType (NSString): the type of authentication used by the given Vantiq server, either @"Internal" or @"OAuth"
  
- • authValid (NSString): is the previously establed authentication token valid, either @"true" or @"false"
+ • authValid (BOOL): is the previously establed authentication token valid
  
  • username (NSString): the username of the authenticated user
  
@@ -145,10 +145,10 @@ to ensure any UI operations are completed on the main thread.
 The ensureValidToken method should be used before any REST operation to attempt to have a
  valid authorization token. If the current authorization token has expired, this method will attempt
  to obtain a new token. The caller should check the authValid key of the returned dictionary to
- determine if the current or new token is valid. If not (i.e., the authValid value is @"false"), then it
- is up to the application to call either authWithOAuth or authWithInternal depending on what kind
- of server is in use. The server type is identified using the serverType key of the returned dictionary,
- which will contain the value @"Internal" or @"OAuth".
+ determine if the current or new token is valid. If not, then it is up to the application to call either
+ authWithOAuth or authWithInternal depending on what kind of server is in use. The server type
+ is identified using the serverType key of the returned dictionary, which will contain the value
+ @"Internal" or @"OAuth".
  
 @warning Please also note this method invokes a callback block associated with a network-
 related block. Because this block is called from asynchronous network operations,
