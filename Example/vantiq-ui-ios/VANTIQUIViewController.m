@@ -7,11 +7,12 @@
 //
 
 #import "VANTIQUIViewController.h"
+#import "VANTIQUIAppDelegate.h"
 #import "VantiqUI.h"
 
 #define VANTIQ_SERVER       @"https://staging.vantiq.com"
-#define INTERNAL_USERNAME   @"swan"
-#define INTERNAL_PASSWORD   @"3367whit"
+#define INTERNAL_USERNAME   @"<Internal auth username>"
+#define INTERNAL_PASSWORD   @"<Internal auth password>"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -48,6 +49,14 @@
             if (authValid) {
                 stateStr = [NSString stringWithFormat:@"Auth token verified for user %@", preferredUsername];
                 AddToText(stateStr);
+                NSString *deviceToken = ((VANTIQUIAppDelegate *)[UIApplication sharedApplication].delegate).APNSDeviceToken;
+                if (deviceToken) {
+                    [self->vui.v registerForPushNotifications:deviceToken completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                        if (error || (response.statusCode < 200) || (response.statusCode > 299)) {
+                            NSLog(@"registerForPushNotifications fails");
+                        }
+                    }];
+                }
                 [self runSomeTests];
             } else {
                 NSString *serverType = [response objectForKey:@"serverType"];
@@ -61,6 +70,7 @@
             }
         });
     }];
+    ((VANTIQUIAppDelegate *)[UIApplication sharedApplication].delegate).vui = vui;
 }
 
 /*

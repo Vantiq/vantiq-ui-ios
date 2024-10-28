@@ -9,10 +9,11 @@
 #define VantiqUI_h
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
+#import <CoreLocation/CoreLocation.h>
 #import "Vantiq.h"
 #import "AppAuth.h"
 
-extern id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
+extern id<OIDExternalUserAgentSession> _Nullable VantiqUIcurrentAuthorizationFlow;
 
 /**
 The VantiqUI class declares the interface for authentication and subsequent interaction with a Vantiq server.
@@ -35,23 +36,23 @@ The VantiqUI class declares the interface for authentication and subsequent inte
  
  (Not all keys will be present depending on error conditions and the method.)
 */
-@interface VantiqUI : NSObject
+@interface VantiqUI : NSObject <CLLocationManagerDelegate>
 /**
 Instance of the underlying Vantiq class for direct communication to the Vantiq SDK
  */
-@property (readonly, nonatomic) Vantiq *v;
+@property (readonly, nonatomic) Vantiq * _Nonnull v;
 /**
  User name of the last authenticated user.
  */
-@property (readonly, nonatomic) NSString *username;
+@property (readonly, nonatomic) NSString * _Nonnull username;
 /**
  Preferred user name of the last authenticated user.
  */
-@property (readonly, nonatomic) NSString *preferredUsername;
+@property (readonly, nonatomic) NSString * _Nonnull preferredUsername;
 /**
  Type of the server, will be either 'Internal' or 'OAuth'
  */
-@property (readonly, nonatomic) NSString *serverType;
+@property (readonly, nonatomic) NSString * _Nonnull serverType;
 
 /**
 Constructor for use with all other Vantiq UI and server operations.
@@ -60,7 +61,7 @@ Constructor for use with all other Vantiq UI and server operations.
 @param targetNamespace        Vantiq Namespace in which to operate, not currently used
 @param handler      The handler block to execute.
  */
-- (id)init:(NSString *)serverURL namespace:(NSString *)targetNamespace completionHandler:(void (^)(NSDictionary *response))handler;
+- (id)init:(NSString *)serverURL namespace:(NSString *)targetNamespace completionHandler:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
 The serverType method determines if the given server uses Internal (username/password) or OAuth (via
@@ -81,7 +82,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)serverType:(void (^)(NSDictionary *response))handler;
+- (void)serverType:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
 The verifyAuthToken method determines if a previously opaquely-saved access token is still valid. If
@@ -99,7 +100,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)verifyAuthToken:(void (^)(NSDictionary *response))handler;
+- (void)verifyAuthToken:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
 The authWithOAuth method retrieves an OAuth access token from a Keycloak server associated
@@ -119,7 +120,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^)(NSDictionary *response))handler;
+- (void)authWithOAuth:(NSString *)urlScheme clientId:(NSString *)clientId completionHandler:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
 The authWithInternal method retrieves an access token from the Vantiq server based on the
@@ -139,7 +140,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^)(NSDictionary *response))handler;
+- (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
 The ensureValidToken method should be used before any REST operation to attempt to have a
@@ -159,7 +160,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)ensureValidToken:(void (^)(NSDictionary *response))handler;
+- (void)ensureValidToken:(void (^_Nonnull)(NSDictionary * _Nonnull response))handler;
 
 /**
 The formError method is a helper to produce an error string based on the NSHTTPURLResponse
@@ -172,7 +173,7 @@ The formError method is a helper to produce an error string based on the NSHTTPU
  
 @return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
 */
-- (BOOL)formError:(NSHTTPURLResponse *)response error:(NSError *)error resultStr:(NSString **)resultStr;
+- (BOOL)formError:(NSHTTPURLResponse *_Nonnull)response error:(NSError *_Nullable)error resultStr:(NSString **_Nonnull)resultStr;
 
 /**
 The dictionaryToJSONString method is a helper to produce a string from an dictionary. 
@@ -181,7 +182,7 @@ The dictionaryToJSONString method is a helper to produce a string from an dictio
  
 @return NSString if the string is successfully created, nil otherwise
 */
-- (NSString *)dictionaryToJSONString:(NSDictionary *)dict;
+- (NSString *_Nonnull)dictionaryToJSONString:(NSDictionary *_Nonnull)dict;
 
 /**
 The JSONStringToDictionary method is a helper to produce a dictionary from a string.
@@ -190,7 +191,40 @@ The JSONStringToDictionary method is a helper to produce a dictionary from a str
  
 @return NSDictionary if the dictionary is successfully created, nil otherwise
 */
-- (NSDictionary *)JSONStringToDictionary:(NSString *)jsonString;
+- (NSDictionary *_Nonnull)JSONStringToDictionary:(NSString *_Nonnull)jsonString;
+
+/**
+The convertAPNSToken method is a helper to convert an APNS device token into an NSString
+ suitable for registering the APNS token for a Vantiq user
+  
+@param deviceToken     The NSData return from didRegisterForRemoteNotificationsWithDeviceToken
+ 
+@return NSString version of the APNS token
+*/
++ (NSString *_Nonnull)convertAPNSToken:(NSData *_Nonnull)deviceToken;
+
+/**
+The processPushNotification method is used in the iOS app's AppDelegate didReceiveRemoteNotification
+ method to process APNS notifications.
+  
+@param completionHandler     a method to determine whether the Vantiq UI library has handled the
+ notification (as in the case for location-related notifications) or whether the notification must be handled
+ by the calling application. The completion handler's notificationHandled BOOL indicates whether the
+ Vantiq UI library has handled the notification.
+*/
+- (void)processPushNotification:(nonnull NSDictionary *)userInfo
+    completionHandler:(void (^_Nonnull)(BOOL notificationHandled))completionHandler;
+
+/**
+The doBFTasksWithCompletionHandler method is used in the iOS app's AppDelegate performFetchWithCompletionHandler
+ method to process background fetch calls from iOS
+  
+@param completionHandler     a method to determine whether the Vantiq UI library has handled the
+ background fetch call  or whether the call must be handled by the calling application. The completion
+ handler's notificationHandled BOOL indicates whether the Vantiq UI library has handled the notification.
+*/
+- (void)doBFTasksWithCompletionHandler:(BOOL)alwaysPublish
+    completionHandler:(void (^_Nonnull)(BOOL notificationHandled))completionHandler;
 @end
 #pragma clang diagnostic pop
 #endif /* VantiqUI_h */

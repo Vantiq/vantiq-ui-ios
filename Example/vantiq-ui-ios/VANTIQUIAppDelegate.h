@@ -7,9 +7,12 @@
 //
 
 @import UIKit;
+#import "VantiqUI.h"
 #import "AppAuth.h"
 
 @interface VANTIQUIAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow * _Nonnull window;
+@property (readonly, nonatomic, nullable) NSString *APNSDeviceToken;
+@property (nonatomic, nullable) VantiqUI *vui;
 @end
