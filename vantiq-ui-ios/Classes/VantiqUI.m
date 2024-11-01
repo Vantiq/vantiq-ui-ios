@@ -684,7 +684,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     if (firstName) [userDict setValue:firstName forKey:@"firstName"];
     if (lastName) [userDict setValue:lastName forKey:@"lastName"];
     if (phone) [userDict setValue:phone forKey:@"phone"];
-    NSDictionary *requestDict = [NSDictionary dictionaryWithObjectsAndKeys:userDict, @"obj", nil]
+    NSDictionary *requestDict = [NSDictionary dictionaryWithObjectsAndKeys:userDict, @"obj", nil];
     NSString *paramsStr = [self dictionaryToJSONString:requestDict];
     paramsStr = paramsStr ? paramsStr : @"{}";
     [_v publicExecute:@"Registration.createInternalUser" params:paramsStr
