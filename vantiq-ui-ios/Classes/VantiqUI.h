@@ -225,6 +225,11 @@ The doBFTasksWithCompletionHandler method is used in the iOS app's AppDelegate p
 */
 - (void)doBFTasksWithCompletionHandler:(BOOL)alwaysPublish
     completionHandler:(void (^_Nonnull)(BOOL notificationHandled))completionHandler;
+
+- (void)createInternalUser:(NSString *_Nonnull)username password:(NSString *_Nonnull)password
+    email:(NSString *_Nullable)email firstName:(NSString *_Nullable)firstName
+    lastName:(NSString *_Nullable)lastName phone:(NSString *_Nullable)phone
+    completionHandler:(void (^_Nonnull)(NSDictionary *_Nonnull response))handler;
 @end
 #pragma clang diagnostic pop
 #endif /* VantiqUI_h */

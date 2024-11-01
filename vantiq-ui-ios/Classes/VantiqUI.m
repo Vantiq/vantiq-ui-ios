@@ -134,7 +134,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         OIDAuthState *authState = [self retrieveAuthState];
         if (authState) {
             [authState performActionWithFreshTokens:^(NSString *_Nonnull accessToken,
-                                                      NSString *_Nonnull idToken, NSError *_Nullable error) {
+                NSString *_Nonnull idToken, NSError *_Nullable error) {
                 if (!error) {
                     if (![accessToken isEqualToString:self->_v.accessToken]) {
                         [self storeSession];
@@ -171,21 +171,21 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     
     authValid = NO;
     [OIDAuthorizationService discoverServiceConfigurationForIssuer:issuer
-                                                        completion:^(OIDServiceConfiguration *_Nullable configuration, NSError *_Nullable error) {
+        completion:^(OIDServiceConfiguration *_Nullable configuration, NSError *_Nullable error) {
         NSString *errorStr = error ? [error localizedDescription] : @"";
         if (configuration) {
             // build authentication request
             NSString *redirectStr = [NSString stringWithFormat:@"%@:/callback", urlScheme];
             NSURL *redirectURL = [NSURL URLWithString:redirectStr];
             OIDAuthorizationRequest *request = [[OIDAuthorizationRequest alloc] initWithConfiguration:configuration
-                                                                                             clientId:clientId scopes:@[OIDScopeOpenID, OIDScopeProfile]
-                                                                                          redirectURL:redirectURL responseType:OIDResponseTypeCode additionalParameters:nil];
+                clientId:clientId scopes:@[OIDScopeOpenID, OIDScopeProfile]
+                redirectURL:redirectURL responseType:OIDResponseTypeCode additionalParameters:nil];
             
             // perform authentication request
             UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
             VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
-                                                                              presentingViewController:rootViewController
-                                                                                              callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
+                presentingViewController:rootViewController
+                callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
                 NSString *errorStr = error ? [error localizedDescription] : @"";
                 if (authState) {
                     [self decodeJWT:authState.lastTokenResponse.idToken];
@@ -245,7 +245,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             OIDAuthState *authState = [self retrieveAuthState];
             if (authState) {
                 [authState performActionWithFreshTokens:^(NSString *_Nonnull accessToken,
-                                                          NSString *_Nonnull idToken, NSError *_Nullable error) {
+                    NSString *_Nonnull idToken, NSError *_Nullable error) {
                     if (!error) {
                         if (![accessToken isEqualToString:self->_v.accessToken]) {
                             self->_v.accessToken = accessToken;
@@ -306,7 +306,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             tokenExpiration = [[payload objectForKey:@"exp"] intValue];
             NSDate *exp = [NSDate dateWithTimeIntervalSince1970:tokenExpiration];
             NSString *dateString = [NSDateFormatter localizedStringFromDate:exp
-                                                                  dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterFullStyle];
+                dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterFullStyle];
             NSLog(@"token expiration = %@ (server = %@)", dateString, [payload objectForKey:@"iss"]);
         }
     }
@@ -319,9 +319,9 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
  */
 - (void)storeSession {
     NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:_v.accessToken,
-                                     @"accessToken", _serverType, @"serverType", _username, @"username",
-                                     _preferredUsername, @"preferredUsername", [NSNumber numberWithInt:tokenExpiration], @"tokenExpiration",
-                                     internalPassword, @"internalPassword", nil];
+        @"accessToken", _serverType, @"serverType", _username, @"username",
+        _preferredUsername, @"preferredUsername", [NSNumber numberWithInt:tokenExpiration], @"tokenExpiration",
+        internalPassword, @"internalPassword", nil];
     
     // use the NSURLCredential form of Keychain access to store session-oriented data
     // the username is just a common key (@"session") and the password is the JSON-
@@ -410,6 +410,10 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     return responseDict;
 }
 
+#pragma mark - APNS Helpers
+/**************************************************
+ *  APNS Helpers
+ */
 /*
  *  convertAPNSToken
  *      - helper to convert an APNS device token into a device ID string
@@ -428,6 +432,11 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 
 /*
  *  processPushNotification
+ *      - called from app delegate's didReceiveRemoteNotification method to
+ *          process push notifications
+ *      - we handle location related types (locationTracking, locationRequest)
+ *          but return an unhandled status for all other types so the app has
+ *          to decide what to do about them
  */
 - (void)processPushNotification:(nonnull NSDictionary *)userInfo
     completionHandler:(void (^)(BOOL notificationHandled))completionHandler {
@@ -437,8 +446,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         // Vantiq notification was sent
         NSString *dataType = [notifyData objectForKey:@"type"];
         if ([dataType isEqualToString:@"locationTracking"]) {
-            NSLog(@"received locationTracking notification");
-            
             NSString *whereClause = [NSString stringWithFormat:@"{\"deviceId\":\"%@\", \"username\":\"%@\"}", _v.appUUID, _v.username];
             [_v select:@"ArsPushTarget" props:@[] where:whereClause completionHandler:^(NSArray *data, NSHTTPURLResponse *response, NSError *error) {
                 NSString *resultStr;
@@ -485,7 +492,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                 }
             }];
         } else if ([dataType isEqualToString:@"locationRequest"]) {
-            NSLog(@"received locationRequest notification");
             [self doBFTasksWithCompletionHandler:NO completionHandler:completionHandler];
         } else {
             completionHandler(NO);
@@ -493,17 +499,18 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     }
 }
 
+#pragma mark - Location Tracking
+/**************************************************
+ *  Location Tracking
+ */
 - (void)publishCurrentLocation:(NSTimer *)timer {
-    NSLog(@"publishCurrentLocation...");
     void (^_pushCompletionHandler)(BOOL notificationHandled) = timer.userInfo;
     [self publishLocation:NO completionHandler:^{
-        NSLog(@"publishCurrentLocation: calling completion handler...");
         _pushCompletionHandler(YES);
     }];
 }
 
 - (void)publishLocation:(BOOL)alwaysPublish completionHandler:(void (^)(void))completionHandler {
-    NSLog(@"publishLocation...");
     if (alwaysPublish || receivedLocation) {
         NSString *lastActiveTime = [self timestampToString:[[LastActive sharedInstance] lastActiveTime]];
         [locationDict setValue:@[_v.username] forKey:@"username"];
@@ -512,6 +519,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         [locationDict removeObjectForKey:@"username"];
         [locationDict removeObjectForKey:@"lastActive"];
         
+        // publish location data to the well-known topic
         [_v publish:@"/ars_collaboration/location/mc" message:message completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
             NSString *resultStr;
             if ([self formError:response error:error resultStr:&resultStr]) {
@@ -526,7 +534,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 }
 
 - (void)updateTracking {
-    NSLog(@"updateTracking: new tracking state = %@", collaborationTracking);
     if (!locationManager) {
         [self initManager];
     }
@@ -571,44 +578,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     // allow tracking while in the background
     locationManager.allowsBackgroundLocationUpdates = YES;
     locationManager.showsBackgroundLocationIndicator = NO;
-    NSLog(@"TrackLocation: starting tracking...");
-}
-
-/*
- *  timestampToString
- *      - helper to convert timestamps into a string that can be published
- */
-- (NSString *)timestampToString:(NSDate *)timestamp {
-    NSString *dateString = [timestamp description];
-    // format the iOS-produced current date/time string to an alternate format
-    dateString = [dateString stringByReplacingOccurrencesOfString:@" +" withString:@"+"];
-    dateString = [dateString stringByReplacingOccurrencesOfString:@" " withString:@"T"];
-    return dateString;
-}
-
-/*
- *  doTasksWithCompletionHandler
- *      - start up operations that need to be run in the background
- */
-- (void)doBFTasksWithCompletionHandler:(BOOL)alwaysPublish completionHandler:(void (^)(BOOL notificationHandled))completionHandler {
-    NSLog(@"starting background tasks...");
-    _pushCompletionHandler = [completionHandler copy];
-    finishedPL = finishedILU = false;
-    [self publishLocation:alwaysPublish completionHandler:^{
-        self->finishedILU = true;
-        [self checkBFFinished];
-    }];
-    [self publishLocation:alwaysPublish completionHandler:^{
-        self->finishedPL = true;
-        [self checkBFFinished];
-    }];
-}
-
-- (void)checkBFFinished {
-    if (finishedILU && finishedPL) {
-        NSLog(@"calling completionHandler...");
-        _pushCompletionHandler(YES);
-    }
 }
 
 - (void)onCollectLocationSample:(CLLocation*)location {
@@ -625,8 +594,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     [coordinates setValue:latlon forKey:@"coordinates"];
     [locationDict setValue:coordinates forKey:@"location"];
     [LocationUtilities addExtras:location toDictionary:locationDict];
-    
-    NSLog(@"got location data: %@ (accuracy = %f)", [JSONUtilities dictionaryToJSONString:locationDict], location.horizontalAccuracy);
     receivedLocation = true;
     
     if (![collaborationTracking isEqualToString:@"off"] && (now >= (lastUpdateTime + 20))) {
@@ -636,6 +603,18 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             }];
         });
     }
+}
+
+/*
+ *  timestampToString
+ *      - helper to convert timestamps into a string that can be published
+ */
+- (NSString *)timestampToString:(NSDate *)timestamp {
+    NSString *dateString = [timestamp description];
+    // format the iOS-produced current date/time string to an alternate format
+    dateString = [dateString stringByReplacingOccurrencesOfString:@" +" withString:@"+"];
+    dateString = [dateString stringByReplacingOccurrencesOfString:@" " withString:@"T"];
+    return dateString;
 }
 
 #pragma mark - CLLocationManager Delegates
@@ -650,7 +629,6 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
  *          we're explicitly sampling during a Background Fetch interval
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"locationManager:didUpdateLocations");
     CLLocation *newLocation = [locations lastObject];
     [self onCollectLocationSample:newLocation];
 }
@@ -661,9 +639,58 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
  *          visits "interesting places"
  */
 - (void)locationManager:(CLLocationManager *)manager didVisit:(CLVisit *)visit {
-    NSLog(@"locationManager:didVisit");
     CLLocation *location = [[CLLocation alloc] initWithCoordinate:visit.coordinate altitude:0.0
         horizontalAccuracy:visit.horizontalAccuracy verticalAccuracy:0.0 timestamp:visit.departureDate];
     [self onCollectLocationSample:location];
+}
+
+#pragma mark - Background Task Processing
+/**************************************************
+ *  Background Task Processing
+ */
+/*
+ *  doTasksWithCompletionHandler
+ *      - start up operations that need to be run in the background
+ */
+- (void)doBFTasksWithCompletionHandler:(BOOL)alwaysPublish completionHandler:(void (^)(BOOL notificationHandled))completionHandler {
+    _pushCompletionHandler = [completionHandler copy];
+    finishedPL = finishedILU = false;
+    [self publishLocation:alwaysPublish completionHandler:^{
+        self->finishedILU = true;
+        [self checkBFFinished];
+    }];
+    [self publishLocation:alwaysPublish completionHandler:^{
+        self->finishedPL = true;
+        [self checkBFFinished];
+    }];
+}
+
+- (void)checkBFFinished {
+    if (finishedILU && finishedPL) {
+        _pushCompletionHandler(YES);
+    }
+}
+
+#pragma mark - New User Creation
+/**************************************************
+ *  New User Creation
+ */
+- (void)createInternalUser:(NSString *)username password:(NSString *)password email:(NSString *)email
+    firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone
+    completionHandler:(void (^_Nonnull)(NSDictionary *_Nonnull response))handler {
+    NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:username, @"username",
+        password, @"password", nil];
+    if (email) [userDict setValue:email forKey:@"email"];
+    if (firstName) [userDict setValue:firstName forKey:@"firstName"];
+    if (lastName) [userDict setValue:lastName forKey:@"lastName"];
+    if (phone) [userDict setValue:phone forKey:@"phone"];
+    NSString *paramsStr = [self dictionaryToJSONString:userDict];
+    paramsStr = paramsStr ? paramsStr : @"{}";
+    [_v publicExecute:@"Registration.createInternalUser" params:paramsStr
+        completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+        NSString *resultStr = @"";
+        self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
+        handler([self buildResponseDictionary:resultStr urlResponse:response]);
+    }];
 }
 @end

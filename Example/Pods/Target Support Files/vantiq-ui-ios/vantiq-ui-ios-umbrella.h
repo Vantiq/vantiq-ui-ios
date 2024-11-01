@@ -10,7 +10,11 @@
 #endif
 #endif
 
+#import "FancyDate.h"
+#import "JSONUtilities.h"
 #import "KeychainItemWrapper.h"
+#import "LastActive.h"
+#import "LocationUtilities.h"
 #import "VantiqUI.h"
 
 FOUNDATION_EXPORT double vantiq_ui_iosVersionNumber;
