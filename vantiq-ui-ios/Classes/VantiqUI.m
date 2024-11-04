@@ -678,6 +678,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 - (void)createInternalUser:(NSString *)username password:(NSString *)password email:(NSString *)email
     firstName:(NSString *)firstName lastName:(NSString *)lastName phone:(NSString *)phone
     completionHandler:(void (^_Nonnull)(NSDictionary *_Nonnull response))handler {
+    // create a dictionary with all the parameters then turn it into a string
     NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:username, @"username",
         password, @"password", nil];
     if (email) [userDict setValue:email forKey:@"email"];
@@ -688,6 +689,21 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     NSString *paramsStr = [self dictionaryToJSONString:requestDict];
     paramsStr = paramsStr ? paramsStr : @"{}";
     [_v publicExecute:@"Registration.createInternalUser" params:paramsStr
+        completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
+        NSString *resultStr = @"";
+        self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
+        handler([self buildResponseDictionary:resultStr urlResponse:response]);
+    }];
+}
+
+- (void)createOAuthUser:(NSString *)urlScheme clientId:(NSString *)clientId
+    completionHandler:(void (^)(NSDictionary *response))handler {
+    // create an empty params object then turn it into a string
+    NSDictionary *userDict = [NSDictionary dictionaryWithObjectsAndKeys:nil];
+    NSDictionary *requestDict = [NSDictionary dictionaryWithObjectsAndKeys:userDict, @"obj", nil];
+    NSString *paramsStr = [self dictionaryToJSONString:requestDict];
+    paramsStr = paramsStr ? paramsStr : @"{}";
+    [_v publicExecute:@"Registration.createDRPCode" params:paramsStr
         completionHandler:^(NSHTTPURLResponse *response, NSError *error) {
         NSString *resultStr = @"";
         self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
