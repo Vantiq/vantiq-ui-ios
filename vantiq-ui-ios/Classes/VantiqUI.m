@@ -696,7 +696,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     NSDictionary *requestDict = [NSDictionary dictionaryWithObjectsAndKeys:userDict, @"obj", nil];
     NSString *paramsStr = [self dictionaryToJSONString:requestDict];
     paramsStr = paramsStr ? paramsStr : @"{}";
-    [_v publicExecute:@"Registration.createInternalUser" params:paramsStr
+    [_v publicExecute:@"com.vantiq.ReactUtilities.createInternalUser" params:paramsStr
         completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
         NSString *resultStr = @"";
         self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
@@ -711,7 +711,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     NSDictionary *requestDict = [NSDictionary dictionaryWithObjectsAndKeys:userDict, @"obj", nil];
     NSString *paramsStr = [self dictionaryToJSONString:requestDict];
     paramsStr = paramsStr ? paramsStr : @"{}";
-    [_v publicExecute:@"Registration.createDRPCode" params:paramsStr
+    [_v publicExecute:@"com.vantiq.ReactUtilities.createDRPCode" params:paramsStr
         completionHandler:^(id data, NSHTTPURLResponse *response, NSError *error) {
         NSString *resultStr = @"";
         self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
