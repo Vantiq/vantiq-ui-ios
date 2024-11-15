@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		0582DB8A77FCB1835DDCAA0A /* Pods-vantiq-ui-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vantiq-ui-ios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-vantiq-ui-ios_Tests/Pods-vantiq-ui-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E9F9E40357F48A1C3E0C68A /* Pods-vantiq-ui-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vantiq-ui-ios_Example.release.xcconfig"; path = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
+		56B6308D2CC96CBF0025E331 /* vantiq-ui-ios_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "vantiq-ui-ios_Example.entitlements"; sourceTree = "<group>"; };
 		583DA7D8147B70702AEF582B /* vantiq-ui-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "vantiq-ui-ios.podspec"; path = "../vantiq-ui-ios.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5878095A6FAD0D28532C677E /* Pods_vantiq_ui_ios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vantiq_ui_ios_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* vantiq-ui-ios_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vantiq-ui-ios_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +99,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				56B6308D2CC96CBF0025E331 /* vantiq-ui-ios_Example.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for vantiq-ui-ios */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -535,6 +537,7 @@
 			baseConfigurationReference = CA6D0B2CD7C398BFBC488DAA /* Pods-vantiq-ui-ios_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "vantiq-ui-ios_Example.entitlements";
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 7ZQYP2MG97;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -545,7 +548,9 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
 				);
 				INFOPLIST_FILE = "vantiq-ui-ios/vantiq-ui-ios-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "vantiq-ui-ios_Example";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow vantiq-ui-ios_Example to report your device's location when required for collaborations.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Please allow vantiq-ui-ios_Example to detect your device's motion when required for collaborations.";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
@@ -565,6 +570,7 @@
 			baseConfigurationReference = 4E9F9E40357F48A1C3E0C68A /* Pods-vantiq-ui-ios_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "vantiq-ui-ios_Example.entitlements";
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 7ZQYP2MG97;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -575,7 +581,9 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers\"",
 				);
 				INFOPLIST_FILE = "vantiq-ui-ios/vantiq-ui-ios-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "vantiq-ui-ios_Example";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow vantiq-ui-ios_Example to report your device's location when required for collaborations.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Please allow vantiq-ui-ios_Example to detect your device's motion when required for collaborations.";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;

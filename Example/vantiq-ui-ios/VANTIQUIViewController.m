@@ -7,11 +7,12 @@
 //
 
 #import "VANTIQUIViewController.h"
+#import "VANTIQUIAppDelegate.h"
 #import "VantiqUI.h"
 
 #define VANTIQ_SERVER       @"https://staging.vantiq.com"
-#define INTERNAL_USERNAME   @"swan"
-#define INTERNAL_PASSWORD   @"3367whit"
+#define INTERNAL_USERNAME   @"<Internal auth username>"
+#define INTERNAL_PASSWORD   @"<Internal auth password>"
 
 @interface VANTIQUIViewController () {
     VantiqUI *vui;
@@ -40,14 +41,23 @@
     _queueCount = [NSNumber numberWithInt:20];
     AddToText(@"Authenticating...");
     
-    vui = [[VantiqUI alloc] init:VANTIQ_SERVER namespace:@"" completionHandler:^(NSDictionary *response) {
+    vui = [[VantiqUI alloc] init:VANTIQ_SERVER namespace:@"react" completionHandler:^(NSDictionary *response) {
         dispatch_async(dispatch_get_main_queue(), ^ {
             BOOL authValid = [response objectForKey:@"authValid"];
             NSString *preferredUsername = [response objectForKey:@"preferredUsername"];
             NSString *stateStr;
+            
             if (authValid) {
                 stateStr = [NSString stringWithFormat:@"Auth token verified for user %@", preferredUsername];
                 AddToText(stateStr);
+                NSString *deviceToken = ((VANTIQUIAppDelegate *)[UIApplication sharedApplication].delegate).APNSDeviceToken;
+                if (deviceToken) {
+                    [self->vui.v registerForPushNotifications:deviceToken completionHandler:^(NSDictionary *data, NSHTTPURLResponse *response, NSError *error) {
+                        if (error || (response.statusCode < 200) || (response.statusCode > 299)) {
+                            NSLog(@"registerForPushNotifications fails");
+                        }
+                    }];
+                }
                 [self runSomeTests];
             } else {
                 NSString *serverType = [response objectForKey:@"serverType"];
@@ -58,6 +68,34 @@
                         [response objectForKey:@"errorStr"]];
                     AddToText(stateStr);
                 }
+            }
+        });
+    }];
+    ((VANTIQUIAppDelegate *)[UIApplication sharedApplication].delegate).vui = vui;
+}
+
+- (void)createUser {
+    [self->vui createOAuthUser:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSDictionary * _Nonnull response) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *resultStr = [NSString stringWithFormat:@"createOAuthUser: %@", [self->vui dictionaryToJSONString:response]];
+            AddToResults(resultStr);
+            if ([[response valueForKey:@"errorStr"] isEqualToString:@"com.vantiq.failed.drp.restart"]) {
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    UIAlertController *confirm = [UIAlertController alertControllerWithTitle:@"Verify Email" message:@"Verify email please" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        NSLog(@"createUser: confirmed email verified");
+                        [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSDictionary *response) {
+                            [self createUser];
+                        }];
+                    }];
+                    [confirm addAction:defaultAction];
+                    [self presentViewController:confirm animated:YES completion:nil];
+                });
+            } else {
+                NSLog(@"createUser: finishing auth");
+                [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSDictionary *response) {
+                    [self finishAuth:response runTests:YES];
+                }];
             }
         });
     }];
@@ -87,22 +125,23 @@
 - (void)initiateAuth:(NSString *)serverType {
     if ([serverType isEqualToString:@"Internal"]) {
         [self->vui authWithInternal:INTERNAL_USERNAME password:INTERNAL_PASSWORD completionHandler:^(NSDictionary *response) {
-            [self finishAuth:response];
+            [self finishAuth:response runTests:YES];
         }];
     } else {
         [self->vui authWithOAuth:@"vantiqreact" clientId:@"vantiqReact" completionHandler:^(NSDictionary *response) {
-            [self finishAuth:response];
+            [self finishAuth:response runTests:YES];
         }];
     }
 }
 
-- (void)finishAuth:(NSDictionary *)authResponse {
+- (void)finishAuth:(NSDictionary *)authResponse runTests:(BOOL)runTests {
     dispatch_async(dispatch_get_main_queue(), ^ {
         NSString *errorStr = [authResponse objectForKey:@"errorStr"];
         if (!errorStr.length) {
-            // remember the username
             AddToText(@"Authentication complete.");
-            [self runSomeTests];
+            if (runTests) {
+                [self runSomeTests];
+            }
         } else {
             NSString *errStr = [NSString stringWithFormat:@"viewDidLoad error: %@", errorStr];
             AddToText(errStr);
