@@ -9,7 +9,7 @@ PODS:
   - JWT (2.2.0):
     - Base64 (~> 1.1.2)
   - vantiq-sdk-ios (1.5.6)
-  - vantiq-ui-ios (0.3.7):
+  - vantiq-ui-ios (0.4.0):
     - AppAuth (~> 1.7.5)
     - Base64 (~> 1.1.2)
     - JWT (~> 2.2.0)
@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   JWT: cf73c0ab0dac762df3de8a3f1164352089d97780
   vantiq-sdk-ios: 84476236c0fca8910c19ae9a8410255ac73f52a7
-  vantiq-ui-ios: 66d511fa99ad180eddaa44d5129afcdcb30a97ce
+  vantiq-ui-ios: 749f088eba9efc0222334cf69b6e3809c6672417
 
 PODFILE CHECKSUM: c8376645e3fc14f8e43814b8b48de6a08076d38f
 
