@@ -68,17 +68,41 @@
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/convertAPNSToken:">+ convertAPNSToken:</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/JSONStringToDictionary:">- JSONStringToDictionary:</option>
 		
 		<option value="//api/name/authWithInternal:password:completionHandler:">- authWithInternal:password:completionHandler:</option>
 		
 		<option value="//api/name/authWithOAuth:clientId:completionHandler:">- authWithOAuth:clientId:completionHandler:</option>
 		
+		<option value="//api/name/createInternalUser:password:email:firstName:lastName:phone:completionHandler:">- createInternalUser:password:email:firstName:lastName:phone:completionHandler:</option>
+		
+		<option value="//api/name/dictionaryToJSONString:">- dictionaryToJSONString:</option>
+		
+		<option value="//api/name/doBFTasksWithCompletionHandler:completionHandler:">- doBFTasksWithCompletionHandler:completionHandler:</option>
+		
+		<option value="//api/name/ensureValidToken:">- ensureValidToken:</option>
+		
 		<option value="//api/name/formError:error:resultStr:">- formError:error:resultStr:</option>
 		
 		<option value="//api/name/init:namespace:completionHandler:">- init:namespace:completionHandler:</option>
+		
+		<option value="//api/name/locationManager:didUpdateLocations:">- locationManager:didUpdateLocations:</option>
+		
+		<option value="//api/name/logout:">- logout:</option>
+		
+		<option value="//api/name/processPushNotification:completionHandler:">- processPushNotification:completionHandler:</option>
+		
+		<option value="//api/name/publishCurrentLocation:">- publishCurrentLocation:</option>
 		
 		<option value="//api/name/serverType:">- serverType:</option>
 		
@@ -107,6 +131,9 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td>CLLocationManagerDelegate</td>
+</tr><tr>
 	<th>Declared in</th>
 	<td>VantiqUI.h<br />VantiqUI.m</td>
 </tr>
@@ -126,7 +153,7 @@
 
 <p>• <a href="#//api/name/serverType">serverType</a> (NSString): the type of authentication used by the given Vantiq server, either @&ldquo;Internal&rdquo; or @&ldquo;OAuth&rdquo;</p>
 
-<p>• authValid (NSString): is the previously establed authentication token valid, either @&ldquo;true&rdquo; or @&ldquo;false&rdquo;</p>
+<p>• authValid (BOOL): is the previously establed authentication token valid</p>
 
 <p>• <a href="#//api/name/username">username</a> (NSString): the <a href="#//api/name/username">username</a> of the authenticated user</p>
 
@@ -148,7 +175,7 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -352,7 +379,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)init:(NSString *)<em>serverURL</em> namespace:(NSString *)<em>targetNamespace</em> completionHandler:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (id _Nullable)init:(NSString *_Nonnull)<em>serverURL</em> namespace:(NSString *_Nonnull)<em>targetNamespace</em> completionHandler:(void ( ^ _Nonnull ) ( NSDictionary *_Nonnull response ))<em>handler</em></code></div>
 
 		    
 			
@@ -423,7 +450,7 @@ authWithInternal or authWithOAuth.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)serverType:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)serverType:(void ( ^ _Nonnull ) ( NSDictionary *_Nullable response ))<em>handler</em></code></div>
 
 		    
 			
@@ -506,7 +533,7 @@ not, then one of <em>authWithInternal</em> or <em>authWithOAuth</em> must be cal
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)verifyAuthToken:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)verifyAuthToken:(void ( ^ _Nonnull ) ( NSDictionary *_Nullable response ))<em>handler</em></code></div>
 
 		    
 			
@@ -586,7 +613,7 @@ method should be called if the <em>verifyAuthToken</em> returns false in its <em
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)authWithOAuth:(NSString *)<em>urlScheme</em> clientId:(NSString *)<em>clientId</em> completionHandler:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)authWithOAuth:(NSString *)<em>urlScheme</em> clientId:(NSString *)<em>clientId</em> completionHandler:(void ( ^ _Nonnull ) ( NSDictionary *response ))<em>handler</em></code></div>
 
 		    
 			
@@ -675,7 +702,7 @@ method should be called if the <em>verifyAuthToken</em> returns true in its <em>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)authWithInternal:(NSString *)<em>username</em> password:(NSString *)<em>password</em> completionHandler:(void ( ^ ) ( NSDictionary *response ))<em>handler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)authWithInternal:(NSString *)<em>username</em> password:(NSString *)<em>password</em> completionHandler:(void ( ^ _Nonnull ) ( NSDictionary *response ))<em>handler</em></code></div>
 
 		    
 			
@@ -746,6 +773,150 @@ to ensure any UI operations are completed on the main thread.</p></div>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/logout:" title="logout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logout:">&ndash;&nbsp;logout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The logout method invalidates the current access token and is used to log current user out</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)logout:(void ( ^ _Nullable ) ( NSDictionary *_Nullable response ))<em>handler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The handler block to execute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>response: dictionary containing session information, see Session Information Dictionary Keys above</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The logout method invalidates the current access token and is used to log current user out</p><div class="warning"><p><strong>Warning:</strong> Please also note this method invokes a callback block associated with a network-
+related block. Because this block is called from asynchronous network operations,
+its code must be wrapped by a call to <em>dispatch_async(dispatch_get_main_queue(), ^ {&hellip;});</em>
+to ensure any UI operations are completed on the main thread.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ensureValidToken:" title="ensureValidToken:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ensureValidToken:">&ndash;&nbsp;ensureValidToken:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The ensureValidToken method should be used before any REST operation to attempt to have a
+valid authorization token. If the current authorization token has expired, this method will attempt
+to obtain a new token. The caller should check the authValid key of the returned dictionary to
+determine if the current or new token is valid. If not, then it is up to the application to call either
+authWithOAuth or authWithInternal depending on what kind of server is in use. The server type
+is identified using the <a href="#//api/name/serverType">serverType</a> key of the returned dictionary, which will contain the value
+@&ldquo;Internal&rdquo; or @&ldquo;OAuth&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)ensureValidToken:(void ( ^ _Nonnull ) ( NSDictionary *_Nonnull response ))<em>handler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The handler block to execute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>response: dictionary containing session information, see Session Information Dictionary Keys above</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The ensureValidToken method should be used before any REST operation to attempt to have a
+valid authorization token. If the current authorization token has expired, this method will attempt
+to obtain a new token. The caller should check the authValid key of the returned dictionary to
+determine if the current or new token is valid. If not, then it is up to the application to call either
+authWithOAuth or authWithInternal depending on what kind of server is in use. The server type
+is identified using the <a href="#//api/name/serverType">serverType</a> key of the returned dictionary, which will contain the value
+@&ldquo;Internal&rdquo; or @&ldquo;OAuth&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> Please also note this method invokes a callback block associated with a network-
+related block. Because this block is called from asynchronous network operations,
+its code must be wrapped by a call to <em>dispatch_async(dispatch_get_main_queue(), ^ {&hellip;});</em>
+to ensure any UI operations are completed on the main thread.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/formError:error:resultStr:" title="formError:error:resultStr:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/formError:error:resultStr:">&ndash;&nbsp;formError:error:resultStr:</a></code>
 </h3>
@@ -764,7 +935,7 @@ no error is returned by the Vantiq SDK, the <em>resultStr</em> will return the e
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)formError:(NSHTTPURLResponse *)<em>response</em> error:(NSError *)<em>error</em> resultStr:(NSString **)<em>resultStr</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)formError:(NSHTTPURLResponse *_Nonnull)<em>response</em> error:(NSError *_Nullable)<em>error</em> resultStr:(NSString *_Nullable *_Nonnull)<em>resultStr</em></code></div>
 
 		    
 			
@@ -822,6 +993,468 @@ no error is returned by the Vantiq SDK, the <em>resultStr</em> will return the e
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionaryToJSONString:" title="dictionaryToJSONString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionaryToJSONString:">&ndash;&nbsp;dictionaryToJSONString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dictionaryToJSONString method is a helper to produce a string from an dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)dictionaryToJSONString:(NSDictionary *_Nonnull)<em>dict</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dict</code></th>
+						<td><p>The dictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString if the string is successfully created, nil otherwise</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The dictionaryToJSONString method is a helper to produce a string from an dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/JSONStringToDictionary:" title="JSONStringToDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/JSONStringToDictionary:">&ndash;&nbsp;JSONStringToDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The JSONStringToDictionary method is a helper to produce a dictionary from a string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nonnull)JSONStringToDictionary:(NSString *_Nonnull)<em>jsonString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dict</code></th>
+						<td><p>The dictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSDictionary if the dictionary is successfully created, nil otherwise</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The JSONStringToDictionary method is a helper to produce a dictionary from a string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertAPNSToken:" title="convertAPNSToken:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertAPNSToken:">+&nbsp;convertAPNSToken:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The convertAPNSToken method is a helper to convert an APNS device token into an NSString
+suitable for registering the APNS token for a Vantiq user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)convertAPNSToken:(NSData *_Nonnull)<em>deviceToken</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceToken</code></th>
+						<td><p>The NSData return from didRegisterForRemoteNotificationsWithDeviceToken</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString version of the APNS token</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The convertAPNSToken method is a helper to convert an APNS device token into an NSString
+suitable for registering the APNS token for a Vantiq user</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processPushNotification:completionHandler:" title="processPushNotification:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processPushNotification:completionHandler:">&ndash;&nbsp;processPushNotification:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The processPushNotification method is used in the iOS app&rsquo;s AppDelegate didReceiveRemoteNotification
+method to process APNS notifications.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)processPushNotification:(nonnull NSDictionary *)<em>userInfo</em> completionHandler:(void ( ^ _Nonnull ) ( BOOL notificationHandled ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>a method to determine whether the Vantiq UI library has handled the
+notification (as in the case for location-related notifications) or whether the notification must be handled
+by the calling application. The completion handler&rsquo;s notificationHandled BOOL indicates whether the
+Vantiq UI library has handled the notification.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The processPushNotification method is used in the iOS app&rsquo;s AppDelegate didReceiveRemoteNotification
+method to process APNS notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/doBFTasksWithCompletionHandler:completionHandler:" title="doBFTasksWithCompletionHandler:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/doBFTasksWithCompletionHandler:completionHandler:">&ndash;&nbsp;doBFTasksWithCompletionHandler:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The doBFTasksWithCompletionHandler method is used in the iOS app&rsquo;s AppDelegate performFetchWithCompletionHandler
+method to process background fetch calls from iOS</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)doBFTasksWithCompletionHandler:(BOOL)<em>alwaysPublish</em> completionHandler:(void ( ^ _Nonnull ) ( BOOL notificationHandled ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>a method to determine whether the Vantiq UI library has handled the
+background fetch call  or whether the call must be handled by the calling application. The completion
+handler&rsquo;s notificationHandled BOOL indicates whether the Vantiq UI library has handled the notification.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The doBFTasksWithCompletionHandler method is used in the iOS app&rsquo;s AppDelegate performFetchWithCompletionHandler
+method to process background fetch calls from iOS</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createInternalUser:password:email:firstName:lastName:phone:completionHandler:" title="createInternalUser:password:email:firstName:lastName:phone:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createInternalUser:password:email:firstName:lastName:phone:completionHandler:">&ndash;&nbsp;createInternalUser:password:email:firstName:lastName:phone:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>New User Creation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)createInternalUser:(NSString *_Nonnull)<em>username</em> password:(NSString *_Nonnull)<em>password</em> email:(NSString *_Nullable)<em>email</em> firstName:(NSString *_Nullable)<em>firstName</em> lastName:(NSString *_Nullable)<em>lastName</em> phone:(NSString *_Nullable)<em>phone</em> completionHandler:(void ( ^ _Nonnull ) ( NSDictionary *_Nonnull response ))<em>handler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>New User Creation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/publishCurrentLocation:" title="publishCurrentLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/publishCurrentLocation:">&ndash;&nbsp;publishCurrentLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Location Tracking</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)publishCurrentLocation:(NSTimer *)<em>timer</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Location Tracking</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/locationManager:didUpdateLocations:" title="locationManager:didUpdateLocations:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/locationManager:didUpdateLocations:">&ndash;&nbsp;locationManager:didUpdateLocations:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>CLLocationManager Delegates</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)locationManager:(CLLocationManager *)<em>manager</em> didUpdateLocations:(NSArray *)<em>locations</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>CLLocationManager Delegates</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VantiqUI.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -837,7 +1470,7 @@ no error is returned by the Vantiq SDK, the <em>resultStr</em> will return the e
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2024 VANTIQ, Inc. All rights reserved. Updated: 2024-10-03</p>
+						<p class="copyright">Copyright &copy; 2025 VANTIQ, Inc. All rights reserved. Updated: 2025-01-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
