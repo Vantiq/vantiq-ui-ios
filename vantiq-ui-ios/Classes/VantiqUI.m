@@ -15,6 +15,7 @@
 
 @interface VantiqUI() {
     int tokenExpiration;
+    NSString *idToken;
     NSString *internalPassword;
     NSURLProtectionSpace *protSpace;
     NSString *protSpaceUser;
@@ -42,6 +43,8 @@
     NSString *_clientId;
     NSString *_urlScheme;
     NSString *_drpCode;
+    
+    id<OIDExternalUserAgentSession> endAuthorizationFlow;
 }
 @property (readwrite, nonatomic) NSString *username;
 @property (readwrite, nonatomic) Vantiq *v;
@@ -79,6 +82,8 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             _preferredUsername = [session objectForKey:@"preferredUsername"];
             tokenExpiration = [[session objectForKey:@"tokenExpiration"] intValue];
             internalPassword = [session objectForKey:@"internalPassword"];
+            idToken = [session objectForKey:@"idToken"];
+            _urlScheme = [session objectForKey:@"urlScheme"];
         } else {
             authValid = NO;
         }
@@ -198,6 +203,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
                     [self decodeJWT:authState.lastTokenResponse.idToken];
                     
                     // store the session securely
+                    self->_urlScheme = urlScheme;
                     self->_v.accessToken = authState.lastTokenResponse.accessToken;
                     self->authValid = YES;
                     [self storeSession];
@@ -227,7 +233,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 - (OIDAuthState *)retrieveAuthState {
     NSError *errRet;
     KeychainItemWrapper *keychainItem =
-    [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
     NSData *data = [keychainItem objectForKey:(id)kSecAttrAccount];
     if (data.length) {
         OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class]
@@ -235,6 +241,67 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         return authState;
     }
     return nil;
+}
+- (void)resetAuthState {
+    KeychainItemWrapper *keychainItem =
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"com.vantiq.uiios.authstate" accessGroup:nil];
+    [keychainItem resetKeychainItem];
+}
+
+- (void)logout:(void (^)(NSDictionary *response))handler {
+    [_v revokeCredentials:^(NSHTTPURLResponse *response, NSError *error) {
+        NSString *resultStr = @"";
+        NSMutableDictionary *responseDict = [NSMutableDictionary
+            dictionaryWithDictionary:[self buildResponseDictionary:resultStr urlResponse:response]];
+        [self formError:response error:error resultStr:&resultStr];
+        if ([resultStr isEqualToString:@""]) {
+            if ([self.serverType isEqualToString:@"OAuth"]) {
+                NSString *issuerURL = [[NSString stringWithString:self.serverURL] lowercaseString];
+                NSURL *url = [NSURL URLWithString:issuerURL];
+                issuerURL = [NSString stringWithFormat:@"%@/auth/realms/%@", issuerURL, url.host];
+                NSURL *issuer = [NSURL URLWithString:issuerURL];
+                
+                [OIDAuthorizationService discoverServiceConfigurationForIssuer:issuer
+                    completion:^(OIDServiceConfiguration *_Nullable configuration, NSError *_Nullable error) {
+                    NSString *errorStr = error ? [error localizedDescription] : @"";
+                    if (configuration) {
+                        // build end session request
+                        NSString *redirectStr = [NSString stringWithFormat:@"%@:/logout", self->_urlScheme];
+                        NSURL *redirectURL = [NSURL URLWithString:redirectStr];
+                        
+                        OIDEndSessionRequest *request = [[OIDEndSessionRequest alloc] initWithConfiguration:configuration
+                            idTokenHint:self->idToken postLogoutRedirectURL:redirectURL
+                            additionalParameters:nil];
+                        UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
+                        OIDExternalUserAgentIOS *agent = [[OIDExternalUserAgentIOS alloc] initWithPresentingViewController:rootViewController];
+                        self->endAuthorizationFlow = [OIDAuthorizationService presentEndSessionRequest:request externalUserAgent:agent callback:^(OIDEndSessionResponse * _Nullable endSessionResponse, NSError * _Nullable error) {
+                            if (endSessionResponse) {
+                                self.v.accessToken = @"";
+                                [self storeSession];
+                                [self resetAuthState];
+                                [responseDict setObject:[NSNumber numberWithBool:NO] forKey:@"authValid"];
+                                NSLog(@"endSession succeeds!");
+                            } else {
+                                NSLog(@"endSession error: %@", [error localizedDescription]);
+                            }
+                            handler(responseDict);
+                        }];
+                    } else {
+                        NSLog(@"Error retrieving discovery document: %@", errorStr);
+                        handler(responseDict);
+                    }
+                }];
+            } else {
+                // this is internal auth so not much to do
+                self.v.accessToken = @"";
+                [self storeSession];
+                [responseDict setObject:[NSNumber numberWithBool:NO] forKey:@"authValid"];
+                handler(responseDict);
+            }
+        } else {
+            handler(responseDict);
+        }
+    }];
 }
 
 /*
@@ -311,6 +378,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             _preferredUsername = [payload objectForKey:@"preferred_username"];
             _username = [payload objectForKey:@"sub"];
             self->_v.username = _username;
+            idToken = jwt;
             tokenExpiration = [[payload objectForKey:@"exp"] intValue];
             NSDate *exp = [NSDate dateWithTimeIntervalSince1970:tokenExpiration];
             NSString *dateString = [NSDateFormatter localizedStringFromDate:exp
@@ -329,7 +397,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     NSDictionary *credentialsDict = [NSDictionary dictionaryWithObjectsAndKeys:_v.accessToken,
         @"accessToken", _serverType, @"serverType", _username, @"username",
         _preferredUsername, @"preferredUsername", [NSNumber numberWithInt:tokenExpiration], @"tokenExpiration",
-        internalPassword, @"internalPassword", nil];
+        internalPassword, @"internalPassword", idToken, @"idToken", _urlScheme, @"urlScheme", nil];
     
     // use the NSURLCredential form of Keychain access to store session-oriented data
     // the username is just a common key (@"session") and the password is the JSON-

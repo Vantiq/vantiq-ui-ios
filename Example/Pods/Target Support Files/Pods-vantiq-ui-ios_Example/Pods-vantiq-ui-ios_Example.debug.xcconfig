@@ -5,6 +5,7 @@ GENERATE_INFOPLIST_FILE = YES
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AppAuth/AppAuth.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Base64/Base64.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/JWT/JWT.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios/vantiq_sdk_ios.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios/vantiq_ui_ios.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_LDFLAGS = $(inherited) -framework "AppAuth" -framework "Base64" -framework "JWT" -framework "SafariServices" -framework "Security" -framework "vantiq_sdk_ios" -framework "vantiq_ui_ios" -weak_framework "AuthenticationServices"
+OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/AppAuth" "-F${PODS_CONFIGURATION_BUILD_DIR}/Base64" "-F${PODS_CONFIGURATION_BUILD_DIR}/JWT" "-F${PODS_CONFIGURATION_BUILD_DIR}/vantiq-sdk-ios" "-F${PODS_CONFIGURATION_BUILD_DIR}/vantiq-ui-ios"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

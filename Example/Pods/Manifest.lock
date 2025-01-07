@@ -1,15 +1,15 @@
 PODS:
-  - AppAuth (1.7.5):
-    - AppAuth/Core (= 1.7.5)
-    - AppAuth/ExternalUserAgent (= 1.7.5)
-  - AppAuth/Core (1.7.5)
-  - AppAuth/ExternalUserAgent (1.7.5):
+  - AppAuth (1.7.6):
+    - AppAuth/Core (= 1.7.6)
+    - AppAuth/ExternalUserAgent (= 1.7.6)
+  - AppAuth/Core (1.7.6)
+  - AppAuth/ExternalUserAgent (1.7.6):
     - AppAuth/Core
   - Base64 (1.1.2)
   - JWT (2.2.0):
     - Base64 (~> 1.1.2)
-  - vantiq-sdk-ios (1.6.1)
-  - vantiq-ui-ios (0.4.3):
+  - vantiq-sdk-ios (1.6.3)
+  - vantiq-ui-ios (0.4.4):
     - AppAuth (~> 1.7.5)
     - Base64 (~> 1.1.2)
     - JWT (~> 2.2.0)
@@ -34,12 +34,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
+  AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   JWT: cf73c0ab0dac762df3de8a3f1164352089d97780
-  vantiq-sdk-ios: 96a624a722513cc0938750588909fa6135b7832f
-  vantiq-ui-ios: f6618ea313524fac50c2c2c29a5c25724815640f
+  vantiq-sdk-ios: ad04da855a2882d0c8cbe5db10dad49c4a1bf57a
+  vantiq-ui-ios: 492106ccdfcd4b003225a6a38f67839912f2327d
 
 PODFILE CHECKSUM: 50b7075e4a0c1a4185966aeca0da76b12263d823
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
