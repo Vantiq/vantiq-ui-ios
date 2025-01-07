@@ -61,7 +61,7 @@ Constructor for use with all other Vantiq UI and server operations.
 @param targetNamespace        Vantiq Namespace in which to operate, not currently used
 @param handler      The handler block to execute.
  */
-- (id)init:(NSString *)serverURL namespace:(NSString *)targetNamespace completionHandler:(void (^_Nonnull)(NSDictionary *response))handler;
+- (id _Nullable )init:(NSString *_Nonnull)serverURL namespace:(NSString *_Nonnull)targetNamespace completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull response))handler;
 
 /**
 The serverType method determines if the given server uses Internal (username/password) or OAuth (via
@@ -82,7 +82,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)serverType:(void (^_Nonnull)(NSDictionary *response))handler;
+- (void)serverType:(void (^_Nonnull)(NSDictionary * _Nullable response))handler;
 
 /**
 The verifyAuthToken method determines if a previously opaquely-saved access token is still valid. If
@@ -100,7 +100,7 @@ to ensure any UI operations are completed on the main thread.
  
 @return response: dictionary containing session information, see Session Information Dictionary Keys above
 */
-- (void)verifyAuthToken:(void (^_Nonnull)(NSDictionary *response))handler;
+- (void)verifyAuthToken:(void (^_Nonnull)(NSDictionary * _Nullable response))handler;
 
 /**
 The authWithOAuth method retrieves an OAuth access token from a Keycloak server associated
@@ -143,6 +143,20 @@ to ensure any UI operations are completed on the main thread.
 - (void)authWithInternal:(NSString *)username password:(NSString *)password completionHandler:(void (^_Nonnull)(NSDictionary *response))handler;
 
 /**
+The logout method invalidates the current access token and is used to log current user out
+ 
+@warning Please also note this method invokes a callback block associated with a network-
+related block. Because this block is called from asynchronous network operations,
+its code must be wrapped by a call to _dispatch_async(dispatch_get_main_queue(), ^ {...});_
+to ensure any UI operations are completed on the main thread.
+ 
+@param handler      The handler block to execute.
+ 
+@return response: dictionary containing session information, see Session Information Dictionary Keys above
+*/
+- (void)logout:(void (^_Nullable)(NSDictionary * _Nullable response))handler;
+
+/**
 The ensureValidToken method should be used before any REST operation to attempt to have a
  valid authorization token. If the current authorization token has expired, this method will attempt
  to obtain a new token. The caller should check the authValid key of the returned dictionary to
@@ -173,7 +187,7 @@ The formError method is a helper to produce an error string based on the NSHTTPU
  
 @return errorStr: localized version of error encountered, if any, or an empty (@"") string otherwise. Check for zero-length string to indicate success.
 */
-- (BOOL)formError:(NSHTTPURLResponse *_Nonnull)response error:(NSError *_Nullable)error resultStr:(NSString **_Nonnull)resultStr;
+- (BOOL)formError:(NSHTTPURLResponse *_Nonnull)response error:(NSError *_Nullable)error resultStr:(NSString *_Nullable*_Nonnull)resultStr;
 
 /**
 The dictionaryToJSONString method is a helper to produce a string from an dictionary. 
@@ -235,7 +249,7 @@ The doBFTasksWithCompletionHandler method is used in the iOS app's AppDelegate p
     completionHandler:(void (^_Nonnull)(NSDictionary *_Nonnull response))handler;
 
 - (void)dismissOAuthWebView;
-- (void)decodeJWT:(NSString *)jwt;
+- (void)decodeJWT:(NSString *_Nonnull)jwt;
 @end
 #pragma clang diagnostic pop
 #endif /* VantiqUI_h */

@@ -7,235 +7,235 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0054C0C639E0A5E5C3CF94F28C53F29A /* OIDEndSessionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2482D59F48091EE9B675E6FCC985FD66 /* OIDEndSessionResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00EA09EAD0519E9278DDDCFD43F990EC /* JWTCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0CC7CAE77D82DE9E2D72E0E5813E9C /* JWTCoding.m */; };
-		0570C62CF8AC15B066DAB7DAD283B8BA /* LocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FB28478F38C0DE43A3ABFBBB33CB2C38 /* LocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		06BD276662FFEC12928104AC5D1B2C3D /* vantiq-sdk-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD66B73B98D3A5F92F4CA052D209949 /* vantiq-sdk-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07F7D38ECA6E2B962EA86710FF559B67 /* JWTCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 315D4AAA166CA5848EA8C49151DA0ABE /* JWTCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09163892E0E6D082EDA5072CBDFA852D /* LocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFBE316F70737A0844FD2D85EACEB5 /* LocationUtilities.m */; };
-		09B607357E73A14ACB97ABB30B590CE6 /* JWTAlgorithmDataHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8375AB3494879254DBB828E79D725BCF /* JWTAlgorithmDataHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0BF4B878E667471B43794AA8ABBAC231 /* OIDAuthState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE767048AF3169486B89E4393BF5ACD /* OIDAuthState.m */; };
-		0F688454CB7276BA6C33CF1074914C9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		107264E1793909A20B9B04E4EB142FC9 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1E9B41C6D454B51F7C1FF430E2EA77 /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13ECE3A09159429776728D04B993FEB0 /* JWT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D0E26A724B25897D83BFFD4328B4690 /* JWT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17ADED2A03C1221197B3C3F7226C9D9A /* OIDURLQueryComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B27E2EE921137A9690CDB49B7E9F34 /* OIDURLQueryComponent.m */; };
-		1B8DBACE9955488B274DD6E8A7F2FD5D /* JWTAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 41474FF570DF9EA5D003ED66C096EDEF /* JWTAlgorithmFactory.m */; };
-		1BDA095FE7DE194DFF9A37775B65CD6D /* OIDTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D98C842BB63C90A621982693D67009 /* OIDTokenRequest.m */; };
-		1EC42C59FA97488D1B0DD4D919FF603E /* JWT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75ECD68140B2FD114D82EB0D11CAD8FB /* JWT-dummy.m */; };
-		231C1D51F721DE0B5302BE9322F06CD2 /* JWTClaim.h in Headers */ = {isa = PBXBuildFile; fileRef = 4235922FB1830BE6D79847A90DE546D1 /* JWTClaim.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2646A02B776E232E79831F093663E6C7 /* OIDExternalUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = FC6CDDEE8B81926A64730D817E34039E /* OIDExternalUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		287DDAF293B5DD940AB04DF7842B5A7C /* OIDResponseTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 614AA027AFC6D3BB79D27C778D14582E /* OIDResponseTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		289F7657B5CC2918C4541D26AE185E54 /* Pods-vantiq-ui-ios_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 955E050C6BC9BDEACCD1A9DA96C16756 /* Pods-vantiq-ui-ios_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29241B2BB72959C159BDCEE52B6B8805 /* OIDIDToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D64621193C7E6F43B7257183DCB3B5 /* OIDIDToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DBF25B31DD495FF81FC90CEBAD80176 /* OIDScopeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B4921A54DA738EC85B4CDFE1AAB8C7 /* OIDScopeUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		310AEC030BEECE38DEB35C48C8238F70 /* AppAuth-AppAuthCore_Privacy in Resources */ = {isa = PBXBuildFile; fileRef = EF9852680BCD6EC8B15F622B5B92A838 /* AppAuth-AppAuthCore_Privacy */; };
-		3240253830E367917124024B7924D1E0 /* OIDErrorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AA99A65A5A4C6D4A3A0006EC34F62B95 /* OIDErrorUtilities.m */; };
-		329FD409C5A67DC3BE9E28E93E7A55DB /* OIDAuthorizationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F56F714CEA20C20330EE83112FACF7C /* OIDAuthorizationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32CE2ED8B8441A3CB8A513C6A1505D89 /* OIDAuthorizationService+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D19C76A09587118A4F764781F517E353 /* OIDAuthorizationService+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32E64CD2BE3E49D6BAD65F53A38912A4 /* JWTRSAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE7EC5297FF1CC247F14CCCBB9146EE /* JWTRSAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		336FF5A8E5879C636313DB8B8C526133 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		3694CE494B6DF0840A1B6FE8DC14F24F /* OIDServiceDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CFB17B710D46E721000F5D03235934C /* OIDServiceDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40798AE45DFA38D1C4564D0401157226 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		446E1D03EEE5BBCCAFB1D220190C5E19 /* JWTClaimsSetSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B2531CCBBCA459E508103568EBF3C1A /* JWTClaimsSetSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		455976DBBA035E9A967E7AF6252ED4E0 /* JWTAlgorithmRSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B22CF95B217200DEC5277304A3DC4 /* JWTAlgorithmRSBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45B685C896ABFE86CC33736A0D42420B /* LastActive.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3457E274C5B84837F9320EC6C4D8 /* LastActive.m */; };
-		468E30F6129499D7C030B5DE450120ED /* OIDRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32BCE74A52D7C4F5C530DC039B395C /* OIDRegistrationResponse.m */; };
-		46C324522B26025BB8E58C9861A218CD /* OIDAuthorizationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D738D50E4E655BC9DB9A02A6F14F636 /* OIDAuthorizationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474EC8A6B61E91F8E40BD14A785A8685 /* OIDDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AD3B28C260F4C7127A39F7A1C809E7 /* OIDDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A586ADA41B07B9F6241DE1BF8DCE24C /* OIDEndSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E260E1D51804249CE40F4843FBA57E09 /* OIDEndSessionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C584CA7D6319D47EB3624BE484676C1 /* AppAuthCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC37117CFA71C2CB52DC78F4A41C7FF /* AppAuthCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CD037BE47B7454C55C3E8EF90D0552D /* OIDRegistrationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB618233CB74A33FCBBC8266F67669C /* OIDRegistrationRequest.m */; };
-		4F9DD683F47A5FD30E322F7C4E0B6989 /* JWTClaimsSetSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DED7A4835E8730BC9C676EA83F0D8 /* JWTClaimsSetSerializer.m */; };
-		529BF808EDF831B0610E8F8A5DB1DE74 /* JWTAlgorithmNone.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C2ED9572779CCE844AB6B80F6D6964 /* JWTAlgorithmNone.m */; };
-		547E9E44086F1D7FA62C4E6A2F065F44 /* OIDURLSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C43F5C99B8D483B21438989DDAA0327 /* OIDURLSessionProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		564A05270EDDE6BE9D465D02D97E8052 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE80E2739CF15E28CC5D47EB7E1803C /* MF_Base64Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		56BFE7EB60C248E34485372BE0176A1C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61CBA40940662F2B10FBEF3BE71558 /* WebViewController.m */; };
-		5A192D64055F796420A9D63926A273E0 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCA03E7D611B805C04E33D0531779EE /* OIDExternalUserAgentIOSCustomBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD7C81F358865EEB5A3A226A45A4FEF /* OIDAuthStateChangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A70B59EB553D9283E083EF19A01EB2 /* OIDAuthStateChangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C59E4A1C457D819CD84164DF9E3C811 /* OIDEndSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF420E333605E7E94308A4CA3BC296 /* OIDEndSessionResponse.m */; };
-		5C6FC8F3D2F70E245A85CC4D761B13CC /* Pods-vantiq-ui-ios_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 083CF42EE3BDB096499D80D5838344B8 /* Pods-vantiq-ui-ios_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EDED647312757265F8EC47BEB25479D /* OIDServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F9288D40A1EFE7A99918E89C70467A7A /* OIDServiceConfiguration.m */; };
-		5F1F7BF5F9247F778ABC0E49B4E5EBDD /* OIDAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8644FB12CA6C2801F140ADCECB717606 /* OIDAuthorizationResponse.m */; };
-		64C61894CF5E6B9071CA6B8E2F650EF7 /* JWTClaimsSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACA21992B13F47DA2E8A966FD394B /* JWTClaimsSet.m */; };
-		669418AA7082B2AFF5043C4B3B55EFA7 /* Vantiq.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CE3E366084C3832AC1D86D59BF4016 /* Vantiq.m */; };
-		6824CF5DC4CE6DE2D99C9C1EB6F64CF6 /* LastActive.h in Headers */ = {isa = PBXBuildFile; fileRef = 063F176CC68473FAEC8F09888158E8C4 /* LastActive.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EFF8AACDD8E9635714B8152E2A9A92C /* OIDTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C777D2F56182C5F7FE33D44C4D5F89C /* OIDTokenResponse.m */; };
-		702F4B2C0D18B950EB3E747828B5FC50 /* OIDAuthorizationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F601D5A73D433EFBF414915AA9404C0 /* OIDAuthorizationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		702FE7B20130585BD2436525E870DA92 /* OIDTokenRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 535D4F035D8B9DD055279845C836714E /* OIDTokenRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7173971F1C14491B8E5A7BE056995595 /* OIDTokenUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4117879398A1A377226BD41C5CD2856B /* OIDTokenUtilities.m */; };
-		73C5B3DD8FE06281A3B2EB42A592FBCD /* OIDExternalUserAgentCatalyst.h in Headers */ = {isa = PBXBuildFile; fileRef = 33C3EB75B48564197E826C8FF7CC0782 /* OIDExternalUserAgentCatalyst.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74FABF1F431E2FA7124F2C443312F1AE /* OIDError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F9E6D25208235720366AAC660E87 /* OIDError.m */; };
-		75533E3C5C1A78DBC3C8807C14D7F093 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 51D574F169877CEE51D7A6D3E0B73BB2 /* PrivacyInfo.xcprivacy */; };
-		7E692CC622B3DD6DAFC2F24E0C8F26E2 /* OIDURLSessionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9310197FCB7991801ABB8E4E00D41B /* OIDURLSessionProvider.m */; };
-		7FAB78EAF873D23108277AFFA7261923 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		7FB55D390D6476E0C9CFA02D3B9BF21C /* AppAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C3E20495956370F18ECF019A49C48 /* AppAuth-dummy.m */; };
-		828A61D13ACB97E90FD8B9AED41FB3AF /* JWTAlgorithmHS384.m in Sources */ = {isa = PBXBuildFile; fileRef = A61576FB06F6D92113AFA242768F7B35 /* JWTAlgorithmHS384.m */; };
-		82D0A19E4FB75269F7632C4FC0E8BE34 /* OIDFieldMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60C13CB858C5E878F90DAF41198ABD /* OIDFieldMapping.m */; };
-		83D6FA835A80F2880AF6530B5F42723E /* JWTAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BCEFB6B49A40409A0EF3607E53E609 /* JWTAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8404A03AF819708FE5CF8DB7C5AD263F /* OIDExternalUserAgentRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D187040EDDD451CB6ED3802A8EB231 /* OIDExternalUserAgentRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		864C436179C8A970E4EB1FCC0BAD1D64 /* vantiq-sdk-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4690EB2C79B7CB8060EDA545A29BF11 /* vantiq-sdk-ios-dummy.m */; };
-		8C99055F42D86804508A31368C303D29 /* OIDExternalUserAgentCatalyst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65FC28852EEBC36FC3D200DD097963 /* OIDExternalUserAgentCatalyst.m */; };
-		8E06A2EB7E4BD5B4BCBB5049D0FFC9AD /* OIDAuthState.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A7F7FF94DC24B2AE82659F65FE31CB /* OIDAuthState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F188432D7BB89122B733765B02CE3E4 /* JWTClaimsSetVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE4E9FC82C8B7E4F78925FD741A02 /* JWTClaimsSetVerifier.m */; };
-		8F90D6D7DF6B997451D2C26FFA05BB79 /* JWTDeprecations.h in Headers */ = {isa = PBXBuildFile; fileRef = D30589CB701C6717675C8796C872BCC8 /* JWTDeprecations.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		909DDE0E831D6401C3C6C4770EE11BE9 /* OIDTokenResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 54919BFEF6F2E582A4BB0CA7667C8118 /* OIDTokenResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90B9D482E9D3091B3E0C4E2DC7264286 /* JWTAlgorithmHS512.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB1DD51D1D83921282F51908016313 /* JWTAlgorithmHS512.m */; };
-		958EAE1E90C473F5E1A01701F9602CA3 /* OIDRegistrationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2DE9A3B3F7563DFDE8D58A78DC791D /* OIDRegistrationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98940975CA7FD0211195CFFFA75F21B2 /* AppAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4727DEE1659E729479059438D069304E /* AppAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9901565B4BA3E2BAB551C8FF633796CD /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 465EF15C3612EDC5E00DC402AA9F5D40 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CF600C1CDD348E9FCF26E9B23DCC218 /* Base64-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38998F79B8EA77BBD9C1967A42EB4B2A /* Base64-dummy.m */; };
-		9F2EFA8C68143EF4839F790170243F48 /* MF_Base64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A142F55649BE6DDD1F9A909D5A8D42 /* MF_Base64Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A052A29186E629813AD41633B35173F8 /* JWTAlgorithmNone.h in Headers */ = {isa = PBXBuildFile; fileRef = F9160A01388783514F70C3BE41494DF9 /* JWTAlgorithmNone.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2A23491463BECBF0E66E886896A255A /* JWTClaim.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2013DAE1F17690B1720EC3D180843A /* JWTClaim.m */; };
-		A5854DF23EF93721C5C9C0CE75EBF873 /* OIDServiceDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA550F166E03DA6C3785965A720A92E /* OIDServiceDiscovery.m */; };
-		A610D8E99FAA24198282686004E0F638 /* OIDErrorUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 994298BFFA2970889FF98E1D71799AB3 /* OIDErrorUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6997288D5C505CE79297B7A4F817A67 /* OIDURLQueryComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2E812BD599A89D00F198FAC2D07FAB /* OIDURLQueryComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7779F3FD47C40C24EC7A5DEB75C1DA8 /* OIDEndSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0585DEEE46FC973ACCF50FC26D4D69 /* OIDEndSessionRequest.m */; };
-		A7C776A972CFFFB115748BB111511F8C /* Pods-vantiq-ui-ios_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB6C6C33D533010CF5E4F3A5195DF15 /* Pods-vantiq-ui-ios_Example-dummy.m */; };
-		AA5CD007CF31F8BFA6B1662E9D5DDD4A /* JWTAlgorithmHS256.h in Headers */ = {isa = PBXBuildFile; fileRef = 6236E5DDF17D2CD7C1591720B0CDBB61 /* JWTAlgorithmHS256.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB9E197A287A359A3481493701A11030 /* Base64-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4480E9529520EA16E26C09A40C68A3E8 /* Base64-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADFE8F952AD7E6F48A28AF81A518B684 /* JWTAlgorithmHSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 942031E7E6AC2457496E25E43852FD55 /* JWTAlgorithmHSBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3DD978DD1222E83B7DCB6FC34C82C98 /* OIDScopeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4F08D2C900D1212AA7948D945DA935 /* OIDScopeUtilities.m */; };
-		B5A0A8E6B3749281B9CD90B225E244A6 /* OIDFieldMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EAF4D9F3845BFA34C6B0BF335593648 /* OIDFieldMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5CB741980C27B0C8BF6941EE9987C19 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1982299382CA973F452B3352709AF4 /* OIDExternalUserAgentIOSCustomBrowser.m */; };
-		B5E25696BEFD5775AA9BFF956EF4458A /* OIDExternalUserAgentSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9807702E1CD9D46F0143062DEBB169B5 /* OIDExternalUserAgentSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8E22310EBE9C3AF5AD9938DFB2D8E89 /* OIDClientMetadataParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E96999DA257F919086EBF8A4F47F9FB /* OIDClientMetadataParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B916E3358C9D7196129B7D91DEF20BFE /* JWTAlgorithmHSBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DD47590D4C9013DAD8767C936C2BB /* JWTAlgorithmHSBase.m */; };
-		B9FD2C49551207757DE4FC9407F26F98 /* WebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FCA8EA0E03C40F764C16ECCB3EA6C947 /* WebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA3458738E257A4AA757F97E35A11692 /* OIDAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD22280FC79B77016E1FCFF2902541 /* OIDAuthorizationRequest.m */; };
-		BCD9E2A2CCAEF03F610D95840FA8A12F /* JWTAlgorithmDataHolderChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 019162F293B4025D2D41CEC549E5542A /* JWTAlgorithmDataHolderChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDAE22D0BB9B9948B20321702ED3B981 /* OIDTokenUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 209EE744E99C14517D00BC80E8662854 /* OIDTokenUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDBA1A77B058C37101F19BD48BA7A5D1 /* OIDRegistrationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AB496B9546F14CDD59306A97C071BC51 /* OIDRegistrationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDBBC3336AB93E577E626491FE566E8F /* OIDError.h in Headers */ = {isa = PBXBuildFile; fileRef = 72359674411D5A859B23633728CEA2D3 /* OIDError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDE652033A1450E512E9C7F81D2A2B56 /* JWTAlgorithmHS384.h in Headers */ = {isa = PBXBuildFile; fileRef = F22F7337C5EEC669E5E46F9EB90EC6CD /* JWTAlgorithmHS384.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE74A1514F19FA40C8ECF1F46627FAC3 /* OIDAuthState+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A30396922400495E4DEE767BC6F9B /* OIDAuthState+IOS.m */; };
-		BEE3DF4E055BD3EA2D8F5B5B46C0F645 /* JWTAlgorithmRSBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A94671A2E68B4B8B241F02A741412C33 /* JWTAlgorithmRSBase.m */; };
-		BF219DF08B3E37A143C9E3E5D46360AA /* OIDScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = A84FC5167537EBB8947459B356DEE540 /* OIDScopes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF6A69C9CFE70691FF16634EAEA76564 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1107D5B0B867E6DCE765F42299C6F61D /* SafariServices.framework */; };
-		C0C884995F7B853A17B3A59295E76A2E /* VantiqUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B8F0DB4D05CE43D268458C51E29CAA /* VantiqUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C510183D95758426243968E8E625EB25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		C611628DF90D56F44C10C436416F37F7 /* OIDGrantTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = AD84316DA9BD92458E77E3F1D70047ED /* OIDGrantTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6A89D2F171799C123E193E60FA1AE61 /* JSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F843A61E05FA1D8C585F893816F9A3 /* JSONUtilities.m */; };
-		C8B30D0D933DDCDCC7936AD7D28B5AE0 /* OIDResponseTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 306B53E6CBDD641E77032439C8F44AD3 /* OIDResponseTypes.m */; };
-		C8CCF5780C34A7F5ADFB6BBBCCECC656 /* OIDExternalUserAgentIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E43C86D57B43DAC1A35867E8EA695F9B /* OIDExternalUserAgentIOS.m */; };
-		C9A25E9FD20BEEBB3FB8BB2DE5FC7443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		CD0142772CA3E9CE56E3AB9D15B8CAF9 /* JWTAlgorithmDataHolderChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EEFAEA8A8F994F832C9A041AEB35 /* JWTAlgorithmDataHolderChain.m */; };
-		CD2FE7EC8EDDDC584FE423D0FC3B5466 /* OIDIDToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D090F9636440C0C6340BA298275E12 /* OIDIDToken.m */; };
-		CFEA7C67B38B480C4E749489CF4112D3 /* Pods-vantiq-ui-ios_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 510B4D26575E257443390A02DA712470 /* Pods-vantiq-ui-ios_Tests-dummy.m */; };
-		D262BA2558D719F3B92AC1B1976C0F65 /* OIDAuthorizationService+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5697BF121FA7794127E658BE8C0C8C8C /* OIDAuthorizationService+IOS.m */; };
-		D3053F12158EEE250DFBF551CEDCD8C5 /* JWTAlgorithmHS256.m in Sources */ = {isa = PBXBuildFile; fileRef = FA03559FD2ECE7DBE7E1F94D97061F0E /* JWTAlgorithmHS256.m */; };
-		D30D14E4544B8647D709D5CFAE98D548 /* JWTAlgorithmDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BB4DADCFE930BA90534D46905190BF /* JWTAlgorithmDataHolder.m */; };
-		D328A8EB7B35E9D9D82162DCAA73FFA5 /* JWTAlgorithmHS512.h in Headers */ = {isa = PBXBuildFile; fileRef = 219B5DB9EF0DC01D3AF3E9E8F53A2292 /* JWTAlgorithmHS512.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D352707AE0F20050D29683BB9E5924AB /* OIDAuthorizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D3246FDCF754A81A0CE96FBD2ABAD1 /* OIDAuthorizationService.m */; };
-		D5BC3548DB4A2967F9039DDBF119A98A /* OIDServiceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9A23827E5F02A98ABBD3544361E764 /* OIDServiceConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6866208BE7B4E58108FFC3F230EDA77 /* FancyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A32440A3D201A0E994C0EFD506D1789F /* FancyDate.m */; };
-		DA94BA453040CB2B383BF81F31FC1AAE /* JWT.h in Headers */ = {isa = PBXBuildFile; fileRef = 12BF5752C7240F763C0869C512639654 /* JWT.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBA1860C2885652ACC675D7B492C5105 /* JWTBase64Coder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0D346AC398414AD9C27E4B710C56A8E /* JWTBase64Coder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DDB09151B497C643E7920241112583E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6286E219A8FE0745A0E7F8AF9051D8BB /* Security.framework */; };
-		DFAB5596FBDC56D70CF8E4D9E01AB7A4 /* JWTBase64Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = F15FAA412ED9D8A21046AF9CD50D6380 /* JWTBase64Coder.m */; };
-		E2203A2932D6ED9FADA50B908ADCC4C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */; };
-		E4E1FC5FCC44671724D66E7D91C74A75 /* JWTClaimsSetVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = B8B2E9DA22279053980197770A4DF050 /* JWTClaimsSetVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E65C90118743DFAED581D7AFB70DF3A4 /* vantiq-ui-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D65A2AD050ACD3C8C2EBA77D14D7A7F1 /* vantiq-ui-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E757F4A0037818CAF32D2E63526C080F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DBB3B42538278666EE037460C30942 /* KeychainItemWrapper.m */; };
-		E826475C12672B1A934B60963B6DEE0D /* FancyDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BF945F4527E3ED4D27565A0486C4831 /* FancyDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8716D99205FD5247FF94664C3059A5F /* JWTClaimsSet.h in Headers */ = {isa = PBXBuildFile; fileRef = D5DAD368182EED458469E37A247485F5 /* JWTClaimsSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA216F4C0E1E15AFC38A58AD6A04E6AE /* vantiq-ui-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7396114FF25F542BBD5A76480E11EF18 /* vantiq-ui-ios-dummy.m */; };
-		EC3AD63DB7BF8298CFCB1B2FBFC7366D /* Vantiq.h in Headers */ = {isa = PBXBuildFile; fileRef = D77F65777095BD256FA8E5908E557A37 /* Vantiq.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC9C12890CF3006B2B6D2AB2BC26D057 /* OIDAuthStateErrorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F46F2E5EA55BB5F47401001B3B8977 /* OIDAuthStateErrorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECA8B13BAE382716E1BA8CB8E373378B /* OIDAuthState+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 251A5CB41FC227B5BE94337BFB4B6D9C /* OIDAuthState+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0D639612CD20AC5986CA93233BD986A /* JSONUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 688C2AEEC0110D342C7D508C8DECEED4 /* JSONUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F168E13393F0BD81E6C12CCFEE2B2B98 /* OIDClientMetadataParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD50B8949BE6076A355BD4C4657A4F1 /* OIDClientMetadataParameters.m */; };
-		F3308EA7703DE079DFEF9716B4D56CB5 /* OIDGrantTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3208AC971D82C41BB534E8A8E63931 /* OIDGrantTypes.m */; };
-		F46316F6EA1F91CAD0C567D85DD0A872 /* JWTAlgorithmFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F07B0AF7F6CBB383A0521AF171BBF216 /* JWTAlgorithmFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4BB88D2C1266429CB931BA9F2FC2935 /* OIDExternalUserAgentIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D730BBC9C4CD1B235EDE23BFE67F3C7 /* OIDExternalUserAgentIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F61F3D9A37DE717CF85B4EDB2C96DB9A /* OIDScopes.m in Sources */ = {isa = PBXBuildFile; fileRef = FC732038537A425CECF31152C9EC0812 /* OIDScopes.m */; };
-		FC56609B1636136A8099417380719C17 /* VantiqUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD38F28405A1CD301ED52B791205A8 /* VantiqUI.m */; };
+		00FA8327F2C9FBAB72B070EB4EF11C70 /* JWTAlgorithmHS512.h in Headers */ = {isa = PBXBuildFile; fileRef = 219B5DB9EF0DC01D3AF3E9E8F53A2292 /* JWTAlgorithmHS512.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02D27692DA1ECD60DB78E33E9460670F /* OIDEndSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF420E333605E7E94308A4CA3BC296 /* OIDEndSessionResponse.m */; };
+		03A5BB19030D5B4F647C1F62224990DC /* AppAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C3E20495956370F18ECF019A49C48 /* AppAuth-dummy.m */; };
+		06F1278D4F95C3AE9B33BB04FE9EB944 /* LocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FB28478F38C0DE43A3ABFBBB33CB2C38 /* LocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0700E7FBEAE5143E22AFCC6DFAC822FA /* OIDExternalUserAgentRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D187040EDDD451CB6ED3802A8EB231 /* OIDExternalUserAgentRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09D76C372F1545EB6894AE22974A39BC /* OIDServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F9288D40A1EFE7A99918E89C70467A7A /* OIDServiceConfiguration.m */; };
+		0A60D09EC45EFD49E5A0BEC3DCCDD88F /* OIDScopes.m in Sources */ = {isa = PBXBuildFile; fileRef = FC732038537A425CECF31152C9EC0812 /* OIDScopes.m */; };
+		0EA59E6C3EEF9587F8A56CC80AC45B4B /* JWTAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 48BCEFB6B49A40409A0EF3607E53E609 /* JWTAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11FB9C8FCEADC84542F07AF822B9A11D /* OIDError.h in Headers */ = {isa = PBXBuildFile; fileRef = 72359674411D5A859B23633728CEA2D3 /* OIDError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		125E1FC1E44FC3729CC5924B8984326B /* JWTClaimsSet.h in Headers */ = {isa = PBXBuildFile; fileRef = D5DAD368182EED458469E37A247485F5 /* JWTClaimsSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		129F5D71C96536B80AA2D80384FE8DB4 /* OIDEndSessionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2482D59F48091EE9B675E6FCC985FD66 /* OIDEndSessionResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13DF559CFEB551A762CE28734FBCA6BC /* OIDURLQueryComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2E812BD599A89D00F198FAC2D07FAB /* OIDURLQueryComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13EE71BDD4275F86F7A8D4F673A6D6A7 /* vantiq-ui-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D65A2AD050ACD3C8C2EBA77D14D7A7F1 /* vantiq-ui-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14BCAD808C9073505EBC3F61FC23DCC4 /* JWTAlgorithmRSBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A94671A2E68B4B8B241F02A741412C33 /* JWTAlgorithmRSBase.m */; };
+		177279A9B8B3E8B6593D82E29146BEB6 /* JWTAlgorithmHS384.m in Sources */ = {isa = PBXBuildFile; fileRef = A61576FB06F6D92113AFA242768F7B35 /* JWTAlgorithmHS384.m */; };
+		1A0ADDD9FE5AD192B994832CCE476F14 /* OIDTokenRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 535D4F035D8B9DD055279845C836714E /* OIDTokenRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E86A782F818F06FC3F4E579B8BD61F1 /* OIDScopeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B4921A54DA738EC85B4CDFE1AAB8C7 /* OIDScopeUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EC0765AD0F6F5D86CE5EE8020E22C0F /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB3E547368BA9AA2D3BE1033688DE0 /* SafariServices.framework */; };
+		269D9070FBF1D5B078694DB6AEDE12B1 /* MF_Base64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A142F55649BE6DDD1F9A909D5A8D42 /* MF_Base64Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29AB25D47B2FC317CA095B72D090D898 /* JWTAlgorithmDataHolderChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 019162F293B4025D2D41CEC549E5542A /* JWTAlgorithmDataHolderChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AF912A3FE3B67A0A76586F4EBAEB8CF /* JWTBase64Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = F15FAA412ED9D8A21046AF9CD50D6380 /* JWTBase64Coder.m */; };
+		2B71890210594CFF0C78E1B1000DA531 /* JWT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D0E26A724B25897D83BFFD4328B4690 /* JWT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BEA925231261D82D4D360D3EEFD07CF /* JWTCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0CC7CAE77D82DE9E2D72E0E5813E9C /* JWTCoding.m */; };
+		2C7933565D5EDD5BA7D58116233CF7DD /* OIDResponseTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 306B53E6CBDD641E77032439C8F44AD3 /* OIDResponseTypes.m */; };
+		2D899BF34031C7D0730FFF1F822128E6 /* JWTClaim.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2013DAE1F17690B1720EC3D180843A /* JWTClaim.m */; };
+		2E541F089DC2BB586A8D9A042BCF2B0C /* OIDAuthState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE767048AF3169486B89E4393BF5ACD /* OIDAuthState.m */; };
+		2E5BBB7338D2B7193B6C2A84C3399C9F /* LocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFBE316F70737A0844FD2D85EACEB5 /* LocationUtilities.m */; };
+		2F8CA8830F8BBF18ABABA11F869C6D99 /* OIDExternalUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = FC6CDDEE8B81926A64730D817E34039E /* OIDExternalUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31BDBABC1A72874C106A9C971A6D321F /* JSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F843A61E05FA1D8C585F893816F9A3 /* JSONUtilities.m */; };
+		32523D7215A49ECB5A12502349F68046 /* JWTClaim.h in Headers */ = {isa = PBXBuildFile; fileRef = 4235922FB1830BE6D79847A90DE546D1 /* JWTClaim.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36217C17012C6CA48F89F54B87CD44D9 /* OIDURLSessionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9310197FCB7991801ABB8E4E00D41B /* OIDURLSessionProvider.m */; };
+		364A034C39F796F6E22BBB751C0195AD /* JWTAlgorithmHS512.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB1DD51D1D83921282F51908016313 /* JWTAlgorithmHS512.m */; };
+		37F5E53DD55AABF1680501E0BD4BD124 /* Vantiq.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CE3E366084C3832AC1D86D59BF4016 /* Vantiq.m */; };
+		394301A665422CE5C5E97B51E07FA69E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		3A0E2A907AED4A2C70B9BE2361BAFCE7 /* JWTAlgorithmHS384.h in Headers */ = {isa = PBXBuildFile; fileRef = F22F7337C5EEC669E5E46F9EB90EC6CD /* JWTAlgorithmHS384.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B7AAAB356FC81C6565BBE6938CE6B70 /* AppAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4727DEE1659E729479059438D069304E /* AppAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F55EAD3972F50167989B9C8D8705847 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DBB3B42538278666EE037460C30942 /* KeychainItemWrapper.m */; };
+		4026E0C37B420EA9E2C6F2842D56D629 /* OIDRegistrationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB618233CB74A33FCBBC8266F67669C /* OIDRegistrationRequest.m */; };
+		408DA46FD224E481EFBB0CEBF72506E9 /* OIDTokenResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 54919BFEF6F2E582A4BB0CA7667C8118 /* OIDTokenResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		423F8E2CFAAC00F9A1FCD5E6DFB88152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		430118DD978A537E4BC75A9EAA9144DC /* JWTClaimsSetVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE4E9FC82C8B7E4F78925FD741A02 /* JWTClaimsSetVerifier.m */; };
+		46F18AAA50A0315D3DCA99F9A9117F05 /* OIDServiceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9A23827E5F02A98ABBD3544361E764 /* OIDServiceConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B16FBB5DF4F21EE94A061049338F04F /* JWT.h in Headers */ = {isa = PBXBuildFile; fileRef = 12BF5752C7240F763C0869C512639654 /* JWT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BCE70145910BA1538AE564B2AD8FE29 /* JWTClaimsSetSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B2531CCBBCA459E508103568EBF3C1A /* JWTClaimsSetSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F1B7939FDF1030E68E99D13DCC1C29F /* OIDAuthorizationService+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5697BF121FA7794127E658BE8C0C8C8C /* OIDAuthorizationService+IOS.m */; };
+		4F5F702E9DFEA81F4EC7F0990F3ED184 /* OIDIDToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D64621193C7E6F43B7257183DCB3B5 /* OIDIDToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50E2DDC7AED6124B9D2B71515946CAC5 /* vantiq-sdk-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD66B73B98D3A5F92F4CA052D209949 /* vantiq-sdk-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5328EECFC32259196096A8B6387F42B8 /* OIDErrorUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 994298BFFA2970889FF98E1D71799AB3 /* OIDErrorUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53E9F901DC770928992A5DD67C100A60 /* JWTAlgorithmHS256.m in Sources */ = {isa = PBXBuildFile; fileRef = FA03559FD2ECE7DBE7E1F94D97061F0E /* JWTAlgorithmHS256.m */; };
+		541021D1D97A454A529AFFF30D1D08E8 /* Pods-vantiq-ui-ios_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB6C6C33D533010CF5E4F3A5195DF15 /* Pods-vantiq-ui-ios_Example-dummy.m */; };
+		587B88BE045B5034B5EF313D15805CAD /* OIDClientMetadataParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E96999DA257F919086EBF8A4F47F9FB /* OIDClientMetadataParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CFB2D69AD88E93D40C64283719AAE6E /* JWTAlgorithmNone.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C2ED9572779CCE844AB6B80F6D6964 /* JWTAlgorithmNone.m */; };
+		5E0FE034C3020FF69E6DFFFBD40510C9 /* OIDEndSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E260E1D51804249CE40F4843FBA57E09 /* OIDEndSessionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		613C301B9BCF531A378AC38040063177 /* JWT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75ECD68140B2FD114D82EB0D11CAD8FB /* JWT-dummy.m */; };
+		616F35C0F95D50528530FF3C55B526E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		6170E9B57C3CEF286FBEC36A4127905E /* OIDGrantTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3208AC971D82C41BB534E8A8E63931 /* OIDGrantTypes.m */; };
+		6419E6210DD9117C42298A75A0D395E3 /* LastActive.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3457E274C5B84837F9320EC6C4D8 /* LastActive.m */; };
+		66269C979ED1F273889A43F4186F11CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		68462D63131BB656F4612EE12E555DE4 /* OIDExternalUserAgentIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E43C86D57B43DAC1A35867E8EA695F9B /* OIDExternalUserAgentIOS.m */; };
+		6897F779740E073A0A4FEEAB5F3C265B /* JWTDeprecations.h in Headers */ = {isa = PBXBuildFile; fileRef = D30589CB701C6717675C8796C872BCC8 /* JWTDeprecations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BB804D7E93D9968659BA6B6B1C7D4A5 /* OIDFieldMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60C13CB858C5E878F90DAF41198ABD /* OIDFieldMapping.m */; };
+		6C15208410D419482CA29F64A243F03A /* OIDServiceDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CFB17B710D46E721000F5D03235934C /* OIDServiceDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F549E0F575D0595D77C4F52C137D804 /* WebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FCA8EA0E03C40F764C16ECCB3EA6C947 /* WebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7039F257E6ABF5806655CBE2AD2E9531 /* OIDResponseTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 614AA027AFC6D3BB79D27C778D14582E /* OIDResponseTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71981EE53197200543C53BE7423BB89A /* OIDFieldMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EAF4D9F3845BFA34C6B0BF335593648 /* OIDFieldMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7442237D6AA09EC7D5C276B837C55A2A /* OIDEndSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0585DEEE46FC973ACCF50FC26D4D69 /* OIDEndSessionRequest.m */; };
+		7C1E0438E51364B4CEAEE7B51BBBDA42 /* OIDExternalUserAgentSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9807702E1CD9D46F0143062DEBB169B5 /* OIDExternalUserAgentSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DE7F668D7A0544BE046C1D07D73DD4E /* OIDError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F9E6D25208235720366AAC660E87 /* OIDError.m */; };
+		7FA13FD4916F80D41A8C6F1535BBFE9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		7FFF93B0637FEE76FEED6D132B25D213 /* OIDAuthorizationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D738D50E4E655BC9DB9A02A6F14F636 /* OIDAuthorizationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80B436DC38851AEB73BA8971374A5141 /* JWTAlgorithmHSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 942031E7E6AC2457496E25E43852FD55 /* JWTAlgorithmHSBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81174F056CAA3AC74C65BE0F0FBAC65D /* FancyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A32440A3D201A0E994C0EFD506D1789F /* FancyDate.m */; };
+		84056477AA2E1DC91ACEE085828F131B /* vantiq-ui-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7396114FF25F542BBD5A76480E11EF18 /* vantiq-ui-ios-dummy.m */; };
+		849DF319425DE0DA9A54ACDDD54D0972 /* JWTAlgorithmRSBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B22CF95B217200DEC5277304A3DC4 /* JWTAlgorithmRSBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857D9634F3F6185DEEACDDAB417B913F /* JWTAlgorithmNone.h in Headers */ = {isa = PBXBuildFile; fileRef = F9160A01388783514F70C3BE41494DF9 /* JWTAlgorithmNone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		858FD0F47286E209A5F81FF07F52F28A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		8682B96E2FECDCA68D19D3E0201C4F6B /* OIDAuthorizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D3246FDCF754A81A0CE96FBD2ABAD1 /* OIDAuthorizationService.m */; };
+		86D0F6376197F28E07FB932B8E036550 /* OIDClientMetadataParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD50B8949BE6076A355BD4C4657A4F1 /* OIDClientMetadataParameters.m */; };
+		8AB9F68F34E8ED4A60A611D3FEA75A45 /* JWTRSAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE7EC5297FF1CC247F14CCCBB9146EE /* JWTRSAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B98690B06CB078B7D87310A327A4CA3 /* OIDRegistrationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AB496B9546F14CDD59306A97C071BC51 /* OIDRegistrationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BB30F779CDD8DFCCAB19FF2A7CCC641 /* JWTAlgorithmHS256.h in Headers */ = {isa = PBXBuildFile; fileRef = 6236E5DDF17D2CD7C1591720B0CDBB61 /* JWTAlgorithmHS256.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CB00AF5E36C153F347BDFE43A9843AA /* OIDScopeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4F08D2C900D1212AA7948D945DA935 /* OIDScopeUtilities.m */; };
+		9430B5316DA2BFDCBA543BD10F999FF1 /* OIDURLSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C43F5C99B8D483B21438989DDAA0327 /* OIDURLSessionProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94F7D1E734732A49B374AE0BEF685281 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE80E2739CF15E28CC5D47EB7E1803C /* MF_Base64Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		95F3D9C574C6D76ABE168C204D0E218D /* OIDIDToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D090F9636440C0C6340BA298275E12 /* OIDIDToken.m */; };
+		9816D1DF1A3E5925894D3845244BC5C7 /* JWTCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 315D4AAA166CA5848EA8C49151DA0ABE /* JWTCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991F4FF90AC6340789B2518D26E588FC /* OIDAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8644FB12CA6C2801F140ADCECB717606 /* OIDAuthorizationResponse.m */; };
+		9AD957E4C0F184CA89DB73C74C577042 /* OIDTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C777D2F56182C5F7FE33D44C4D5F89C /* OIDTokenResponse.m */; };
+		9B10FE4FCD0641E16799ACC6CFBE84C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */; };
+		A38EEF53871F8AAAD0429E1DF4FCA1CE /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCA03E7D611B805C04E33D0531779EE /* OIDExternalUserAgentIOSCustomBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A39AEE2F6CD9ADE5EC7D43BD3F29E1A7 /* JWTClaimsSetVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = B8B2E9DA22279053980197770A4DF050 /* JWTClaimsSetVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3EB9C3DF232E11761B3042B65937086 /* JWTAlgorithmDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BB4DADCFE930BA90534D46905190BF /* JWTAlgorithmDataHolder.m */; };
+		A4AECAF313F328F61039FE1995FBE5C8 /* VantiqUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AD38F28405A1CD301ED52B791205A8 /* VantiqUI.m */; };
+		A4FC5C63C1C49CDF77A7B3EACF06AF97 /* OIDAuthState+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 251A5CB41FC227B5BE94337BFB4B6D9C /* OIDAuthState+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A58FB688482ACD73435ADD18C0F0A3BB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB5AB833881FFDD7612F8513454A129 /* Security.framework */; };
+		A60D123D5CACBB76AF321DB31903880D /* OIDExternalUserAgentCatalyst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65FC28852EEBC36FC3D200DD097963 /* OIDExternalUserAgentCatalyst.m */; };
+		A6E66D87B99E33CFC884867111A78A6B /* Pods-vantiq-ui-ios_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 955E050C6BC9BDEACCD1A9DA96C16756 /* Pods-vantiq-ui-ios_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A80CC8C035F3636D6FEF831DADCCBDCB /* OIDTokenUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4117879398A1A377226BD41C5CD2856B /* OIDTokenUtilities.m */; };
+		AA2439BAA2E4174F49F223579F4D8AC5 /* OIDTokenUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 209EE744E99C14517D00BC80E8662854 /* OIDTokenUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA351DB92927C342D8FD9F16FF6D1D20 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1982299382CA973F452B3352709AF4 /* OIDExternalUserAgentIOSCustomBrowser.m */; };
+		ADAB95829C10EB96B5C0F0DC2642437F /* OIDRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32BCE74A52D7C4F5C530DC039B395C /* OIDRegistrationResponse.m */; };
+		AEEF21E567FE4366C7624057B7976D2C /* AppAuthCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC37117CFA71C2CB52DC78F4A41C7FF /* AppAuthCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B05508F9764D4F1672936648A44B95DB /* OIDExternalUserAgentIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D730BBC9C4CD1B235EDE23BFE67F3C7 /* OIDExternalUserAgentIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B07819722CB2B27EDAAF792A98A9CC98 /* FancyDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BF945F4527E3ED4D27565A0486C4831 /* FancyDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B387DA1A90AABE851EE27F0CEF53496D /* OIDRegistrationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2DE9A3B3F7563DFDE8D58A78DC791D /* OIDRegistrationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B493366B89796C702FB967D492B46CEF /* Vantiq.h in Headers */ = {isa = PBXBuildFile; fileRef = D77F65777095BD256FA8E5908E557A37 /* Vantiq.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEC894CA0C0967AC0D87484BE1CE7950 /* OIDTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D98C842BB63C90A621982693D67009 /* OIDTokenRequest.m */; };
+		C0EEE44B4EB0C54F6BFF2780F3A506F7 /* JSONUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 688C2AEEC0110D342C7D508C8DECEED4 /* JSONUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5DC14D73257F63C33B12624E51D946B /* JWTAlgorithmDataHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8375AB3494879254DBB828E79D725BCF /* JWTAlgorithmDataHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C620082E7BD4A95CC713697D44C142E5 /* JWTAlgorithmDataHolderChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EEFAEA8A8F994F832C9A041AEB35 /* JWTAlgorithmDataHolderChain.m */; };
+		C79A43932B96D456A1BD8A68A037E75C /* OIDURLQueryComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B27E2EE921137A9690CDB49B7E9F34 /* OIDURLQueryComponent.m */; };
+		C81D53D9E807648BC41C68CEBAC37D97 /* VantiqUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B8F0DB4D05CE43D268458C51E29CAA /* VantiqUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C88CA6721406C72E6EEDDB736B97A434 /* OIDAuthState.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A7F7FF94DC24B2AE82659F65FE31CB /* OIDAuthState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA2A6A7431E23A5489D71908E677E5FD /* JWTClaimsSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACA21992B13F47DA2E8A966FD394B /* JWTClaimsSet.m */; };
+		CC21B45F72CA0F609F9D4F5A9A90921C /* Pods-vantiq-ui-ios_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 510B4D26575E257443390A02DA712470 /* Pods-vantiq-ui-ios_Tests-dummy.m */; };
+		CF238A6BD005718699B81801BE0198CE /* OIDExternalUserAgentCatalyst.h in Headers */ = {isa = PBXBuildFile; fileRef = 33C3EB75B48564197E826C8FF7CC0782 /* OIDExternalUserAgentCatalyst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFD4FF2AD9DE475FE12FDA7109C22A6F /* OIDErrorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AA99A65A5A4C6D4A3A0006EC34F62B95 /* OIDErrorUtilities.m */; };
+		D04F6D437DC45BC2E68FCA5E586771A9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61CBA40940662F2B10FBEF3BE71558 /* WebViewController.m */; };
+		D113A464B8F95A4849DF94B4D300A4D3 /* OIDAuthStateErrorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F46F2E5EA55BB5F47401001B3B8977 /* OIDAuthStateErrorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1F0123A32394CFE85744DECB6A68514 /* OIDDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AD3B28C260F4C7127A39F7A1C809E7 /* OIDDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2C1DE31C7076EB32C252F911014C098 /* AppAuth-AppAuthCore_Privacy in Resources */ = {isa = PBXBuildFile; fileRef = EF9852680BCD6EC8B15F622B5B92A838 /* AppAuth-AppAuthCore_Privacy */; };
+		D33A70B5F3D101DFA5FC2BC014E5D8F0 /* OIDAuthorizationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F601D5A73D433EFBF414915AA9404C0 /* OIDAuthorizationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F95D81B933EE05BE11B4B1D2BF0ADD /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 465EF15C3612EDC5E00DC402AA9F5D40 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D83AF4E43CC0482FB69CD41BDF219072 /* OIDScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = A84FC5167537EBB8947459B356DEE540 /* OIDScopes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D92FEED2AAB405AFD80C24BEBCE79E03 /* JWTBase64Coder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0D346AC398414AD9C27E4B710C56A8E /* JWTBase64Coder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA8D91B62FEB7F8999C7B01EBB430471 /* OIDAuthorizationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F56F714CEA20C20330EE83112FACF7C /* OIDAuthorizationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB34D661E4BDCB842B1203D88AECD3F7 /* JWTAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 41474FF570DF9EA5D003ED66C096EDEF /* JWTAlgorithmFactory.m */; };
+		DB529F7D2A142ADE3DA2CF7CD95BD821 /* JWTAlgorithmHSBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DD47590D4C9013DAD8767C936C2BB /* JWTAlgorithmHSBase.m */; };
+		DC82197567B33B0738BB0F2ABA511927 /* vantiq-sdk-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4690EB2C79B7CB8060EDA545A29BF11 /* vantiq-sdk-ios-dummy.m */; };
+		DCB16ED5585C4F6E4C046E7D6CDBFDCF /* OIDServiceDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA550F166E03DA6C3785965A720A92E /* OIDServiceDiscovery.m */; };
+		DD1F22E70A8754D0E92B7F6387B7ACB1 /* OIDAuthorizationService+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D19C76A09587118A4F764781F517E353 /* OIDAuthorizationService+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF1499DFA31C62564691494A238FD573 /* JWTAlgorithmFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F07B0AF7F6CBB383A0521AF171BBF216 /* JWTAlgorithmFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E99EE4085991793730ADA654BF94F756 /* OIDAuthState+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A30396922400495E4DEE767BC6F9B /* OIDAuthState+IOS.m */; };
+		EA19523C395959C202992835862CE528 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1E9B41C6D454B51F7C1FF430E2EA77 /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDC79CEE96B97E71AB7004D2400431E9 /* OIDAuthStateChangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A70B59EB553D9283E083EF19A01EB2 /* OIDAuthStateChangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF45FF2C433BBB0C7A60AA01F7CF8AD5 /* LastActive.h in Headers */ = {isa = PBXBuildFile; fileRef = 063F176CC68473FAEC8F09888158E8C4 /* LastActive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F05B4A1AA04363502B432AAA3BD3403E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 51D574F169877CEE51D7A6D3E0B73BB2 /* PrivacyInfo.xcprivacy */; };
+		F399293EE2154A2159E97EF9D807F510 /* OIDGrantTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = AD84316DA9BD92458E77E3F1D70047ED /* OIDGrantTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C93B03D1B9DFDA405736E71DDA059A /* Base64-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38998F79B8EA77BBD9C1967A42EB4B2A /* Base64-dummy.m */; };
+		FA84ECFE7AC138E673977EAB24B6FF4E /* Pods-vantiq-ui-ios_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 083CF42EE3BDB096499D80D5838344B8 /* Pods-vantiq-ui-ios_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD9F6D1D6FEF98B2B56473BA95C3EAC7 /* OIDAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD22280FC79B77016E1FCFF2902541 /* OIDAuthorizationRequest.m */; };
+		FDB2C8E19BF277FD572F828CD5EC6250 /* JWTClaimsSetSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DED7A4835E8730BC9C676EA83F0D8 /* JWTClaimsSetSerializer.m */; };
+		FF2F43234C5689855FDC0B1D218D9391 /* Base64-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4480E9529520EA16E26C09A40C68A3E8 /* Base64-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D6DF121619275A7FD4826C24F67044C /* PBXContainerItemProxy */ = {
+		24051F954736A0DCED64333615A12E01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
+			remoteInfo = Base64;
+		};
+		3A4A494B39CA384F6814B7ED7661BBDE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3B932EC9659D505694902B50F4EB3D8B;
 			remoteInfo = "AppAuth-AppAuthCore_Privacy";
 		};
-		2839A931E501559CC32DF1E06BD8F7EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 278B43106880C1E6AFC7C366F81FDE46;
-			remoteInfo = "vantiq-ui-ios";
-		};
-		2A8B331FF3AECE235F89D00E8745E7B6 /* PBXContainerItemProxy */ = {
+		5678D3B4F4851CEC7E7934C1E525EFF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = ABFC5AC5B9324A17183D52A4E937FCF7;
 			remoteInfo = "Pods-vantiq-ui-ios_Example";
 		};
-		8AE97341E3BE0D4571B9FF02547531C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F95BD6B7EBE4B40A06D0F914262CA972;
-			remoteInfo = JWT;
-		};
-		8EB96311E9CE1060B7AB0FEF5FFBBC62 /* PBXContainerItemProxy */ = {
+		5A00080CF1D4B817CBCEC3364D3FEF27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5C642AA10FB29936669CC269F42079C6;
 			remoteInfo = AppAuth;
 		};
-		9C0E2483B21A6D3C4412C18B0C557F3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5C642AA10FB29936669CC269F42079C6;
-			remoteInfo = AppAuth;
-		};
-		B24FF42B3FDA57EEFBD5CB8678317B62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C75595ADD357937CE06647814FE10FFF;
-			remoteInfo = "vantiq-sdk-ios";
-		};
-		B6E9F07814A22C7A3D1C1D5D367DDA3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
-			remoteInfo = Base64;
-		};
-		CE2EE594A1EFD3F4A2BF58454A946CC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
-			remoteInfo = Base64;
-		};
-		F004DAA753726155A720865D97E592F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
-			remoteInfo = Base64;
-		};
-		F85EABE7C5C6DA1249C76397606935D6 /* PBXContainerItemProxy */ = {
+		AAC2E59B8CC9951E7C3B39E03CD5836B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F95BD6B7EBE4B40A06D0F914262CA972;
 			remoteInfo = JWT;
 		};
-		FD35922E261EF073ED7A8F94A3F8A636 /* PBXContainerItemProxy */ = {
+		B581F0CAC0EE9C590EAE3E25A767CD26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C642AA10FB29936669CC269F42079C6;
+			remoteInfo = AppAuth;
+		};
+		C504C7F0002F15A5C9C0F716E7680FD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C75595ADD357937CE06647814FE10FFF;
 			remoteInfo = "vantiq-sdk-ios";
+		};
+		D1AA9AAE6608110E662DFEE9955D9158 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
+			remoteInfo = Base64;
+		};
+		D1C5BF1B3D238EAFC58973DC3F8C58CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 278B43106880C1E6AFC7C366F81FDE46;
+			remoteInfo = "vantiq-ui-ios";
+		};
+		E8CC99685BFFF47DDEDCB76C89874584 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C75595ADD357937CE06647814FE10FFF;
+			remoteInfo = "vantiq-sdk-ios";
+		};
+		F7D1995D3B669647AEECA40920FAD8E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB2B17EEE15C8E869A37C1514F4D378E;
+			remoteInfo = Base64;
+		};
+		FE94519AE57CE8C63E2CD1E29DE8EE37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F95BD6B7EBE4B40A06D0F914262CA972;
+			remoteInfo = JWT;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -255,7 +255,6 @@
 		0CFB17B710D46E721000F5D03235934C /* OIDServiceDiscovery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDServiceDiscovery.h; path = Sources/AppAuthCore/OIDServiceDiscovery.h; sourceTree = "<group>"; };
 		0D65FC28852EEBC36FC3D200DD097963 /* OIDExternalUserAgentCatalyst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDExternalUserAgentCatalyst.m; path = Sources/AppAuth/iOS/OIDExternalUserAgentCatalyst.m; sourceTree = "<group>"; };
 		10864C53F80EDF7926E9AE881A8059EC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		1107D5B0B867E6DCE765F42299C6F61D /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		12BF5752C7240F763C0869C512639654 /* JWT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWT.h; path = Classes/JWT.h; sourceTree = "<group>"; };
 		140BC5575FB09BCF57C47D3CA7785229 /* _object.scss */ = {isa = PBXFileReference; includeInIndex = 1; name = _object.scss; path = docs/css/scss/_object.scss; sourceTree = "<group>"; };
 		15D64621193C7E6F43B7257183DCB3B5 /* OIDIDToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDIDToken.h; path = Sources/AppAuthCore/OIDIDToken.h; sourceTree = "<group>"; };
@@ -290,7 +289,6 @@
 		3C880053ED06F63C87783BF1C00DF968 /* _index.scss */ = {isa = PBXFileReference; includeInIndex = 1; name = _index.scss; path = docs/css/scss/_index.scss; sourceTree = "<group>"; };
 		3CE767048AF3169486B89E4393BF5ACD /* OIDAuthState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDAuthState.m; path = Sources/AppAuthCore/OIDAuthState.m; sourceTree = "<group>"; };
 		3E61CBA40940662F2B10FBEF3BE71558 /* WebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = "vantiq-ui-ios/Classes/WebViewController.m"; sourceTree = "<group>"; };
-		3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3FD1B4C1246D643E9476438C28048FA8 /* AppAuth */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AppAuth; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4117879398A1A377226BD41C5CD2856B /* OIDTokenUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDTokenUtilities.m; path = Sources/AppAuthCore/OIDTokenUtilities.m; sourceTree = "<group>"; };
 		41474FF570DF9EA5D003ED66C096EDEF /* JWTAlgorithmFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JWTAlgorithmFactory.m; path = Classes/Algorithms/Base/JWTAlgorithmFactory.m; sourceTree = "<group>"; };
@@ -320,6 +318,7 @@
 		55A0D44D67155B6D8BE5EF39BFE1CAD4 /* Pods-vantiq-ui-ios_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-vantiq-ui-ios_Example.modulemap"; sourceTree = "<group>"; };
 		5697BF121FA7794127E658BE8C0C8C8C /* OIDAuthorizationService+IOS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OIDAuthorizationService+IOS.m"; path = "Sources/AppAuth/iOS/OIDAuthorizationService+IOS.m"; sourceTree = "<group>"; };
 		5703892112E2E1005A5940D64319D9B4 /* vantiq-sdk-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "vantiq-sdk-ios-Info.plist"; sourceTree = "<group>"; };
+		5AEB3E547368BA9AA2D3BE1033688DE0 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		5B171CBEAEBE9F3A4A34F9113E57622C /* Pods-vantiq-ui-ios_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-vantiq-ui-ios_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5DE7EC5297FF1CC247F14CCCBB9146EE /* JWTRSAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWTRSAlgorithm.h; path = Classes/Algorithms/RSFamily/JWTRSAlgorithm.h; sourceTree = "<group>"; };
 		5F56F714CEA20C20330EE83112FACF7C /* OIDAuthorizationService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDAuthorizationService.h; path = Sources/AppAuthCore/OIDAuthorizationService.h; sourceTree = "<group>"; };
@@ -328,7 +327,6 @@
 		605567B1F6A585A1B36E9DF8B89A1CAF /* JWT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWT.debug.xcconfig; sourceTree = "<group>"; };
 		614AA027AFC6D3BB79D27C778D14582E /* OIDResponseTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDResponseTypes.h; path = Sources/AppAuthCore/OIDResponseTypes.h; sourceTree = "<group>"; };
 		6236E5DDF17D2CD7C1591720B0CDBB61 /* JWTAlgorithmHS256.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWTAlgorithmHS256.h; path = Classes/Algorithms/HSFamily/JWTAlgorithmHS256.h; sourceTree = "<group>"; };
-		6286E219A8FE0745A0E7F8AF9051D8BB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		64276196D0333F4D46C4A267F9CDC387 /* Pods-vantiq-ui-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-vantiq-ui-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		688C2AEEC0110D342C7D508C8DECEED4 /* JSONUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONUtilities.h; path = "vantiq-ui-ios/Classes/JSONUtilities.h"; sourceTree = "<group>"; };
 		6A0CC7CAE77D82DE9E2D72E0E5813E9C /* JWTCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JWTCoding.m; path = Classes/Coding/JWTCoding.m; sourceTree = "<group>"; };
@@ -395,11 +393,13 @@
 		B1303DFFEF1286E3336DF24B93401B29 /* AppAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppAuth.modulemap; sourceTree = "<group>"; };
 		B13776069FC833A9EEAF20E36F7271FB /* vantiq-ui-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "vantiq-ui-ios.modulemap"; sourceTree = "<group>"; };
 		B2C2ED9572779CCE844AB6B80F6D6964 /* JWTAlgorithmNone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JWTAlgorithmNone.m; path = Classes/Algorithms/Base/JWTAlgorithmNone.m; sourceTree = "<group>"; };
+		B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B8B27E2EE921137A9690CDB49B7E9F34 /* OIDURLQueryComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDURLQueryComponent.m; path = Sources/AppAuthCore/OIDURLQueryComponent.m; sourceTree = "<group>"; };
 		B8B2E9DA22279053980197770A4DF050 /* JWTClaimsSetVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JWTClaimsSetVerifier.h; path = Classes/ClaimSet/JWTClaimsSetVerifier.h; sourceTree = "<group>"; };
 		B8DF420E333605E7E94308A4CA3BC296 /* OIDEndSessionResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDEndSessionResponse.m; path = Sources/AppAuthCore/OIDEndSessionResponse.m; sourceTree = "<group>"; };
 		BB4F08D2C900D1212AA7948D945DA935 /* OIDScopeUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDScopeUtilities.m; path = Sources/AppAuthCore/OIDScopeUtilities.m; sourceTree = "<group>"; };
 		BC6E4C904193E92E450CF70F259128A8 /* JWT-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JWT-Info.plist"; sourceTree = "<group>"; };
+		BFB5AB833881FFDD7612F8513454A129 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		C2A70B59EB553D9283E083EF19A01EB2 /* OIDAuthStateChangeDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDAuthStateChangeDelegate.h; path = Sources/AppAuthCore/OIDAuthStateChangeDelegate.h; sourceTree = "<group>"; };
 		C9EB1DD51D1D83921282F51908016313 /* JWTAlgorithmHS512.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JWTAlgorithmHS512.m; path = Classes/Algorithms/HSFamily/JWTAlgorithmHS512.m; sourceTree = "<group>"; };
 		CEBD22280FC79B77016E1FCFF2902541 /* OIDAuthorizationRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OIDAuthorizationRequest.m; path = Sources/AppAuthCore/OIDAuthorizationRequest.m; sourceTree = "<group>"; };
@@ -448,68 +448,68 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B63FEA3512A7600BEBD680C476193CA /* Frameworks */ = {
+		00B9CB2D101C8CACF6CD1430DA222000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C510183D95758426243968E8E625EB25 /* Foundation.framework in Frameworks */,
-				DDB09151B497C643E7920241112583E5 /* Security.framework in Frameworks */,
+				423F8E2CFAAC00F9A1FCD5E6DFB88152 /* Foundation.framework in Frameworks */,
+				1EC0765AD0F6F5D86CE5EE8020E22C0F /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F3B410820421DA0C9294D4A1FC5E628 /* Frameworks */ = {
+		137831964B55DE1686F59A43FC6B67B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F688454CB7276BA6C33CF1074914C9B /* Foundation.framework in Frameworks */,
-				BF6A69C9CFE70691FF16634EAEA76564 /* SafariServices.framework in Frameworks */,
+				9B10FE4FCD0641E16799ACC6CFBE84C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C7DCEBBE8DC377B26874B7E8A22B666 /* Frameworks */ = {
+		14B069D1B69D3AC986961741CEA94D19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2203A2932D6ED9FADA50B908ADCC4C0 /* Foundation.framework in Frameworks */,
+				66269C979ED1F273889A43F4186F11CB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D5E54F7F18CCC6A15FEDFD3D3FABCFA /* Frameworks */ = {
+		21DB10EEBC8DC5EEA2315C635E04B0A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FAB78EAF873D23108277AFFA7261923 /* Foundation.framework in Frameworks */,
+				616F35C0F95D50528530FF3C55B526E4 /* Foundation.framework in Frameworks */,
+				A58FB688482ACD73435ADD18C0F0A3BB /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9FE3A9725FE44190F628315E42606DF0 /* Frameworks */ = {
+		7D66F52532A0863FC5D6171428A700F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40798AE45DFA38D1C4564D0401157226 /* Foundation.framework in Frameworks */,
+				7FA13FD4916F80D41A8C6F1535BBFE9C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A58FD1F4706E0AA82049FED6328D7AFF /* Frameworks */ = {
+		CC75EF77E0E9C9A1719383802303F7E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9A25E9FD20BEEBB3FB8BB2DE5FC7443 /* Foundation.framework in Frameworks */,
+				394301A665422CE5C5E97B51E07FA69E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2FA73C175755D17B2F9A631BF5722D9 /* Frameworks */ = {
+		DE818B076C20378339AAFFB77391FFD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858FD0F47286E209A5F81FF07F52F28A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E994D21E32A1A07176745DCED63DED54 /* Frameworks */ = {
+		E15E7BB64ABA6239B597D887CDAC11E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336FF5A8E5879C636313DB8B8C526133 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,9 +519,19 @@
 		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				114BAA123191544C7AD4F79C847162E7 /* iOS */,
+				0793280BBF166F6EC3E146D3703445D7 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0793280BBF166F6EC3E146D3703445D7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B2D4AE6507C72BAA43D2E45199B9BD47 /* Foundation.framework */,
+				5AEB3E547368BA9AA2D3BE1033688DE0 /* SafariServices.framework */,
+				BFB5AB833881FFDD7612F8513454A129 /* Security.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		081BB454B39C06E557D7053E6FE9DF8B /* Resources */ = {
@@ -530,16 +540,6 @@
 				51D574F169877CEE51D7A6D3E0B73BB2 /* PrivacyInfo.xcprivacy */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		114BAA123191544C7AD4F79C847162E7 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3F30DDCBFA3B286AD855C4187D8682F4 /* Foundation.framework */,
-				1107D5B0B867E6DCE765F42299C6F61D /* SafariServices.framework */,
-				6286E219A8FE0745A0E7F8AF9051D8BB /* Security.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		1AA7F8E93FD09E0192F970A7E5B2DE56 /* AppAuth */ = {
@@ -918,124 +918,124 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1515E461172873D741E019E6C50EAE74 /* Headers */ = {
+		08A35E67EF6FD6D7D127656988B355B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB9E197A287A359A3481493701A11030 /* Base64-umbrella.h in Headers */,
-				9F2EFA8C68143EF4839F790170243F48 /* MF_Base64Additions.h in Headers */,
+				B493366B89796C702FB967D492B46CEF /* Vantiq.h in Headers */,
+				50E2DDC7AED6124B9D2B71515946CAC5 /* vantiq-sdk-ios-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		204D5D34B8D1C910668E35E933C5E4DB /* Headers */ = {
+		218261834BD92E49F6E34E45ECE8614E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				289F7657B5CC2918C4541D26AE185E54 /* Pods-vantiq-ui-ios_Tests-umbrella.h in Headers */,
+				B07819722CB2B27EDAAF792A98A9CC98 /* FancyDate.h in Headers */,
+				C0EEE44B4EB0C54F6BFF2780F3A506F7 /* JSONUtilities.h in Headers */,
+				EA19523C395959C202992835862CE528 /* KeychainItemWrapper.h in Headers */,
+				EF45FF2C433BBB0C7A60AA01F7CF8AD5 /* LastActive.h in Headers */,
+				06F1278D4F95C3AE9B33BB04FE9EB944 /* LocationUtilities.h in Headers */,
+				13EE71BDD4275F86F7A8D4F673A6D6A7 /* vantiq-ui-ios-umbrella.h in Headers */,
+				C81D53D9E807648BC41C68CEBAC37D97 /* VantiqUI.h in Headers */,
+				6F549E0F575D0595D77C4F52C137D804 /* WebViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48A1F843D5BF71673B716DD188210E92 /* Headers */ = {
+		398292D48BB20B2E85E28D264DA758C1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9901565B4BA3E2BAB551C8FF633796CD /* AppAuth.h in Headers */,
-				98940975CA7FD0211195CFFFA75F21B2 /* AppAuth-umbrella.h in Headers */,
-				4C584CA7D6319D47EB3624BE484676C1 /* AppAuthCore.h in Headers */,
-				46C324522B26025BB8E58C9861A218CD /* OIDAuthorizationRequest.h in Headers */,
-				702F4B2C0D18B950EB3E747828B5FC50 /* OIDAuthorizationResponse.h in Headers */,
-				329FD409C5A67DC3BE9E28E93E7A55DB /* OIDAuthorizationService.h in Headers */,
-				32CE2ED8B8441A3CB8A513C6A1505D89 /* OIDAuthorizationService+IOS.h in Headers */,
-				8E06A2EB7E4BD5B4BCBB5049D0FFC9AD /* OIDAuthState.h in Headers */,
-				ECA8B13BAE382716E1BA8CB8E373378B /* OIDAuthState+IOS.h in Headers */,
-				5AD7C81F358865EEB5A3A226A45A4FEF /* OIDAuthStateChangeDelegate.h in Headers */,
-				EC9C12890CF3006B2B6D2AB2BC26D057 /* OIDAuthStateErrorDelegate.h in Headers */,
-				B8E22310EBE9C3AF5AD9938DFB2D8E89 /* OIDClientMetadataParameters.h in Headers */,
-				474EC8A6B61E91F8E40BD14A785A8685 /* OIDDefines.h in Headers */,
-				4A586ADA41B07B9F6241DE1BF8DCE24C /* OIDEndSessionRequest.h in Headers */,
-				0054C0C639E0A5E5C3CF94F28C53F29A /* OIDEndSessionResponse.h in Headers */,
-				BDBBC3336AB93E577E626491FE566E8F /* OIDError.h in Headers */,
-				A610D8E99FAA24198282686004E0F638 /* OIDErrorUtilities.h in Headers */,
-				2646A02B776E232E79831F093663E6C7 /* OIDExternalUserAgent.h in Headers */,
-				73C5B3DD8FE06281A3B2EB42A592FBCD /* OIDExternalUserAgentCatalyst.h in Headers */,
-				F4BB88D2C1266429CB931BA9F2FC2935 /* OIDExternalUserAgentIOS.h in Headers */,
-				5A192D64055F796420A9D63926A273E0 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */,
-				8404A03AF819708FE5CF8DB7C5AD263F /* OIDExternalUserAgentRequest.h in Headers */,
-				B5E25696BEFD5775AA9BFF956EF4458A /* OIDExternalUserAgentSession.h in Headers */,
-				B5A0A8E6B3749281B9CD90B225E244A6 /* OIDFieldMapping.h in Headers */,
-				C611628DF90D56F44C10C436416F37F7 /* OIDGrantTypes.h in Headers */,
-				29241B2BB72959C159BDCEE52B6B8805 /* OIDIDToken.h in Headers */,
-				BDBA1A77B058C37101F19BD48BA7A5D1 /* OIDRegistrationRequest.h in Headers */,
-				958EAE1E90C473F5E1A01701F9602CA3 /* OIDRegistrationResponse.h in Headers */,
-				287DDAF293B5DD940AB04DF7842B5A7C /* OIDResponseTypes.h in Headers */,
-				BF219DF08B3E37A143C9E3E5D46360AA /* OIDScopes.h in Headers */,
-				2DBF25B31DD495FF81FC90CEBAD80176 /* OIDScopeUtilities.h in Headers */,
-				D5BC3548DB4A2967F9039DDBF119A98A /* OIDServiceConfiguration.h in Headers */,
-				3694CE494B6DF0840A1B6FE8DC14F24F /* OIDServiceDiscovery.h in Headers */,
-				702FE7B20130585BD2436525E870DA92 /* OIDTokenRequest.h in Headers */,
-				909DDE0E831D6401C3C6C4770EE11BE9 /* OIDTokenResponse.h in Headers */,
-				BDAE22D0BB9B9948B20321702ED3B981 /* OIDTokenUtilities.h in Headers */,
-				A6997288D5C505CE79297B7A4F817A67 /* OIDURLQueryComponent.h in Headers */,
-				547E9E44086F1D7FA62C4E6A2F065F44 /* OIDURLSessionProvider.h in Headers */,
+				4B16FBB5DF4F21EE94A061049338F04F /* JWT.h in Headers */,
+				2B71890210594CFF0C78E1B1000DA531 /* JWT-umbrella.h in Headers */,
+				0EA59E6C3EEF9587F8A56CC80AC45B4B /* JWTAlgorithm.h in Headers */,
+				C5DC14D73257F63C33B12624E51D946B /* JWTAlgorithmDataHolder.h in Headers */,
+				29AB25D47B2FC317CA095B72D090D898 /* JWTAlgorithmDataHolderChain.h in Headers */,
+				DF1499DFA31C62564691494A238FD573 /* JWTAlgorithmFactory.h in Headers */,
+				8BB30F779CDD8DFCCAB19FF2A7CCC641 /* JWTAlgorithmHS256.h in Headers */,
+				3A0E2A907AED4A2C70B9BE2361BAFCE7 /* JWTAlgorithmHS384.h in Headers */,
+				00FA8327F2C9FBAB72B070EB4EF11C70 /* JWTAlgorithmHS512.h in Headers */,
+				80B436DC38851AEB73BA8971374A5141 /* JWTAlgorithmHSBase.h in Headers */,
+				857D9634F3F6185DEEACDDAB417B913F /* JWTAlgorithmNone.h in Headers */,
+				849DF319425DE0DA9A54ACDDD54D0972 /* JWTAlgorithmRSBase.h in Headers */,
+				D92FEED2AAB405AFD80C24BEBCE79E03 /* JWTBase64Coder.h in Headers */,
+				32523D7215A49ECB5A12502349F68046 /* JWTClaim.h in Headers */,
+				125E1FC1E44FC3729CC5924B8984326B /* JWTClaimsSet.h in Headers */,
+				4BCE70145910BA1538AE564B2AD8FE29 /* JWTClaimsSetSerializer.h in Headers */,
+				A39AEE2F6CD9ADE5EC7D43BD3F29E1A7 /* JWTClaimsSetVerifier.h in Headers */,
+				9816D1DF1A3E5925894D3845244BC5C7 /* JWTCoding.h in Headers */,
+				6897F779740E073A0A4FEEAB5F3C265B /* JWTDeprecations.h in Headers */,
+				8AB9F68F34E8ED4A60A611D3FEA75A45 /* JWTRSAlgorithm.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D2DB21978B55B609E5074C2E5102D4B /* Headers */ = {
+		6842F268E0205B92C55BFB87D14979B8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA94BA453040CB2B383BF81F31FC1AAE /* JWT.h in Headers */,
-				13ECE3A09159429776728D04B993FEB0 /* JWT-umbrella.h in Headers */,
-				83D6FA835A80F2880AF6530B5F42723E /* JWTAlgorithm.h in Headers */,
-				09B607357E73A14ACB97ABB30B590CE6 /* JWTAlgorithmDataHolder.h in Headers */,
-				BCD9E2A2CCAEF03F610D95840FA8A12F /* JWTAlgorithmDataHolderChain.h in Headers */,
-				F46316F6EA1F91CAD0C567D85DD0A872 /* JWTAlgorithmFactory.h in Headers */,
-				AA5CD007CF31F8BFA6B1662E9D5DDD4A /* JWTAlgorithmHS256.h in Headers */,
-				BDE652033A1450E512E9C7F81D2A2B56 /* JWTAlgorithmHS384.h in Headers */,
-				D328A8EB7B35E9D9D82162DCAA73FFA5 /* JWTAlgorithmHS512.h in Headers */,
-				ADFE8F952AD7E6F48A28AF81A518B684 /* JWTAlgorithmHSBase.h in Headers */,
-				A052A29186E629813AD41633B35173F8 /* JWTAlgorithmNone.h in Headers */,
-				455976DBBA035E9A967E7AF6252ED4E0 /* JWTAlgorithmRSBase.h in Headers */,
-				DBA1860C2885652ACC675D7B492C5105 /* JWTBase64Coder.h in Headers */,
-				231C1D51F721DE0B5302BE9322F06CD2 /* JWTClaim.h in Headers */,
-				E8716D99205FD5247FF94664C3059A5F /* JWTClaimsSet.h in Headers */,
-				446E1D03EEE5BBCCAFB1D220190C5E19 /* JWTClaimsSetSerializer.h in Headers */,
-				E4E1FC5FCC44671724D66E7D91C74A75 /* JWTClaimsSetVerifier.h in Headers */,
-				07F7D38ECA6E2B962EA86710FF559B67 /* JWTCoding.h in Headers */,
-				8F90D6D7DF6B997451D2C26FFA05BB79 /* JWTDeprecations.h in Headers */,
-				32E64CD2BE3E49D6BAD65F53A38912A4 /* JWTRSAlgorithm.h in Headers */,
+				FA84ECFE7AC138E673977EAB24B6FF4E /* Pods-vantiq-ui-ios_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA8F71F03EE27B713F9BB89356B15121 /* Headers */ = {
+		74B05F1B5D2E551510561737BCF1DA57 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E826475C12672B1A934B60963B6DEE0D /* FancyDate.h in Headers */,
-				F0D639612CD20AC5986CA93233BD986A /* JSONUtilities.h in Headers */,
-				107264E1793909A20B9B04E4EB142FC9 /* KeychainItemWrapper.h in Headers */,
-				6824CF5DC4CE6DE2D99C9C1EB6F64CF6 /* LastActive.h in Headers */,
-				0570C62CF8AC15B066DAB7DAD283B8BA /* LocationUtilities.h in Headers */,
-				E65C90118743DFAED581D7AFB70DF3A4 /* vantiq-ui-ios-umbrella.h in Headers */,
-				C0C884995F7B853A17B3A59295E76A2E /* VantiqUI.h in Headers */,
-				B9FD2C49551207757DE4FC9407F26F98 /* WebViewController.h in Headers */,
+				FF2F43234C5689855FDC0B1D218D9391 /* Base64-umbrella.h in Headers */,
+				269D9070FBF1D5B078694DB6AEDE12B1 /* MF_Base64Additions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1E6D53D471C6074A43734167577BFAD /* Headers */ = {
+		78B70A8AE4FE2E5C0CE7CA6C06231F1B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C6FC8F3D2F70E245A85CC4D761B13CC /* Pods-vantiq-ui-ios_Example-umbrella.h in Headers */,
+				A6E66D87B99E33CFC884867111A78A6B /* Pods-vantiq-ui-ios_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF8D0E9EEFFA1A688D586CFA6289289F /* Headers */ = {
+		F3A4229B8C5AC1CFCCBE4D98C895116C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3AD63DB7BF8298CFCB1B2FBFC7366D /* Vantiq.h in Headers */,
-				06BD276662FFEC12928104AC5D1B2C3D /* vantiq-sdk-ios-umbrella.h in Headers */,
+				D3F95D81B933EE05BE11B4B1D2BF0ADD /* AppAuth.h in Headers */,
+				3B7AAAB356FC81C6565BBE6938CE6B70 /* AppAuth-umbrella.h in Headers */,
+				AEEF21E567FE4366C7624057B7976D2C /* AppAuthCore.h in Headers */,
+				7FFF93B0637FEE76FEED6D132B25D213 /* OIDAuthorizationRequest.h in Headers */,
+				D33A70B5F3D101DFA5FC2BC014E5D8F0 /* OIDAuthorizationResponse.h in Headers */,
+				DA8D91B62FEB7F8999C7B01EBB430471 /* OIDAuthorizationService.h in Headers */,
+				DD1F22E70A8754D0E92B7F6387B7ACB1 /* OIDAuthorizationService+IOS.h in Headers */,
+				C88CA6721406C72E6EEDDB736B97A434 /* OIDAuthState.h in Headers */,
+				A4FC5C63C1C49CDF77A7B3EACF06AF97 /* OIDAuthState+IOS.h in Headers */,
+				EDC79CEE96B97E71AB7004D2400431E9 /* OIDAuthStateChangeDelegate.h in Headers */,
+				D113A464B8F95A4849DF94B4D300A4D3 /* OIDAuthStateErrorDelegate.h in Headers */,
+				587B88BE045B5034B5EF313D15805CAD /* OIDClientMetadataParameters.h in Headers */,
+				D1F0123A32394CFE85744DECB6A68514 /* OIDDefines.h in Headers */,
+				5E0FE034C3020FF69E6DFFFBD40510C9 /* OIDEndSessionRequest.h in Headers */,
+				129F5D71C96536B80AA2D80384FE8DB4 /* OIDEndSessionResponse.h in Headers */,
+				11FB9C8FCEADC84542F07AF822B9A11D /* OIDError.h in Headers */,
+				5328EECFC32259196096A8B6387F42B8 /* OIDErrorUtilities.h in Headers */,
+				2F8CA8830F8BBF18ABABA11F869C6D99 /* OIDExternalUserAgent.h in Headers */,
+				CF238A6BD005718699B81801BE0198CE /* OIDExternalUserAgentCatalyst.h in Headers */,
+				B05508F9764D4F1672936648A44B95DB /* OIDExternalUserAgentIOS.h in Headers */,
+				A38EEF53871F8AAAD0429E1DF4FCA1CE /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */,
+				0700E7FBEAE5143E22AFCC6DFAC822FA /* OIDExternalUserAgentRequest.h in Headers */,
+				7C1E0438E51364B4CEAEE7B51BBBDA42 /* OIDExternalUserAgentSession.h in Headers */,
+				71981EE53197200543C53BE7423BB89A /* OIDFieldMapping.h in Headers */,
+				F399293EE2154A2159E97EF9D807F510 /* OIDGrantTypes.h in Headers */,
+				4F5F702E9DFEA81F4EC7F0990F3ED184 /* OIDIDToken.h in Headers */,
+				8B98690B06CB078B7D87310A327A4CA3 /* OIDRegistrationRequest.h in Headers */,
+				B387DA1A90AABE851EE27F0CEF53496D /* OIDRegistrationResponse.h in Headers */,
+				7039F257E6ABF5806655CBE2AD2E9531 /* OIDResponseTypes.h in Headers */,
+				D83AF4E43CC0482FB69CD41BDF219072 /* OIDScopes.h in Headers */,
+				1E86A782F818F06FC3F4E579B8BD61F1 /* OIDScopeUtilities.h in Headers */,
+				46F18AAA50A0315D3DCA99F9A9117F05 /* OIDServiceConfiguration.h in Headers */,
+				6C15208410D419482CA29F64A243F03A /* OIDServiceDiscovery.h in Headers */,
+				1A0ADDD9FE5AD192B994832CCE476F14 /* OIDTokenRequest.h in Headers */,
+				408DA46FD224E481EFBB0CEBF72506E9 /* OIDTokenResponse.h in Headers */,
+				AA2439BAA2E4174F49F223579F4D8AC5 /* OIDTokenUtilities.h in Headers */,
+				13DF559CFEB551A762CE28734FBCA6BC /* OIDURLQueryComponent.h in Headers */,
+				9430B5316DA2BFDCBA543BD10F999FF1 /* OIDURLSessionProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,20 +1044,20 @@
 /* Begin PBXNativeTarget section */
 		278B43106880C1E6AFC7C366F81FDE46 /* vantiq-ui-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEF488870F46A7250A328A120457D4FF /* Build configuration list for PBXNativeTarget "vantiq-ui-ios" */;
+			buildConfigurationList = 0CD2225237B1B73F959CF0A944D9DFE3 /* Build configuration list for PBXNativeTarget "vantiq-ui-ios" */;
 			buildPhases = (
-				BA8F71F03EE27B713F9BB89356B15121 /* Headers */,
-				353E35F42E905154246114BDFA08A8D6 /* Sources */,
-				7D5E54F7F18CCC6A15FEDFD3D3FABCFA /* Frameworks */,
-				2B0F11CE35C822CE540F20C3CA308BA2 /* Resources */,
+				218261834BD92E49F6E34E45ECE8614E /* Headers */,
+				505E2086349F2C1CF2B16998CC8093E6 /* Sources */,
+				14B069D1B69D3AC986961741CEA94D19 /* Frameworks */,
+				263DDC3BA7EB9DD318D6C82FCEA816ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6FC059FB1B1E0432C336B1E4975D2AD0 /* PBXTargetDependency */,
-				7E5628789ED258AE9659EC9D530B7CAC /* PBXTargetDependency */,
-				2D3EBE5BF8708BA7D83F022E0C7F6C89 /* PBXTargetDependency */,
-				15C85B865AAE7AD6BAECC714417DA053 /* PBXTargetDependency */,
+				69A1C93FF790C8D5BA70AA0EDA5736C1 /* PBXTargetDependency */,
+				0CC4DF9123A83269216255F7125B97B9 /* PBXTargetDependency */,
+				BA3E4572265B4D55B860174C13874266 /* PBXTargetDependency */,
+				5040D86A04390EED5F8DE3BA1C18CAB6 /* PBXTargetDependency */,
 			);
 			name = "vantiq-ui-ios";
 			productName = vantiq_ui_ios;
@@ -1066,17 +1066,17 @@
 		};
 		3A95B46BDFB55DE4B9B79906C4A35CF8 /* Pods-vantiq-ui-ios_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C05A2B14D73DF0058ACD4AC7C25C877 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Tests" */;
+			buildConfigurationList = FBCDAAF464F250C290955EB6FABD3B63 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Tests" */;
 			buildPhases = (
-				204D5D34B8D1C910668E35E933C5E4DB /* Headers */,
-				98C64A0372A2009729C8B48F7AF60F2F /* Sources */,
-				3C7DCEBBE8DC377B26874B7E8A22B666 /* Frameworks */,
-				04ADCDDFA4FC282D009C475D3E21CF68 /* Resources */,
+				78B70A8AE4FE2E5C0CE7CA6C06231F1B /* Headers */,
+				634436981552DA7B8DC45385D5D573D9 /* Sources */,
+				DE818B076C20378339AAFFB77391FFD1 /* Frameworks */,
+				D5F19C7E107B2B40E5EA4D1A4AB2C842 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D0BFB00182CBDA396B326F22449993CB /* PBXTargetDependency */,
+				2E55C65FD8F6069B374C47EA300BCE37 /* PBXTargetDependency */,
 			);
 			name = "Pods-vantiq-ui-ios_Tests";
 			productName = Pods_vantiq_ui_ios_Tests;
@@ -1085,11 +1085,11 @@
 		};
 		3B932EC9659D505694902B50F4EB3D8B /* AppAuth-AppAuthCore_Privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6887C4ACA47AB87060C2D66E827B655B /* Build configuration list for PBXNativeTarget "AppAuth-AppAuthCore_Privacy" */;
+			buildConfigurationList = 10AC0FA1F2017F50CE538B5041D776EF /* Build configuration list for PBXNativeTarget "AppAuth-AppAuthCore_Privacy" */;
 			buildPhases = (
-				6B483617125D1F01C56F8197B4F19338 /* Sources */,
-				D2FA73C175755D17B2F9A631BF5722D9 /* Frameworks */,
-				CF98F6B71244085D3C66D23E71B2C73A /* Resources */,
+				9E483B59E8897CE28DA91CD883C4E627 /* Sources */,
+				E15E7BB64ABA6239B597D887CDAC11E2 /* Frameworks */,
+				19799968B9825AA7AA0C051E13AC2A80 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1102,17 +1102,17 @@
 		};
 		5C642AA10FB29936669CC269F42079C6 /* AppAuth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C952815B05E2FD5CA8BF5F76B5DE22B4 /* Build configuration list for PBXNativeTarget "AppAuth" */;
+			buildConfigurationList = D33590A1A41B07057C61742E882402D8 /* Build configuration list for PBXNativeTarget "AppAuth" */;
 			buildPhases = (
-				48A1F843D5BF71673B716DD188210E92 /* Headers */,
-				D7B0B74E609151DEDB19036413202AF8 /* Sources */,
-				2F3B410820421DA0C9294D4A1FC5E628 /* Frameworks */,
-				E64F294CDC02ED632C3E99F6BD64762B /* Resources */,
+				F3A4229B8C5AC1CFCCBE4D98C895116C /* Headers */,
+				826B6844FBF04008486F552DB0C53849 /* Sources */,
+				00B9CB2D101C8CACF6CD1430DA222000 /* Frameworks */,
+				83B9DE5B1E3657C91EA09C8480C98DFB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				73A01B180A63FBEBE676634ECC52A5F2 /* PBXTargetDependency */,
+				6F24B22EDAFBA42A441851F26B2809C4 /* PBXTargetDependency */,
 			);
 			name = AppAuth;
 			productName = AppAuth;
@@ -1121,21 +1121,21 @@
 		};
 		ABFC5AC5B9324A17183D52A4E937FCF7 /* Pods-vantiq-ui-ios_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9187747EC011108CA6CFBDBD780D178C /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Example" */;
+			buildConfigurationList = 600ED324C48C03E578EB100222326A25 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Example" */;
 			buildPhases = (
-				D1E6D53D471C6074A43734167577BFAD /* Headers */,
-				BF0B4B584FD09575E7FA4AD1C7E8F6DB /* Sources */,
-				A58FD1F4706E0AA82049FED6328D7AFF /* Frameworks */,
-				453973CA984719794C2763D9E22EF07A /* Resources */,
+				6842F268E0205B92C55BFB87D14979B8 /* Headers */,
+				ADA1FBB566B03C75EBC75BD3E124ADC1 /* Sources */,
+				7D66F52532A0863FC5D6171428A700F3 /* Frameworks */,
+				3C3B40025A1C4A4016F8C8EE6C3F96A7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24DAFEF4680EEEC24A49AB3196CF932E /* PBXTargetDependency */,
-				3BD8E783D8ADA07B48EF4F94C2858000 /* PBXTargetDependency */,
-				A5E5F87B37556F11521BE8FDE67F36B8 /* PBXTargetDependency */,
-				02A0597B9FADFBE93D016E855549AB84 /* PBXTargetDependency */,
-				9F1EC93F7F8B5E8D8DAF88927A37D0FC /* PBXTargetDependency */,
+				EE873D0175D04A9AC3D2BC77468AAEDD /* PBXTargetDependency */,
+				346059E5AABC6BB9ADB788B53E8BF8E3 /* PBXTargetDependency */,
+				09302B7AECAD91725365C01D78F89F79 /* PBXTargetDependency */,
+				ED878B88114E1D6B3914300D29131269 /* PBXTargetDependency */,
+				EB17B0FC3BDC48D964382D86C29CEA58 /* PBXTargetDependency */,
 			);
 			name = "Pods-vantiq-ui-ios_Example";
 			productName = Pods_vantiq_ui_ios_Example;
@@ -1144,12 +1144,12 @@
 		};
 		C75595ADD357937CE06647814FE10FFF /* vantiq-sdk-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 631D7C80D23D087831F9B112B285ECAD /* Build configuration list for PBXNativeTarget "vantiq-sdk-ios" */;
+			buildConfigurationList = F1C4861400E99590E0D6367140D3E7A9 /* Build configuration list for PBXNativeTarget "vantiq-sdk-ios" */;
 			buildPhases = (
-				DF8D0E9EEFFA1A688D586CFA6289289F /* Headers */,
-				A153AFE40B06F794686EE0AD8FFFDC38 /* Sources */,
-				E994D21E32A1A07176745DCED63DED54 /* Frameworks */,
-				EBCCC6870E98833BB2284C4C60D4FBF2 /* Resources */,
+				08A35E67EF6FD6D7D127656988B355B4 /* Headers */,
+				9CEC58BD0B5DA4CA0BA09EBC2FAD3E68 /* Sources */,
+				137831964B55DE1686F59A43FC6B67B6 /* Frameworks */,
+				06B901CF83E38FA2963E436AF8C8E6E6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1162,12 +1162,12 @@
 		};
 		DB2B17EEE15C8E869A37C1514F4D378E /* Base64 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A667531B11FC05FDE21E71B8E6A1D906 /* Build configuration list for PBXNativeTarget "Base64" */;
+			buildConfigurationList = 3089F0F84064A6C1BB471C2E487B1CD9 /* Build configuration list for PBXNativeTarget "Base64" */;
 			buildPhases = (
-				1515E461172873D741E019E6C50EAE74 /* Headers */,
-				05242DB8D25EA0992F431420A9609141 /* Sources */,
-				9FE3A9725FE44190F628315E42606DF0 /* Frameworks */,
-				BB189E495155BB15EB0E8B2F94A11CCA /* Resources */,
+				74B05F1B5D2E551510561737BCF1DA57 /* Headers */,
+				5C9A56654A2F8E87A4E696B3B786904F /* Sources */,
+				CC75EF77E0E9C9A1719383802303F7E0 /* Frameworks */,
+				F3E9BC8252DC3795C2CACBCB8133AED9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1180,17 +1180,17 @@
 		};
 		F95BD6B7EBE4B40A06D0F914262CA972 /* JWT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F67FA79963BEAAB120F5948020EFF03B /* Build configuration list for PBXNativeTarget "JWT" */;
+			buildConfigurationList = 8A21381715F22853E30F33C446F0ABBF /* Build configuration list for PBXNativeTarget "JWT" */;
 			buildPhases = (
-				7D2DB21978B55B609E5074C2E5102D4B /* Headers */,
-				F49E9ECA047DEFD98136F8963F1C7EBD /* Sources */,
-				0B63FEA3512A7600BEBD680C476193CA /* Frameworks */,
-				779A2498993DD36A516F0955092A85E2 /* Resources */,
+				398292D48BB20B2E85E28D264DA758C1 /* Headers */,
+				4951C1B4EE2FA341890790BE72E043EF /* Sources */,
+				21DB10EEBC8DC5EEA2315C635E04B0A7 /* Frameworks */,
+				EB3CFC6A48CAA6156815A6711710EF1F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F7887B970D4BDA74DE1F65F5845E581B /* PBXTargetDependency */,
+				DC92CEBF1BA8C7FC9918745D70301884 /* PBXTargetDependency */,
 			);
 			name = JWT;
 			productName = JWT;
@@ -1203,8 +1203,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 12.0";
@@ -1216,6 +1216,7 @@
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = BD59C181350C2AD8CE6967D28216408F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1233,58 +1234,58 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04ADCDDFA4FC282D009C475D3E21CF68 /* Resources */ = {
+		06B901CF83E38FA2963E436AF8C8E6E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B0F11CE35C822CE540F20C3CA308BA2 /* Resources */ = {
+		19799968B9825AA7AA0C051E13AC2A80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05B4A1AA04363502B432AAA3BD3403E /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		263DDC3BA7EB9DD318D6C82FCEA816ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		453973CA984719794C2763D9E22EF07A /* Resources */ = {
+		3C3B40025A1C4A4016F8C8EE6C3F96A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		779A2498993DD36A516F0955092A85E2 /* Resources */ = {
+		83B9DE5B1E3657C91EA09C8480C98DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C1DE31C7076EB32C252F911014C098 /* AppAuth-AppAuthCore_Privacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F19C7E107B2B40E5EA4D1A4AB2C842 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB189E495155BB15EB0E8B2F94A11CCA /* Resources */ = {
+		EB3CFC6A48CAA6156815A6711710EF1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF98F6B71244085D3C66D23E71B2C73A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				75533E3C5C1A78DBC3C8807C14D7F093 /* PrivacyInfo.xcprivacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E64F294CDC02ED632C3E99F6BD64762B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				310AEC030BEECE38DEB35C48C8238F70 /* AppAuth-AppAuthCore_Privacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EBCCC6870E98833BB2284C4C60D4FBF2 /* Resources */ = {
+		F3E9BC8252DC3795C2CACBCB8133AED9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1294,201 +1295,240 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05242DB8D25EA0992F431420A9609141 /* Sources */ = {
+		4951C1B4EE2FA341890790BE72E043EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CF600C1CDD348E9FCF26E9B23DCC218 /* Base64-dummy.m in Sources */,
-				564A05270EDDE6BE9D465D02D97E8052 /* MF_Base64Additions.m in Sources */,
+				613C301B9BCF531A378AC38040063177 /* JWT-dummy.m in Sources */,
+				A3EB9C3DF232E11761B3042B65937086 /* JWTAlgorithmDataHolder.m in Sources */,
+				C620082E7BD4A95CC713697D44C142E5 /* JWTAlgorithmDataHolderChain.m in Sources */,
+				DB34D661E4BDCB842B1203D88AECD3F7 /* JWTAlgorithmFactory.m in Sources */,
+				53E9F901DC770928992A5DD67C100A60 /* JWTAlgorithmHS256.m in Sources */,
+				177279A9B8B3E8B6593D82E29146BEB6 /* JWTAlgorithmHS384.m in Sources */,
+				364A034C39F796F6E22BBB751C0195AD /* JWTAlgorithmHS512.m in Sources */,
+				DB529F7D2A142ADE3DA2CF7CD95BD821 /* JWTAlgorithmHSBase.m in Sources */,
+				5CFB2D69AD88E93D40C64283719AAE6E /* JWTAlgorithmNone.m in Sources */,
+				14BCAD808C9073505EBC3F61FC23DCC4 /* JWTAlgorithmRSBase.m in Sources */,
+				2AF912A3FE3B67A0A76586F4EBAEB8CF /* JWTBase64Coder.m in Sources */,
+				2D899BF34031C7D0730FFF1F822128E6 /* JWTClaim.m in Sources */,
+				CA2A6A7431E23A5489D71908E677E5FD /* JWTClaimsSet.m in Sources */,
+				FDB2C8E19BF277FD572F828CD5EC6250 /* JWTClaimsSetSerializer.m in Sources */,
+				430118DD978A537E4BC75A9EAA9144DC /* JWTClaimsSetVerifier.m in Sources */,
+				2BEA925231261D82D4D360D3EEFD07CF /* JWTCoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		353E35F42E905154246114BDFA08A8D6 /* Sources */ = {
+		505E2086349F2C1CF2B16998CC8093E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6866208BE7B4E58108FFC3F230EDA77 /* FancyDate.m in Sources */,
-				C6A89D2F171799C123E193E60FA1AE61 /* JSONUtilities.m in Sources */,
-				E757F4A0037818CAF32D2E63526C080F /* KeychainItemWrapper.m in Sources */,
-				45B685C896ABFE86CC33736A0D42420B /* LastActive.m in Sources */,
-				09163892E0E6D082EDA5072CBDFA852D /* LocationUtilities.m in Sources */,
-				EA216F4C0E1E15AFC38A58AD6A04E6AE /* vantiq-ui-ios-dummy.m in Sources */,
-				FC56609B1636136A8099417380719C17 /* VantiqUI.m in Sources */,
-				56BFE7EB60C248E34485372BE0176A1C /* WebViewController.m in Sources */,
+				81174F056CAA3AC74C65BE0F0FBAC65D /* FancyDate.m in Sources */,
+				31BDBABC1A72874C106A9C971A6D321F /* JSONUtilities.m in Sources */,
+				3F55EAD3972F50167989B9C8D8705847 /* KeychainItemWrapper.m in Sources */,
+				6419E6210DD9117C42298A75A0D395E3 /* LastActive.m in Sources */,
+				2E5BBB7338D2B7193B6C2A84C3399C9F /* LocationUtilities.m in Sources */,
+				84056477AA2E1DC91ACEE085828F131B /* vantiq-ui-ios-dummy.m in Sources */,
+				A4AECAF313F328F61039FE1995FBE5C8 /* VantiqUI.m in Sources */,
+				D04F6D437DC45BC2E68FCA5E586771A9 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B483617125D1F01C56F8197B4F19338 /* Sources */ = {
+		5C9A56654A2F8E87A4E696B3B786904F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C93B03D1B9DFDA405736E71DDA059A /* Base64-dummy.m in Sources */,
+				94F7D1E734732A49B374AE0BEF685281 /* MF_Base64Additions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		634436981552DA7B8DC45385D5D573D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC21B45F72CA0F609F9D4F5A9A90921C /* Pods-vantiq-ui-ios_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		826B6844FBF04008486F552DB0C53849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03A5BB19030D5B4F647C1F62224990DC /* AppAuth-dummy.m in Sources */,
+				FD9F6D1D6FEF98B2B56473BA95C3EAC7 /* OIDAuthorizationRequest.m in Sources */,
+				991F4FF90AC6340789B2518D26E588FC /* OIDAuthorizationResponse.m in Sources */,
+				8682B96E2FECDCA68D19D3E0201C4F6B /* OIDAuthorizationService.m in Sources */,
+				4F1B7939FDF1030E68E99D13DCC1C29F /* OIDAuthorizationService+IOS.m in Sources */,
+				2E541F089DC2BB586A8D9A042BCF2B0C /* OIDAuthState.m in Sources */,
+				E99EE4085991793730ADA654BF94F756 /* OIDAuthState+IOS.m in Sources */,
+				86D0F6376197F28E07FB932B8E036550 /* OIDClientMetadataParameters.m in Sources */,
+				7442237D6AA09EC7D5C276B837C55A2A /* OIDEndSessionRequest.m in Sources */,
+				02D27692DA1ECD60DB78E33E9460670F /* OIDEndSessionResponse.m in Sources */,
+				7DE7F668D7A0544BE046C1D07D73DD4E /* OIDError.m in Sources */,
+				CFD4FF2AD9DE475FE12FDA7109C22A6F /* OIDErrorUtilities.m in Sources */,
+				A60D123D5CACBB76AF321DB31903880D /* OIDExternalUserAgentCatalyst.m in Sources */,
+				68462D63131BB656F4612EE12E555DE4 /* OIDExternalUserAgentIOS.m in Sources */,
+				AA351DB92927C342D8FD9F16FF6D1D20 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */,
+				6BB804D7E93D9968659BA6B6B1C7D4A5 /* OIDFieldMapping.m in Sources */,
+				6170E9B57C3CEF286FBEC36A4127905E /* OIDGrantTypes.m in Sources */,
+				95F3D9C574C6D76ABE168C204D0E218D /* OIDIDToken.m in Sources */,
+				4026E0C37B420EA9E2C6F2842D56D629 /* OIDRegistrationRequest.m in Sources */,
+				ADAB95829C10EB96B5C0F0DC2642437F /* OIDRegistrationResponse.m in Sources */,
+				2C7933565D5EDD5BA7D58116233CF7DD /* OIDResponseTypes.m in Sources */,
+				0A60D09EC45EFD49E5A0BEC3DCCDD88F /* OIDScopes.m in Sources */,
+				8CB00AF5E36C153F347BDFE43A9843AA /* OIDScopeUtilities.m in Sources */,
+				09D76C372F1545EB6894AE22974A39BC /* OIDServiceConfiguration.m in Sources */,
+				DCB16ED5585C4F6E4C046E7D6CDBFDCF /* OIDServiceDiscovery.m in Sources */,
+				BEC894CA0C0967AC0D87484BE1CE7950 /* OIDTokenRequest.m in Sources */,
+				9AD957E4C0F184CA89DB73C74C577042 /* OIDTokenResponse.m in Sources */,
+				A80CC8C035F3636D6FEF831DADCCBDCB /* OIDTokenUtilities.m in Sources */,
+				C79A43932B96D456A1BD8A68A037E75C /* OIDURLQueryComponent.m in Sources */,
+				36217C17012C6CA48F89F54B87CD44D9 /* OIDURLSessionProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CEC58BD0B5DA4CA0BA09EBC2FAD3E68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F5E53DD55AABF1680501E0BD4BD124 /* Vantiq.m in Sources */,
+				DC82197567B33B0738BB0F2ABA511927 /* vantiq-sdk-ios-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E483B59E8897CE28DA91CD883C4E627 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98C64A0372A2009729C8B48F7AF60F2F /* Sources */ = {
+		ADA1FBB566B03C75EBC75BD3E124ADC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFEA7C67B38B480C4E749489CF4112D3 /* Pods-vantiq-ui-ios_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A153AFE40B06F794686EE0AD8FFFDC38 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				669418AA7082B2AFF5043C4B3B55EFA7 /* Vantiq.m in Sources */,
-				864C436179C8A970E4EB1FCC0BAD1D64 /* vantiq-sdk-ios-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF0B4B584FD09575E7FA4AD1C7E8F6DB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A7C776A972CFFFB115748BB111511F8C /* Pods-vantiq-ui-ios_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7B0B74E609151DEDB19036413202AF8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FB55D390D6476E0C9CFA02D3B9BF21C /* AppAuth-dummy.m in Sources */,
-				BA3458738E257A4AA757F97E35A11692 /* OIDAuthorizationRequest.m in Sources */,
-				5F1F7BF5F9247F778ABC0E49B4E5EBDD /* OIDAuthorizationResponse.m in Sources */,
-				D352707AE0F20050D29683BB9E5924AB /* OIDAuthorizationService.m in Sources */,
-				D262BA2558D719F3B92AC1B1976C0F65 /* OIDAuthorizationService+IOS.m in Sources */,
-				0BF4B878E667471B43794AA8ABBAC231 /* OIDAuthState.m in Sources */,
-				BE74A1514F19FA40C8ECF1F46627FAC3 /* OIDAuthState+IOS.m in Sources */,
-				F168E13393F0BD81E6C12CCFEE2B2B98 /* OIDClientMetadataParameters.m in Sources */,
-				A7779F3FD47C40C24EC7A5DEB75C1DA8 /* OIDEndSessionRequest.m in Sources */,
-				5C59E4A1C457D819CD84164DF9E3C811 /* OIDEndSessionResponse.m in Sources */,
-				74FABF1F431E2FA7124F2C443312F1AE /* OIDError.m in Sources */,
-				3240253830E367917124024B7924D1E0 /* OIDErrorUtilities.m in Sources */,
-				8C99055F42D86804508A31368C303D29 /* OIDExternalUserAgentCatalyst.m in Sources */,
-				C8CCF5780C34A7F5ADFB6BBBCCECC656 /* OIDExternalUserAgentIOS.m in Sources */,
-				B5CB741980C27B0C8BF6941EE9987C19 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */,
-				82D0A19E4FB75269F7632C4FC0E8BE34 /* OIDFieldMapping.m in Sources */,
-				F3308EA7703DE079DFEF9716B4D56CB5 /* OIDGrantTypes.m in Sources */,
-				CD2FE7EC8EDDDC584FE423D0FC3B5466 /* OIDIDToken.m in Sources */,
-				4CD037BE47B7454C55C3E8EF90D0552D /* OIDRegistrationRequest.m in Sources */,
-				468E30F6129499D7C030B5DE450120ED /* OIDRegistrationResponse.m in Sources */,
-				C8B30D0D933DDCDCC7936AD7D28B5AE0 /* OIDResponseTypes.m in Sources */,
-				F61F3D9A37DE717CF85B4EDB2C96DB9A /* OIDScopes.m in Sources */,
-				B3DD978DD1222E83B7DCB6FC34C82C98 /* OIDScopeUtilities.m in Sources */,
-				5EDED647312757265F8EC47BEB25479D /* OIDServiceConfiguration.m in Sources */,
-				A5854DF23EF93721C5C9C0CE75EBF873 /* OIDServiceDiscovery.m in Sources */,
-				1BDA095FE7DE194DFF9A37775B65CD6D /* OIDTokenRequest.m in Sources */,
-				6EFF8AACDD8E9635714B8152E2A9A92C /* OIDTokenResponse.m in Sources */,
-				7173971F1C14491B8E5A7BE056995595 /* OIDTokenUtilities.m in Sources */,
-				17ADED2A03C1221197B3C3F7226C9D9A /* OIDURLQueryComponent.m in Sources */,
-				7E692CC622B3DD6DAFC2F24E0C8F26E2 /* OIDURLSessionProvider.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F49E9ECA047DEFD98136F8963F1C7EBD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1EC42C59FA97488D1B0DD4D919FF603E /* JWT-dummy.m in Sources */,
-				D30D14E4544B8647D709D5CFAE98D548 /* JWTAlgorithmDataHolder.m in Sources */,
-				CD0142772CA3E9CE56E3AB9D15B8CAF9 /* JWTAlgorithmDataHolderChain.m in Sources */,
-				1B8DBACE9955488B274DD6E8A7F2FD5D /* JWTAlgorithmFactory.m in Sources */,
-				D3053F12158EEE250DFBF551CEDCD8C5 /* JWTAlgorithmHS256.m in Sources */,
-				828A61D13ACB97E90FD8B9AED41FB3AF /* JWTAlgorithmHS384.m in Sources */,
-				90B9D482E9D3091B3E0C4E2DC7264286 /* JWTAlgorithmHS512.m in Sources */,
-				B916E3358C9D7196129B7D91DEF20BFE /* JWTAlgorithmHSBase.m in Sources */,
-				529BF808EDF831B0610E8F8A5DB1DE74 /* JWTAlgorithmNone.m in Sources */,
-				BEE3DF4E055BD3EA2D8F5B5B46C0F645 /* JWTAlgorithmRSBase.m in Sources */,
-				DFAB5596FBDC56D70CF8E4D9E01AB7A4 /* JWTBase64Coder.m in Sources */,
-				A2A23491463BECBF0E66E886896A255A /* JWTClaim.m in Sources */,
-				64C61894CF5E6B9071CA6B8E2F650EF7 /* JWTClaimsSet.m in Sources */,
-				4F9DD683F47A5FD30E322F7C4E0B6989 /* JWTClaimsSetSerializer.m in Sources */,
-				8F188432D7BB89122B733765B02CE3E4 /* JWTClaimsSetVerifier.m in Sources */,
-				00EA09EAD0519E9278DDDCFD43F990EC /* JWTCoding.m in Sources */,
+				541021D1D97A454A529AFFF30D1D08E8 /* Pods-vantiq-ui-ios_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		02A0597B9FADFBE93D016E855549AB84 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "vantiq-sdk-ios";
-			target = C75595ADD357937CE06647814FE10FFF /* vantiq-sdk-ios */;
-			targetProxy = B24FF42B3FDA57EEFBD5CB8678317B62 /* PBXContainerItemProxy */;
-		};
-		15C85B865AAE7AD6BAECC714417DA053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "vantiq-sdk-ios";
-			target = C75595ADD357937CE06647814FE10FFF /* vantiq-sdk-ios */;
-			targetProxy = FD35922E261EF073ED7A8F94A3F8A636 /* PBXContainerItemProxy */;
-		};
-		24DAFEF4680EEEC24A49AB3196CF932E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppAuth;
-			target = 5C642AA10FB29936669CC269F42079C6 /* AppAuth */;
-			targetProxy = 8EB96311E9CE1060B7AB0FEF5FFBBC62 /* PBXContainerItemProxy */;
-		};
-		2D3EBE5BF8708BA7D83F022E0C7F6C89 /* PBXTargetDependency */ = {
+		09302B7AECAD91725365C01D78F89F79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JWT;
 			target = F95BD6B7EBE4B40A06D0F914262CA972 /* JWT */;
-			targetProxy = F85EABE7C5C6DA1249C76397606935D6 /* PBXContainerItemProxy */;
+			targetProxy = FE94519AE57CE8C63E2CD1E29DE8EE37 /* PBXContainerItemProxy */;
 		};
-		3BD8E783D8ADA07B48EF4F94C2858000 /* PBXTargetDependency */ = {
+		0CC4DF9123A83269216255F7125B97B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Base64;
 			target = DB2B17EEE15C8E869A37C1514F4D378E /* Base64 */;
-			targetProxy = CE2EE594A1EFD3F4A2BF58454A946CC4 /* PBXContainerItemProxy */;
+			targetProxy = D1AA9AAE6608110E662DFEE9955D9158 /* PBXContainerItemProxy */;
 		};
-		6FC059FB1B1E0432C336B1E4975D2AD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppAuth;
-			target = 5C642AA10FB29936669CC269F42079C6 /* AppAuth */;
-			targetProxy = 9C0E2483B21A6D3C4412C18B0C557F3E /* PBXContainerItemProxy */;
-		};
-		73A01B180A63FBEBE676634ECC52A5F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AppAuth-AppAuthCore_Privacy";
-			target = 3B932EC9659D505694902B50F4EB3D8B /* AppAuth-AppAuthCore_Privacy */;
-			targetProxy = 1D6DF121619275A7FD4826C24F67044C /* PBXContainerItemProxy */;
-		};
-		7E5628789ED258AE9659EC9D530B7CAC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Base64;
-			target = DB2B17EEE15C8E869A37C1514F4D378E /* Base64 */;
-			targetProxy = B6E9F07814A22C7A3D1C1D5D367DDA3F /* PBXContainerItemProxy */;
-		};
-		9F1EC93F7F8B5E8D8DAF88927A37D0FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "vantiq-ui-ios";
-			target = 278B43106880C1E6AFC7C366F81FDE46 /* vantiq-ui-ios */;
-			targetProxy = 2839A931E501559CC32DF1E06BD8F7EA /* PBXContainerItemProxy */;
-		};
-		A5E5F87B37556F11521BE8FDE67F36B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JWT;
-			target = F95BD6B7EBE4B40A06D0F914262CA972 /* JWT */;
-			targetProxy = 8AE97341E3BE0D4571B9FF02547531C7 /* PBXContainerItemProxy */;
-		};
-		D0BFB00182CBDA396B326F22449993CB /* PBXTargetDependency */ = {
+		2E55C65FD8F6069B374C47EA300BCE37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-vantiq-ui-ios_Example";
 			target = ABFC5AC5B9324A17183D52A4E937FCF7 /* Pods-vantiq-ui-ios_Example */;
-			targetProxy = 2A8B331FF3AECE235F89D00E8745E7B6 /* PBXContainerItemProxy */;
+			targetProxy = 5678D3B4F4851CEC7E7934C1E525EFF1 /* PBXContainerItemProxy */;
 		};
-		F7887B970D4BDA74DE1F65F5845E581B /* PBXTargetDependency */ = {
+		346059E5AABC6BB9ADB788B53E8BF8E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Base64;
 			target = DB2B17EEE15C8E869A37C1514F4D378E /* Base64 */;
-			targetProxy = F004DAA753726155A720865D97E592F4 /* PBXContainerItemProxy */;
+			targetProxy = F7D1995D3B669647AEECA40920FAD8E2 /* PBXContainerItemProxy */;
+		};
+		5040D86A04390EED5F8DE3BA1C18CAB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "vantiq-sdk-ios";
+			target = C75595ADD357937CE06647814FE10FFF /* vantiq-sdk-ios */;
+			targetProxy = C504C7F0002F15A5C9C0F716E7680FD1 /* PBXContainerItemProxy */;
+		};
+		69A1C93FF790C8D5BA70AA0EDA5736C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppAuth;
+			target = 5C642AA10FB29936669CC269F42079C6 /* AppAuth */;
+			targetProxy = 5A00080CF1D4B817CBCEC3364D3FEF27 /* PBXContainerItemProxy */;
+		};
+		6F24B22EDAFBA42A441851F26B2809C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AppAuth-AppAuthCore_Privacy";
+			target = 3B932EC9659D505694902B50F4EB3D8B /* AppAuth-AppAuthCore_Privacy */;
+			targetProxy = 3A4A494B39CA384F6814B7ED7661BBDE /* PBXContainerItemProxy */;
+		};
+		BA3E4572265B4D55B860174C13874266 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JWT;
+			target = F95BD6B7EBE4B40A06D0F914262CA972 /* JWT */;
+			targetProxy = AAC2E59B8CC9951E7C3B39E03CD5836B /* PBXContainerItemProxy */;
+		};
+		DC92CEBF1BA8C7FC9918745D70301884 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Base64;
+			target = DB2B17EEE15C8E869A37C1514F4D378E /* Base64 */;
+			targetProxy = 24051F954736A0DCED64333615A12E01 /* PBXContainerItemProxy */;
+		};
+		EB17B0FC3BDC48D964382D86C29CEA58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "vantiq-ui-ios";
+			target = 278B43106880C1E6AFC7C366F81FDE46 /* vantiq-ui-ios */;
+			targetProxy = D1C5BF1B3D238EAFC58973DC3F8C58CE /* PBXContainerItemProxy */;
+		};
+		ED878B88114E1D6B3914300D29131269 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "vantiq-sdk-ios";
+			target = C75595ADD357937CE06647814FE10FFF /* vantiq-sdk-ios */;
+			targetProxy = E8CC99685BFFF47DDEDCB76C89874584 /* PBXContainerItemProxy */;
+		};
+		EE873D0175D04A9AC3D2BC77468AAEDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppAuth;
+			target = 5C642AA10FB29936669CC269F42079C6 /* AppAuth */;
+			targetProxy = B581F0CAC0EE9C590EAE3E25A767CD26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0DF2E544D531B23959F4C9BED1A8E9DA /* Release */ = {
+		076101F5F92188647C6B61245F88BB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8972266E1C90A5CD7377F5213E791354 /* Pods-vantiq-ui-ios_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		240D23A7826D5DCE05217A622674D969 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5353190D1D51829AD4D4E0499A962326 /* Pods-vantiq-ui-ios_Tests.release.xcconfig */;
 			buildSettings = {
@@ -1502,6 +1542,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Tests/Pods-vantiq-ui-ios_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1519,6 +1561,44 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		29103EE4B4E836656ACB52D6D20B9927 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6811F8BBEB2598EDBD0739FA80C591 /* AppAuth.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/AppAuth/AppAuth-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/AppAuth/AppAuth-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AppAuth/AppAuth.modulemap";
+				PRODUCT_MODULE_NAME = AppAuth;
+				PRODUCT_NAME = AppAuth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1592,7 +1672,85 @@
 			};
 			name = Debug;
 		};
-		3BC398AF58BEEBF19C1360540A73504C /* Debug */ = {
+		2D10D3DDAAC498C040B013D2ADAC34ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 605567B1F6A585A1B36E9DF8B89A1CAF /* JWT.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/JWT/JWT-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/JWT/JWT-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JWT/JWT.modulemap";
+				PRODUCT_MODULE_NAME = JWT;
+				PRODUCT_NAME = JWT;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		368721752098A42EE12A69C09707FCE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08108E2E979A3F8B498E3420B481C5F5 /* vantiq-sdk-ios.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios.modulemap";
+				PRODUCT_MODULE_NAME = vantiq_sdk_ios;
+				PRODUCT_NAME = vantiq_sdk_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C5B8E195C5B0A59DDFF849617CB1DD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1681EAA57F465AFEF5A7D9AF41C17E8 /* vantiq-ui-ios.debug.xcconfig */;
 			buildSettings = {
@@ -1605,7 +1763,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1620,6 +1781,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1627,37 +1789,20 @@
 			};
 			name = Debug;
 		};
-		63BFED5A0581A32FF1858E6E7B02298F /* Release */ = {
+		57FB504B3037A32A5573FC7A09DCA627 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF6811F8BBEB2598EDBD0739FA80C591 /* AppAuth.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AppAuth/AppAuth-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AppAuth/AppAuth-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AppAuth";
+				IBSC_MODULE = AppAuth;
+				INFOPLIST_FILE = "Target Support Files/AppAuth/ResourceBundle-AppAuthCore_Privacy-AppAuth-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/AppAuth/AppAuth.modulemap";
-				PRODUCT_MODULE_NAME = AppAuth;
-				PRODUCT_NAME = AppAuth;
+				PRODUCT_NAME = AppAuthCore_Privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -1723,7 +1868,180 @@
 			};
 			name = Release;
 		};
-		7590F8EA28FD394F058895EEA7D34D38 /* Debug */ = {
+		9590BDC8F4C91101ED162820E6B48DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4F20F611E9B9BEE1D79EF4FECE827D0 /* Base64.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Base64/Base64-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Base64/Base64-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Base64/Base64.modulemap";
+				PRODUCT_MODULE_NAME = Base64;
+				PRODUCT_NAME = Base64;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9AF7DBF409FCEE4CF82ABD6B53BBA76E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB62D1F69AE93209DE34235796B8CC8A /* vantiq-ui-ios.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios.modulemap";
+				PRODUCT_MODULE_NAME = vantiq_ui_ios;
+				PRODUCT_NAME = vantiq_ui_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ABF38DB12BC3134133B5057E92718BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2845F7317471F2FCA9C21016C0A76ABD /* AppAuth.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AppAuth";
+				IBSC_MODULE = AppAuth;
+				INFOPLIST_FILE = "Target Support Files/AppAuth/ResourceBundle-AppAuthCore_Privacy-AppAuth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = AppAuthCore_Privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		C013EC5E0D66706DC4EE2BE25A0D7121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22A58A25B8641406D747959629490A4A /* JWT.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/JWT/JWT-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/JWT/JWT-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JWT/JWT.modulemap";
+				PRODUCT_MODULE_NAME = JWT;
+				PRODUCT_NAME = JWT;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C45D90189A9FC7E0F254A7F95298E63C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C38739909343089237DE7FAB9F093A /* vantiq-sdk-ios.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios.modulemap";
+				PRODUCT_MODULE_NAME = vantiq_sdk_ios;
+				PRODUCT_NAME = vantiq_sdk_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CAE794E009529A1AA2BA14F276444167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64276196D0333F4D46C4A267F9CDC387 /* Pods-vantiq-ui-ios_Tests.debug.xcconfig */;
 			buildSettings = {
@@ -1737,6 +2055,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Tests/Pods-vantiq-ui-ios_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1760,63 +2080,9 @@
 			};
 			name = Debug;
 		};
-		76F3AF7266C7DA0C77394B7E3ED108F9 /* Debug */ = {
+		CD9E695D589DD3438A2B05C91028A84A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8972266E1C90A5CD7377F5213E791354 /* Pods-vantiq-ui-ios_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		865BB8DB7BE0E3E29161BA072A19D944 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF6811F8BBEB2598EDBD0739FA80C591 /* AppAuth.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AppAuth";
-				IBSC_MODULE = AppAuth;
-				INFOPLIST_FILE = "Target Support Files/AppAuth/ResourceBundle-AppAuthCore_Privacy-AppAuth-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = AppAuthCore_Privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		9798CFA08601E1F3648694577C847400 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22A58A25B8641406D747959629490A4A /* JWT.release.xcconfig */;
+			baseConfigurationReference = 05F1AB1C9CFF1EF4CCC1B7515CF0225F /* Base64.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1826,8 +2092,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JWT/JWT-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JWT/JWT-Info.plist";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Base64/Base64-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Base64/Base64-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1835,12 +2104,13 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/JWT/JWT.modulemap";
-				PRODUCT_MODULE_NAME = JWT;
-				PRODUCT_NAME = JWT;
+				MODULEMAP_FILE = "Target Support Files/Base64/Base64.modulemap";
+				PRODUCT_MODULE_NAME = Base64;
+				PRODUCT_NAME = Base64;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1849,24 +2119,7 @@
 			};
 			name = Release;
 		};
-		98478F50ADE3B8E3764829C61330B912 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2845F7317471F2FCA9C21016C0A76ABD /* AppAuth.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AppAuth";
-				IBSC_MODULE = AppAuth;
-				INFOPLIST_FILE = "Target Support Files/AppAuth/ResourceBundle-AppAuthCore_Privacy-AppAuth-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = AppAuthCore_Privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		AEA22988BDB89D247B4071084CE6FE65 /* Release */ = {
+		DD1409448D6218F87CFC129531B3D22F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ADF50392AAB862DF8C49C59F1888DB8 /* Pods-vantiq-ui-ios_Example.release.xcconfig */;
 			buildSettings = {
@@ -1880,6 +2133,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-vantiq-ui-ios_Example/Pods-vantiq-ui-ios_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1904,182 +2159,7 @@
 			};
 			name = Release;
 		};
-		B895BCC10F27A2928E9B42F3E0FE6236 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05F1AB1C9CFF1EF4CCC1B7515CF0225F /* Base64.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Base64/Base64-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Base64/Base64-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Base64/Base64.modulemap";
-				PRODUCT_MODULE_NAME = Base64;
-				PRODUCT_NAME = Base64;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C3C827E2D285E38F6432624239B103F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 605567B1F6A585A1B36E9DF8B89A1CAF /* JWT.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JWT/JWT-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JWT/JWT-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/JWT/JWT.modulemap";
-				PRODUCT_MODULE_NAME = JWT;
-				PRODUCT_NAME = JWT;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3E67B5B6D65CAE7E39DA7DC94CD4B57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB62D1F69AE93209DE34235796B8CC8A /* vantiq-ui-ios.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/vantiq-ui-ios/vantiq-ui-ios.modulemap";
-				PRODUCT_MODULE_NAME = vantiq_ui_ios;
-				PRODUCT_NAME = vantiq_ui_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DACBF2B46C5C7CFFCFA05B994FB55D15 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08108E2E979A3F8B498E3420B481C5F5 /* vantiq-sdk-ios.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios.modulemap";
-				PRODUCT_MODULE_NAME = vantiq_sdk_ios;
-				PRODUCT_NAME = vantiq_sdk_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DB21A0BD14A947BE3259073AF025C953 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4F20F611E9B9BEE1D79EF4FECE827D0 /* Base64.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Base64/Base64-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Base64/Base64-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Base64/Base64.modulemap";
-				PRODUCT_MODULE_NAME = Base64;
-				PRODUCT_NAME = Base64;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E7A6D73B1991CC84901A72599B5EBABF /* Debug */ = {
+		F2922B9329BE1E1A95018D713883A386 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2845F7317471F2FCA9C21016C0A76ABD /* AppAuth.debug.xcconfig */;
 			buildSettings = {
@@ -2090,7 +2170,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/AppAuth/AppAuth-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/AppAuth/AppAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2105,41 +2188,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EF0A19FEBC5B9E1D8B70D24ECE193E0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8C38739909343089237DE7FAB9F093A /* vantiq-sdk-ios.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/vantiq-sdk-ios/vantiq-sdk-ios.modulemap";
-				PRODUCT_MODULE_NAME = vantiq_sdk_ios;
-				PRODUCT_NAME = vantiq_sdk_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2150,11 +2199,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C05A2B14D73DF0058ACD4AC7C25C877 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Tests" */ = {
+		0CD2225237B1B73F959CF0A944D9DFE3 /* Build configuration list for PBXNativeTarget "vantiq-ui-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7590F8EA28FD394F058895EEA7D34D38 /* Debug */,
-				0DF2E544D531B23959F4C9BED1A8E9DA /* Release */,
+				4C5B8E195C5B0A59DDFF849617CB1DD7 /* Debug */,
+				9AF7DBF409FCEE4CF82ABD6B53BBA76E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10AC0FA1F2017F50CE538B5041D776EF /* Build configuration list for PBXNativeTarget "AppAuth-AppAuthCore_Privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF38DB12BC3134133B5057E92718BFE /* Debug */,
+				57FB504B3037A32A5573FC7A09DCA627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3089F0F84064A6C1BB471C2E487B1CD9 /* Build configuration list for PBXNativeTarget "Base64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9590BDC8F4C91101ED162820E6B48DE9 /* Debug */,
+				CD9E695D589DD3438A2B05C91028A84A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2168,65 +2235,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		631D7C80D23D087831F9B112B285ECAD /* Build configuration list for PBXNativeTarget "vantiq-sdk-ios" */ = {
+		600ED324C48C03E578EB100222326A25 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF0A19FEBC5B9E1D8B70D24ECE193E0C /* Debug */,
-				DACBF2B46C5C7CFFCFA05B994FB55D15 /* Release */,
+				076101F5F92188647C6B61245F88BB9B /* Debug */,
+				DD1409448D6218F87CFC129531B3D22F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6887C4ACA47AB87060C2D66E827B655B /* Build configuration list for PBXNativeTarget "AppAuth-AppAuthCore_Privacy" */ = {
+		8A21381715F22853E30F33C446F0ABBF /* Build configuration list for PBXNativeTarget "JWT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98478F50ADE3B8E3764829C61330B912 /* Debug */,
-				865BB8DB7BE0E3E29161BA072A19D944 /* Release */,
+				2D10D3DDAAC498C040B013D2ADAC34ED /* Debug */,
+				C013EC5E0D66706DC4EE2BE25A0D7121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9187747EC011108CA6CFBDBD780D178C /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Example" */ = {
+		D33590A1A41B07057C61742E882402D8 /* Build configuration list for PBXNativeTarget "AppAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76F3AF7266C7DA0C77394B7E3ED108F9 /* Debug */,
-				AEA22988BDB89D247B4071084CE6FE65 /* Release */,
+				F2922B9329BE1E1A95018D713883A386 /* Debug */,
+				29103EE4B4E836656ACB52D6D20B9927 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A667531B11FC05FDE21E71B8E6A1D906 /* Build configuration list for PBXNativeTarget "Base64" */ = {
+		F1C4861400E99590E0D6367140D3E7A9 /* Build configuration list for PBXNativeTarget "vantiq-sdk-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB21A0BD14A947BE3259073AF025C953 /* Debug */,
-				B895BCC10F27A2928E9B42F3E0FE6236 /* Release */,
+				C45D90189A9FC7E0F254A7F95298E63C /* Debug */,
+				368721752098A42EE12A69C09707FCE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C952815B05E2FD5CA8BF5F76B5DE22B4 /* Build configuration list for PBXNativeTarget "AppAuth" */ = {
+		FBCDAAF464F250C290955EB6FABD3B63 /* Build configuration list for PBXNativeTarget "Pods-vantiq-ui-ios_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E7A6D73B1991CC84901A72599B5EBABF /* Debug */,
-				63BFED5A0581A32FF1858E6E7B02298F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F67FA79963BEAAB120F5948020EFF03B /* Build configuration list for PBXNativeTarget "JWT" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C3C827E2D285E38F6432624239B103F7 /* Debug */,
-				9798CFA08601E1F3648694577C847400 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEF488870F46A7250A328A120457D4FF /* Build configuration list for PBXNativeTarget "vantiq-ui-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3BC398AF58BEEBF19C1360540A73504C /* Debug */,
-				D3E67B5B6D65CAE7E39DA7DC94CD4B57 /* Release */,
+				CAE794E009529A1AA2BA14F276444167 /* Debug */,
+				240D23A7826D5DCE05217A622674D969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
