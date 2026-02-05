@@ -786,7 +786,8 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         if (self->authValid) {
             // if the DRP code is generated, then launch a webview to allow the user to either
             // authenticate using an OAuth provider or to create a user from scratch
-            NSString *drpCode = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
+            //NSString *drpCode = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
+            NSString *drpCode = [[NSString alloc] initWithString:data];
             drpCode = [drpCode stringByReplacingOccurrencesOfString:@"\"" withString:@""];
             NSString *OAuthURL = [NSString stringWithFormat:@"%@/ui/drp/index.html?code=%@&webview=true", self->_serverURL, drpCode];
             dispatch_async(dispatch_get_main_queue(), ^{
