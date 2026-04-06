@@ -195,26 +195,37 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             
             // perform authentication request
             UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
-            VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
-                presentingViewController:rootViewController
-                callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
-                NSString *errorStr = error ? [error localizedDescription] : @"";
-                if (authState) {
-                    [self decodeJWT:authState.lastTokenResponse.idToken];
-                    
-                    // store the session securely
-                    self->_urlScheme = urlScheme;
-                    self->_v.accessToken = authState.lastTokenResponse.accessToken;
-                    self->authValid = YES;
-                    [self storeSession];
-                    // persist the returned state
-                    [self storeAuthState:authState];
-                    handler([self buildResponseDictionary:errorStr urlResponse:nil]);
-                } else {
-                    NSLog(@"Authorization error: %@", errorStr);
-                    handler([self buildResponseDictionary:errorStr urlResponse:nil]);
-                }
-            }];
+            // see https://github.com/Vantiq/vantiq-ui-ios/issues/2
+            /*VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
+                presentingViewController:rootViewController */
+            if (@available(iOS 13, *)) {
+                OIDExternalUserAgentIOS *agent = [[OIDExternalUserAgentIOS alloc]
+                    initWithPresentingViewController:rootViewController
+                    prefersEphemeralSession:YES];
+                
+                VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
+                    externalUserAgent:agent
+                    callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
+                    NSString *errorStr = error ? [error localizedDescription] : @"";
+                    if (authState) {
+                        [self decodeJWT:authState.lastTokenResponse.idToken];
+                        
+                        // store the session securely
+                        self->_urlScheme = urlScheme;
+                        self->_v.accessToken = authState.lastTokenResponse.accessToken;
+                        self->authValid = YES;
+                        [self storeSession];
+                        // persist the returned state
+                        [self storeAuthState:authState];
+                        handler([self buildResponseDictionary:errorStr urlResponse:nil]);
+                    } else {
+                        NSLog(@"Authorization error: %@", errorStr);
+                        handler([self buildResponseDictionary:errorStr urlResponse:nil]);
+                    }
+                }];
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             NSLog(@"Error retrieving discovery document: %@", errorStr);
             handler([self buildResponseDictionary:errorStr urlResponse:nil]);
