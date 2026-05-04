@@ -8,30 +8,21 @@
 
 Pod::Spec.new do |s|
   s.name             = 'vantiq-ui-ios'
-  s.version          = '0.4.8'
+  s.version          = '0.4.92'
   s.summary          = 'UI API for building Vantiq mobile iOS apps.'
   s.description      = <<-DESC
   UI API for building Vantiq mobile iOS apps to allow cross-platform development.
                        DESC
 
   s.homepage         = 'https://github.com/Vantiq/vantiq-ui-ios'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Michael Swan' => 'mswan@vantiq.com' }
   s.source           = { :git => 'https://github.com/Vantiq/vantiq-ui-ios.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '12.0'
-
-  s.source_files = 'vantiq-ui-ios/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'vantiq-ui-ios' => ['vantiq-ui-ios/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.deployment_target = '15.0'
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+ 
   s.dependency 'vantiq-sdk-ios'
   s.dependency 'AppAuth', '~> 1.7.5'
   s.dependency 'JWT', '~> 2.2.0'

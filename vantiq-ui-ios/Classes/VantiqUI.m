@@ -170,7 +170,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
         dispatch_async(dispatch_get_main_queue(), ^ {
             NSString *resultStr = @"";
             self->authValid = [self formError:response error:error resultStr:&resultStr] ? NO : YES;
-            handler([self buildResponseDictionary:resultStr urlResponse:response]);
+            handler([self buildResponseDictionary:resultStr urlResponse:response returnToken:self->authValid]);
         });
     }];
 }
@@ -195,26 +195,37 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             
             // perform authentication request
             UIViewController *rootViewController = UIApplication.sharedApplication.delegate.window.rootViewController;
-            VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
-                presentingViewController:rootViewController
-                callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
-                NSString *errorStr = error ? [error localizedDescription] : @"";
-                if (authState) {
-                    [self decodeJWT:authState.lastTokenResponse.idToken];
-                    
-                    // store the session securely
-                    self->_urlScheme = urlScheme;
-                    self->_v.accessToken = authState.lastTokenResponse.accessToken;
-                    self->authValid = YES;
-                    [self storeSession];
-                    // persist the returned state
-                    [self storeAuthState:authState];
-                    handler([self buildResponseDictionary:errorStr urlResponse:nil]);
-                } else {
-                    NSLog(@"Authorization error: %@", errorStr);
-                    handler([self buildResponseDictionary:errorStr urlResponse:nil]);
-                }
-            }];
+            // see https://github.com/Vantiq/vantiq-ui-ios/issues/2
+            /*VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
+                presentingViewController:rootViewController */
+            if (@available(iOS 13, *)) {
+                OIDExternalUserAgentIOS *agent = [[OIDExternalUserAgentIOS alloc]
+                    initWithPresentingViewController:rootViewController
+                    prefersEphemeralSession:YES];
+                
+                VantiqUIcurrentAuthorizationFlow = [OIDAuthState authStateByPresentingAuthorizationRequest:request
+                    externalUserAgent:agent
+                    callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {
+                    NSString *errorStr = error ? [error localizedDescription] : @"";
+                    if (authState) {
+                        [self decodeJWT:authState.lastTokenResponse.idToken];
+                        
+                        // store the session securely
+                        self->_urlScheme = urlScheme;
+                        self->_v.accessToken = authState.lastTokenResponse.accessToken;
+                        self->authValid = YES;
+                        [self storeSession];
+                        // persist the returned state
+                        [self storeAuthState:authState];
+                        handler([self buildResponseDictionary:errorStr urlResponse:nil returnToken:YES]);
+                    } else {
+                        NSLog(@"Authorization error: %@", errorStr);
+                        handler([self buildResponseDictionary:errorStr urlResponse:nil]);
+                    }
+                }];
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             NSLog(@"Error retrieving discovery document: %@", errorStr);
             handler([self buildResponseDictionary:errorStr urlResponse:nil]);
@@ -365,7 +376,7 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
             // store the session securely
             [self storeSession];
         }
-        handler([self buildResponseDictionary:resultStr urlResponse:response]);
+        handler([self buildResponseDictionary:resultStr urlResponse:response returnToken:YES]);
     }];
 }
 
@@ -466,6 +477,10 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
 }
 
 - (NSDictionary *)buildResponseDictionary:(NSString *)errorStr urlResponse:(NSHTTPURLResponse *)response {
+    return [self buildResponseDictionary:errorStr urlResponse:response returnToken:NO];
+}
+
+- (NSMutableDictionary *)buildResponseDictionary:(NSString *)errorStr urlResponse:(NSHTTPURLResponse *)response returnToken:(BOOL)returnToken {
     NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] init];
     if (_serverType) {
         [responseDict setObject:_serverType forKey:@"serverType"];
@@ -483,6 +498,9 @@ id<OIDExternalUserAgentSession> VantiqUIcurrentAuthorizationFlow;
     if (response) {
         [responseDict setObject:[NSNumber numberWithInteger:response.statusCode] forKey:@"statusCode"];
     }
+	if (returnToken) {
+		[responseDict setObject:self->_v.accessToken forKey:@"accessToken"];
+	}
     return responseDict;
 }
 
