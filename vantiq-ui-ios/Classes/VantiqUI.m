@@ -5,7 +5,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VantiqUI.h"
+//#import "VantiqUI.h"
+#import <vantiq_ui_ios/VantiqUI.h>
 #import "JWT.h"
 #include "KeychainItemWrapper.h"
 #include "LastActive.h"

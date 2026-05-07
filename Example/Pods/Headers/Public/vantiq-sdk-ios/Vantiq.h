@@ -1,1 +1,0 @@
-../../../vantiq-sdk-ios/Pod/Classes/Vantiq.h

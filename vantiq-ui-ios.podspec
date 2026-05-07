@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'vantiq-ui-ios'
-  s.version          = '0.4.92'
+  s.version          = '0.4.93'
   s.summary          = 'UI API for building Vantiq mobile iOS apps.'
   s.description      = <<-DESC
   UI API for building Vantiq mobile iOS apps to allow cross-platform development.
@@ -22,9 +22,12 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '15.0'
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
+  s.source_files = 'vantiq-ui-ios/**/Classes/*.{h,m}'
+  s.public_header_files = 'vantiq-ui-ios/**/Classes/*.h'
  
   s.dependency 'vantiq-sdk-ios'
   s.dependency 'AppAuth', '~> 1.7.5'
-  s.dependency 'JWT', '~> 2.2.0'
-  s.dependency 'Base64', '~> 1.1.2'
+  s.dependency 'JWT', '2.2.0.3'
+  s.dependency 'Base64', '1.2.1.2'
 end

@@ -1,1 +1,0 @@
-../../../vantiq-ui-ios/vantiq-ui-ios/Classes/LocationUtilities.h

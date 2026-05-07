@@ -10,8 +10,9 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
 #import <CoreLocation/CoreLocation.h>
-#import "Vantiq.h"
-#import "AppAuth.h"
+//#import "Vantiq.h"
+#import <vantiq_sdk_ios/Vantiq.h>
+#import <AppAuth/AppAuth.h>
 
 extern id<OIDExternalUserAgentSession> _Nullable VantiqUIcurrentAuthorizationFlow;
 

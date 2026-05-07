@@ -7,8 +7,12 @@
 //
 
 @import UIKit;
-#import "VantiqUI.h"
-#import "AppAuth.h"
+
+//#import "../Pods/vantiq-ui-ios/vantiq-ui-ios/Classes/VantiqUI.h"
+// #import "VantiqUI.h"
+#import <vantiq_ui_ios/VantiqUI.h>
+// #import "AppAuth.h"
+#import <AppAuth/AppAuth.h>
 
 @interface VANTIQUIAppDelegate : UIResponder <UIApplicationDelegate>
 
