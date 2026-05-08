@@ -9,21 +9,27 @@ PODS:
   - JWT (2.2.0.3):
     - Base64 (= 1.2.1.2)
   - vantiq-sdk-ios (1.6.3)
-  - vantiq-ui-ios (0.4.93):
+  - vantiq-ui-ios (0.4.94):
     - AppAuth (~> 1.7.5)
-    - Base64 (= 1.2.1.2)
-    - JWT (= 2.2.0.3)
     - vantiq-sdk-ios
+    - VantiqBase64 (= 1.2.1.3)
+    - VantiqJWT (= 2.2.0.5)
+  - VantiqBase64 (1.2.1.3)
+  - VantiqJWT (2.2.0.5):
+    - VantiqBase64 (= 1.2.1.3)
 
 DEPENDENCIES:
   - Base64 (from `https://github.com/Vantiq/Base64.git`, tag `1.2.1.2`)
   - JWT (from `https://github.com/Vantiq/JWT.git`, tag `2.2.0.3`)
-  - vantiq-ui-ios (from `../`)
+  - vantiq-ui-ios
 
 SPEC REPOS:
   trunk:
     - AppAuth
     - vantiq-sdk-ios
+    - vantiq-ui-ios
+    - VantiqBase64
+    - VantiqJWT
 
 EXTERNAL SOURCES:
   Base64:
@@ -32,8 +38,6 @@ EXTERNAL SOURCES:
   JWT:
     :git: https://github.com/Vantiq/JWT.git
     :tag: 2.2.0.3
-  vantiq-ui-ios:
-    :path: "../"
 
 CHECKOUT OPTIONS:
   Base64:
@@ -48,8 +52,10 @@ SPEC CHECKSUMS:
   Base64: 28c0ecb0abbf9a4302a3cc95f0b92e4820b6ebf8
   JWT: 5b19d003a59181bf008f9e9fac2eee2b7312d4b0
   vantiq-sdk-ios: ad04da855a2882d0c8cbe5db10dad49c4a1bf57a
-  vantiq-ui-ios: 031f0984661808ff6bde5022b304062795f4a9d2
+  vantiq-ui-ios: c5bc32d8b57a9c4ceb50bd298665eaa691fdd6c3
+  VantiqBase64: 3f8c683093ef41a3e79a97d528f90467dea2ce8d
+  VantiqJWT: 7502bf6eda3bca09337d46d6173b88d541487dfb
 
-PODFILE CHECKSUM: 24a44a681a767d24600291c688a8339d9d287fce
+PODFILE CHECKSUM: 260e61dbc769406a74721c42a9ffe66bd869c8ad
 
 COCOAPODS: 1.16.2

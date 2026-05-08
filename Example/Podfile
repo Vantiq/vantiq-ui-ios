@@ -7,7 +7,8 @@ target 'vantiq-ui-ios_Example' do
   # pod 'AppAuth', '~> 1.7.5'
   # pod 'JWT', '~> 2.2.0'
   # pod 'Base64', '~> 1.1.2'
-  pod 'vantiq-ui-ios', :path => '../'
+  # pod 'vantiq-ui-ios', :path => '../'
+  pod 'vantiq-ui-ios'
   pod 'Base64', :git => 'https://github.com/Vantiq/Base64.git', :tag => '1.2.1.2'
   pod 'JWT', :git => 'https://github.com/Vantiq/JWT.git', :tag => '2.2.0.3'
 end
