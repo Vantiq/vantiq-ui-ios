@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'vantiq-ui-ios'
-  s.version          = '0.4.95'
+  s.version          = '0.4.96'
   s.summary          = 'UI API for building Vantiq mobile iOS apps.'
   s.description      = <<-DESC
   UI API for building Vantiq mobile iOS apps to allow cross-platform development.
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
  
   s.dependency 'vantiq-sdk-ios'
   s.dependency 'AppAuth', '~> 1.7.5'
-  s.dependency 'VantiqJWT', '2.2.0.5'
-  s.dependency 'VantiqBase64', '1.2.1.3'
+  s.dependency 'VantiqJWT', '2.2.0.6'
+  s.dependency 'VantiqBase64', '1.2.1.5'
 end
